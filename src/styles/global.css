@@ -1,0 +1,28 @@
+html {
+  background-color: #202020;
+  font-family: "JetBrains Mono";
+}
+
+body {
+  color: lightgrey;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 65ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: lightgrey;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+/* nav styles */

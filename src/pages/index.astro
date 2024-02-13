@@ -1,16 +1,18 @@
 ---
+import Base from "../layouts/Base.astro";
 
+const allArticles = await Astro.glob("../pages/articles/*.md");
+const pageTitle = "base";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base pageTitle={pageTitle}>
+  <p>still under construction...</p>
+  <p>but you can read the initial post if you want:</p>
+  {
+    allArticles.map((post) => (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+      </li>
+    ))
+  }
+</Base>
