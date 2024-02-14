@@ -1,6 +1,6 @@
 html {
   background-color: #202020;
-  font-family: "JetBrains Mono";
+  
 }
 
 body {
@@ -10,6 +10,7 @@ body {
   max-width: 65ch;
   padding: 1rem;
   line-height: 1.5;
+  font-family: "JetBrains Mono";
 }
 
 a {
