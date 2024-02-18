@@ -4,22 +4,38 @@
 }
 
 html {
-  background-color: #202020;
-  
+  background-color: #eeeeee;
 }
 
 body {
-  color: lightgrey;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 65ch;
+  color: rgb(41, 41, 41);
+  max-width: 75ch;
   padding: 1rem;
   line-height: 1.5;
   font-family: "JetBrains Mono";
+  text-align: justify;
+}
+
+.nav-links a {
+  background-color: #bfb1a8;
+  border: 2px solid darkslategray;
+  padding: 0.2rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  padding: 0.2rem;
+  background-color: #272727;
 }
 
 a {
-  color: lightgrey;
+  color: #272727;
+}
+
+a:hover {
+  color: #eeeeee;
+  padding: 4px;
+  background-color: #272727;
 }
 
 * {
