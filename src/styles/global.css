@@ -88,8 +88,8 @@ h1 {
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: red;
-  background: yellow;
+  color: #fefefe;
+  background: #272727;
 }
 
 ::selection {
