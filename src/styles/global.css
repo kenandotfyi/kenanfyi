@@ -8,12 +8,20 @@ html {
 }
 
 body {
+  font-size: 14px;
   color: rgb(41, 41, 41);
+  margin-left: 0;
   max-width: 75ch;
   padding: 1rem;
   line-height: 1.5;
   font-family: "JetBrains Mono";
-  text-align: justify;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+    text-align: justify;
+  }
 }
 
 .nav-links a {
@@ -25,6 +33,7 @@ body {
 
 .nav-links a:hover {
   padding: 0.2rem;
+  border: 2px solid #272727;
   background-color: #272727;
 }
 
