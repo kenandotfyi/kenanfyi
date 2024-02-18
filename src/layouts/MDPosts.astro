@@ -4,7 +4,9 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
-  <p>Published: {frontmatter.pubDate.slice(0, 10)}</p>
+  <div class="post-heading">
+    <h1>{frontmatter.title}</h1>
+    <p>published: {frontmatter.pubDate.slice(0, 10)}</p>
+  </div>
   <slot />
 </Base>

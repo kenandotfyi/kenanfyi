@@ -8,10 +8,10 @@ html {
 }
 
 body {
-  font-size: 14px;
+  font-size: 0.85rem;
   color: rgb(41, 41, 41);
   margin-left: 0;
-  max-width: 75ch;
+  max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
   font-family: "JetBrains Mono";
@@ -19,14 +19,15 @@ body {
 
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 1rem;
     text-align: justify;
   }
 }
 
 .nav-links a {
-  background-color: #bfb1a8;
+  background-color: #fefefe;
   border: 2px solid darkslategray;
+  border-bottom: 4px solid;
   padding: 0.2rem;
   text-decoration: none;
 }
@@ -34,17 +35,22 @@ body {
 .nav-links a:hover {
   padding: 0.2rem;
   border: 2px solid #272727;
+  border-bottom: 4px solid #272727;
   background-color: #272727;
+  transition: ease-in 0.3s;
 }
 
 a {
   color: #272727;
+  text-decoration: none;
+  border-bottom: 2px solid #272727;
 }
 
 a:hover {
   color: #eeeeee;
-  padding: 4px;
+  /* padding: 2px; */
   background-color: #272727;
+  transition: ease-in 0.3s;
 }
 
 * {
@@ -53,7 +59,40 @@ a:hover {
 
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
-/* nav styles */
+.post-heading {
+  background: #fefefe;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  border: 2px solid #272727;
+  border-bottom: 8px solid #272727;
+}
+
+.post-heading h1 {
+  margin: 0;
+}
+
+.post-heading p {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+.footer {
+  font-size: 0.7rem;
+  color: grey;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: red;
+  background: yellow;
+}
+
+::selection {
+  color: #fefefe;
+  background: #272727;
+}
