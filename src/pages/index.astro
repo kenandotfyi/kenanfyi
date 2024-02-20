@@ -6,7 +6,14 @@ const pageTitle = "main";
 ---
 
 <Base pageTitle={pageTitle}>
-  <p>posting some stuff that pops into my head</p>
+  <p>Posting some stuff that pops into my head</p>
+  <p>
+    There are some metadata inside the posts, which gives the reader some ideas
+    about the articles. Like the status which shows if the article is completed
+    or not. Also the update date. I will implement a more friendly metadata
+    display in the upcoming days. Since I am building in public, I do my updates
+    in the prod.
+  </p>
   {
     allArticles.map((post) => (
       <li>

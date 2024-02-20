@@ -1,7 +1,10 @@
-@font-face {
+/* @font-face {
   font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-Regular.ttf");
-}
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
 
 html {
   background-color: #eeeeee;
@@ -14,7 +17,7 @@ body {
   max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono', monospace;
 }
 
 @media only screen and (min-width: 768px) {
