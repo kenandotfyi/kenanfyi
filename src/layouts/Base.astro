@@ -17,7 +17,7 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <Nav />
+    <Nav transition:persist />
     <slot />
     <Footer />
   </body>

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono[wght].ttf");
+  src: url("/fonts/JetBrainsMono-Regular.woff2");
 }
 
 html {
@@ -14,7 +14,7 @@ body {
   max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
-  font-family: "JetBrains Mono";
+  font-family: 'JetBrains Mono';
 }
 
 @media only screen and (min-width: 768px) {
@@ -52,7 +52,6 @@ a {
   padding: 0.2rem;
   text-decoration: none;
 }
-
 
 * {
   box-sizing: border-box;

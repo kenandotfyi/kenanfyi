@@ -3,6 +3,8 @@ layout: ../../layouts/MDPosts.astro
 title: "On Starting a Blog"
 description: "Initial post to explain this experiment of mine."
 pubDate: 2024-02-13
+updated:
+status: "finished"
 type: article
 tags: ["no-topic"]
 ---

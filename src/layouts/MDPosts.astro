@@ -7,6 +7,16 @@ const { frontmatter } = Astro.props;
   <div class="post-heading">
     <h1>{frontmatter.title}</h1>
     <p>published: {frontmatter.pubDate.slice(0, 10)}</p>
+    {
+      frontmatter.updated === null ? (
+        ""
+      ) : (
+        <p>updated: {frontmatter.updated.slice(0, 10)}</p>
+      )
+    }
+    <p>status: {frontmatter.status}</p>
   </div>
-  <slot />
+  <main>
+    <slot />
+  </main>
 </Base>
