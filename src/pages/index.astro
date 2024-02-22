@@ -2,6 +2,10 @@
 import Base from "../layouts/Base.astro";
 
 const allArticles = await Astro.glob("../pages/articles/*.md");
+allArticles.sort(
+  (a, b) =>
+    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate),
+);
 const pageTitle = "main";
 ---
 
@@ -23,7 +27,7 @@ const pageTitle = "main";
   <ul class="postNames">
     {
       allArticles.map((post) => (
-        <li class="pubTitle">
+        <li>
           <span>
             <a href={post.url}>{post.frontmatter.title}</a>
           </span>
