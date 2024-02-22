@@ -8,12 +8,13 @@
 
 html {
   background-color: #eeeeee;
+  overflow: scroll;
 }
 
 body {
   font-size: 0.85rem;
   color: rgb(41, 41, 41);
-  margin-left: 0;
+  margin: 0 auto;
   max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
@@ -27,9 +28,7 @@ body {
   }
 
   .nav-links a:hover {
-    padding: 0.2rem;
-    border: 2px solid #272727;
-    border-bottom: 4px solid #272727;
+    /* padding: 0.2rem; */
     background-color: #272727;
     transition: ease-in 0.3s;
   }
@@ -45,10 +44,10 @@ body {
 a {
   color: #272727;
   text-decoration: none;
-  border-bottom: 2px solid #272727;
+  border-bottom: 1px solid #272727;
 }
 
-.nav-links a {
+.nav-links {
   background-color: #fefefe;
   border: 2px solid darkslategray;
   border-bottom: 4px solid;
@@ -92,6 +91,51 @@ h2 {
   font-size: 0.7rem;
   color: grey;
 }
+
+.logo-a {
+  border: 0px !important;
+  padding: 0 !important;
+}
+
+.logo-a:hover {
+  background-color: #272727 !important;
+}
+
+.pubDates {
+  color: #828181;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+ul.postNames {
+  max-width: 40em;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none
+}
+
+ul.postNames li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  color: #828181;
+  content:
+    "•••••••••••••••••••••••••••••••••••••••"
+    "•••••••••••••••••••••••••••••••••••••••"
+    "•••••••••••••••••••••••••••••••••••••••"
+}
+
+ul.postNames span:first-child {
+  padding-right: 0.6em;
+  background-color: #eeeeee;
+}
+
+ul.postNames span+span {
+  float: right;
+  padding-left: 0.33em;
+  background-color: #eeeeee;
+}
+
 
 ::-moz-selection {
   /* Code for Firefox */

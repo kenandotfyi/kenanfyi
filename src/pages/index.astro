@@ -6,19 +6,30 @@ const pageTitle = "main";
 ---
 
 <Base pageTitle={pageTitle}>
-  <p>Posting some stuff that pops into my head</p>
+  <p>Hey,</p>
   <p>
-    There are some metadata inside the posts, which gives the reader some ideas
-    about the articles. Like the status which shows if the article is completed
-    or not. Also the update date. I will implement a more friendly metadata
-    display in the upcoming days. Since I am building in public, I do my updates
-    in the prod.
+    Kenan here. This blog is an experiment where I try new stuff out and keep
+    learning about web technologies plus posting some thoughts that pops into my
+    head.
   </p>
-  {
-    allArticles.map((post) => (
-      <li>
-        <a href={post.url}>{post.frontmatter.title}</a>
-      </li>
-    ))
-  }
+  There are some metadata inside the posts, which gives the reader some ideas about
+  the articles. Like the status which shows if the article is completed or not. Also
+  the update date. I will implement a more friendly metadata display in the upcoming
+  days. Since I am building in public, I do my updates in the prod.
+
+  <p>
+    <i>Some recent posts:</i>
+  </p>
+  <ul class="postNames">
+    {
+      allArticles.map((post) => (
+        <li class="pubTitle">
+          <span>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </span>
+          <span class="pubDates">{post.frontmatter.pubDate.slice(0, 10)}</span>
+        </li>
+      ))
+    }
+  </ul>
 </Base>
