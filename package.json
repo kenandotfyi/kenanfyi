@@ -32,6 +32,7 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.3.6",
+    "rehype-external-links": "^3.0.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
