@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MDPosts.astro
+draft: false
 title: "On Starting a Blog"
 description: "Initial post to explain this experiment of mine."
 pubDate: 2024-02-13

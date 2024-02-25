@@ -1,11 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
+import { string } from "astro/zod";
 
-const allArticles = await Astro.glob("../pages/articles/*.md");
-allArticles.sort(
-  (a, b) =>
-    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate),
-);
+const allArticles = await getCollection("articles");
+allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 const pageTitle = "main";
 ---
 
@@ -26,12 +25,14 @@ const pageTitle = "main";
   </p>
   <ul class="postNames">
     {
-      allArticles.map((post) => (
+      allArticles.map((article) => (
         <li>
           <span>
-            <a href={post.url}>{post.frontmatter.title}</a>
+            <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
           </span>
-          <span class="pubDates">{post.frontmatter.pubDate.slice(0, 10)}</span>
+          <span class="pubDates">
+            {article.data.pubDate.toISOString().split("T")[0]}
+          </span>
         </li>
       ))
     }

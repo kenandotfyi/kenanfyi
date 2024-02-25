@@ -1,17 +1,17 @@
 ---
-import Base from "../layouts/Base.astro";
+import Base from "./Base.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title}>
   <div class="post-heading">
     <h1>{frontmatter.title}</h1>
-    <p>published: {frontmatter.pubDate.slice(0, 10)}</p>
+    <p>published: {frontmatter.pubDate.toISOString().split("T")[0]}</p>
     {
       frontmatter.updated === null ? (
         ""
       ) : (
-        <p>updated: {frontmatter.updated.slice(0, 10)}</p>
+        <p>updated: {frontmatter.updated.toISOString().split("T")[0]}</p>
       )
     }
     <p>status: {frontmatter.status}</p>

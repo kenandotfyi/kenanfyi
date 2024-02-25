@@ -47,6 +47,12 @@ a {
   border-bottom: 1px solid #272727;
 }
 
+.logo-a a {
+  font-weight: 900;
+  border-bottom: 0px solid !important;
+}
+
+
 .nav-links {
   background-color: #fefefe;
   border: 2px solid darkslategray;
@@ -94,19 +100,11 @@ h2 {
   color: grey;
 }
 
-.logo-a {
-  border: 0px !important;
-  padding: 0 !important;
-}
-
-.logo-a:hover {
-  background-color: #272727 !important;
-}
-
 .pubDates {
   color: #828181;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
 }
 
 ul.postNames {
@@ -137,6 +135,10 @@ ul.postNames span+span {
   padding-left: 0.33em;
   background-color: #eeeeee;
   position: relative;
+}
+
+table * {
+  border: 2px solid red
 }
 
 
