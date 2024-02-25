@@ -173,3 +173,12 @@ table * {
   color: #fefefe;
   background: #272727;
 }
+
+.astro-code {
+  padding: 1rem;
+  font-size: 14px;
+}
+
+.astro-code * {
+  font-family: 'JetBrains Mono', monospace;
+}
