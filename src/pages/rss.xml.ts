@@ -2,7 +2,9 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
 export async function GET(context: any) {
-  const posts = await getCollection("articles");
+  const posts = await getCollection("articles", ({ data }) => {
+    return data.draft !== true;
+  });
 
   const items = posts
     .sort((a: any, b: any) => b.data.pubDate - a.data.pubDate)
