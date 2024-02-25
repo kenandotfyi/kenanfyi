@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+const pageTitle = "colophon";
+---
+
+<Base pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+  <i> Last Updated: 2024-02-25 </i>
+  <p>
+    <strong>kenan.fyi</strong> is my personal website, simultaneously serving as
+    an experimental tool on web design. I'm building in public and the entire codebase
+    is hosted in <a
+      href="https://github.com/kenandotfyi/kenanfyi"
+      target="_blank">Github > kenan.fyi</a
+    >.
+  </p>
+
+  <p>
+    It is built with Astro and mostly static, although there are some
+    client-side Javascript for interactivity. There are no ads and no analytics,
+    and I don't plan to implement any ads in the future. I may implement a
+    article view counter, but that will be the only thing in terms of analytics.
+    Other than that, I will never implement some kind of bullshit tracking
+    algorithm or anything like that. Blogging should be free of that kind of
+    non-sense.
+  </p>
+
+  Primary typeface is <a
+    href="https://www.jetbrains.com/lp/mono/"
+    target="_blank"
+    >JetBrains Mono<a></a> at the moment and will stay until I get bored out of it.
+    Monospace fonts are good for coding, but reading long form text is not that eye-friendly
+    as far as I now. So I may change it later. For code blocks, I will use JetBrains
+    Mono as well, but if I see a problem for context switching I might use something
+    else.
+  </a>
+</Base>
