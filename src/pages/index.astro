@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { string } from "astro/zod";
 
-const allArticles = await getCollection("articles");
+const allArticles = await getCollection("articles", ({ data }) => {
+  return data.draft !== true;
+});
 allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 const pageTitle = "main";
 ---

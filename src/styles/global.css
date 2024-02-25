@@ -39,6 +39,13 @@ body {
     background-color: #272727;
     transition: ease-in 0.3s;
   }
+
+  .post-metadata {
+    float: left;
+    font-style: italic;
+    position: relative;
+    margin-left: -10rem;
+  }
 }
 
 a {
@@ -49,7 +56,9 @@ a {
 
 .logo-a a {
   font-weight: 900;
-  border-bottom: 0px solid !important;
+  border-bottom: 0px solid;
+  padding-left: 0.5rem;
+
 }
 
 
@@ -76,28 +85,42 @@ h2 {
   font-size: 1.2rem;
 }
 
-.post-heading {
+
+
+.post-title h1 {
+  height: 61px;
   background: #fefefe;
   padding: 0.2rem;
   margin-top: 1rem;
   border: 2px solid #272727;
-  border-bottom: 8px solid #272727;
+  font-size: 2rem;
 }
 
-.post-heading h1 {
-  margin: 0;
+.post-metadata {
+  background: #fefefe;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  border: 2px solid #272727;
 }
 
-.post-heading p {
+
+
+.post-metadata p {
   padding: 0;
   margin: 0;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 0.7rem;
 }
 
 .footer {
   font-size: 0.7rem;
   color: grey;
+}
+
+.footer-links a {
+  font-size: 0.7rem;
+  color: grey;
+  border-bottom: 0px solid;
 }
 
 .pubDates {

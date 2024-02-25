@@ -3,7 +3,7 @@ draft: false
 title: "On Starting a Blog"
 description: "Initial post to explain this experiment of mine."
 pubDate: 2024-02-13
-updated:
+updated: 2024-02-25
 status: "finished"
 type: article
 tags: ["no-topic"]

@@ -4,8 +4,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <div class="post-heading">
-    <h1>{frontmatter.title}</h1>
+  <div class="post-metadata">
     <p>published: {frontmatter.pubDate.toISOString().split("T")[0]}</p>
     {
       frontmatter.updated === null ? (
@@ -16,6 +15,7 @@ const { frontmatter } = Astro.props;
     }
     <p>status: {frontmatter.status}</p>
   </div>
+  <div class="post-title"><h1>{frontmatter.title}</h1></div>
   <main>
     <slot />
   </main>
