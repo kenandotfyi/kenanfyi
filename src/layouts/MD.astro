@@ -26,7 +26,7 @@ const currentPath = Astro.url.pathname;
           month: "long",
           day: "numeric",
         })
-      } • {minutes}
+      } • {minutes}{frontmatter.status === "wip" ? ", work in progress" : ""}
     </p>
   </div>
   <main>
