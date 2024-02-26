@@ -1,10 +1,19 @@
-/* @font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrainsMono-Regular.woff2") format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fefefe;
+  background: #272727;
+}
+
+::selection {
+  color: #fefefe;
+  background: #272727;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 html {
   background-color: #eaeaea;
@@ -24,13 +33,7 @@ body {
 @media only screen and (min-width: 768px) {
   body {
     font-size: 1rem;
-    text-align: justify;
-  }
-
-  .nav-links a:hover {
-    /* padding: 0.2rem; */
-    background-color: #272727;
-    transition: ease-in 0.3s;
+    /* text-align: justify; */
   }
 
   a:hover {
@@ -38,12 +41,6 @@ body {
     /* padding: 2px; */
     background-color: #272727;
     transition: ease-in 0.3s;
-  }
-
-  .post-metadata {
-    float: left;
-    position: relative;
-    margin-left: -9rem;
   }
 }
 
@@ -56,44 +53,32 @@ a {
 
 a.external-link {
   background-image: url(../assets/arrow_hardedge.svg);
-
   background-repeat: no-repeat;
   background-size: 0.8rem;
   background-position: right;
   padding-right: 1em;
 }
 
-.logo-a a {
+.logo a {
   font-weight: 900;
-  border-bottom: 0px solid;
+  border-bottom: 0px;
   padding-left: 0.5rem;
-
 }
-
 
 .nav-links {
   background-color: #fefefe;
-  /* border: 2px solid darkslategray; */
   border-bottom: 4px solid;
   padding: 0.2rem;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 h1 {
-  font-size: 1.4rem;
-}
-
-h2 {
   font-size: 1.2rem;
 }
 
-
+h2 {
+  font-size: 1.1rem;
+}
 
 .post-title {
   /* height: 53px; */
@@ -104,29 +89,15 @@ h2 {
 }
 
 .post-title h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 0;
 }
 
 .post-title p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: darkgray;
   margin: 0;
   padding: 0;
-}
-
-.post-metadata {
-  text-align: left;
-  background: #fefefe;
-  padding: 0.2rem;
-  margin-top: 1rem;
-  border-bottom: 4px dotted #bdbcbc;
-}
-
-.post-metadata p {
-  padding: 0;
-  margin: 0;
-  font-size: 0.6rem;
 }
 
 .footer {
@@ -138,13 +109,6 @@ h2 {
 .footer-links a {
   font-size: 0.7rem;
   border-bottom: 0px solid;
-}
-
-.pubDates {
-  color: #828181;
-  font-style: italic;
-  font-size: 0.8rem;
-  padding-top: 0.1rem;
 }
 
 ul.postNames {
@@ -177,27 +141,12 @@ ul.postNames span+span {
   position: relative;
 }
 
-table * {
-  border: 2px solid red
-}
 
-
-::-moz-selection {
-  /* Code for Firefox */
-  color: #fefefe;
-  background: #272727;
-}
-
-::selection {
-  color: #fefefe;
-  background: #272727;
-}
-
-.astro-code {
+/* .astro-code {
   padding: 1rem;
   font-size: 14px;
 }
 
 .astro-code * {
   font-family: 'JetBrains Mono', monospace;
-}
+} */
