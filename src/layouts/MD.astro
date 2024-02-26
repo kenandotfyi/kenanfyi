@@ -1,10 +1,12 @@
 ---
 import Base from "./Base.astro";
-const { frontmatter } = Astro.props;
+const { frontmatter, minutes } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <div class="post-metadata">
+  <!-- <div class="post-metadata">
     <p>published: {frontmatter.pubDate.toISOString().split("T")[0]}</p>
     {
       frontmatter.updated === null ? (
@@ -14,8 +16,19 @@ const { frontmatter } = Astro.props;
       )
     }
     <p>status: {frontmatter.status}</p>
+  </div> -->
+  <div class="post-title">
+    <h1>{frontmatter.title}</h1>
+    <p>
+      {
+        frontmatter.pubDate.toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      } • {minutes}
+    </p>
   </div>
-  <div class="post-title"><h1>{frontmatter.title}</h1></div>
   <main>
     <slot />
   </main>

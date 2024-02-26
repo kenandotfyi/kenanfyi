@@ -1,17 +1,18 @@
 import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
 import remarkMath from "remark-math";
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       [
         rehypeExternalLinks,
         {
-          content: { type: "text", value: "↗" },
+          properties: { className: "external-link" },
           target: "_blank",
         },
       ],

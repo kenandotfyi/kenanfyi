@@ -1,9 +1,11 @@
 ---
-
+const currentPath = Astro.url.pathname;
 ---
 
 <div class="nav-links">
-  <span class="logo-a"><a href="/">~/</a></span>
+  <span class="logo-a"
+    ><a href="/">~/</a>{currentPath.toString().split("/")[1]}</span
+  >
   <span style="color: #ad1d1d">●</span>
   <a href="/now/">now</a>
 
