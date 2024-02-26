@@ -16,13 +16,13 @@
 }
 
 html {
-  background-color: #eaeaea;
+  background-color: #E6E4DA;
   overflow: scroll;
 }
 
 body {
   font-size: 1rem;
-  color: rgb(41, 41, 41);
+  color: #100F0F;
   margin: 0 auto;
   max-width: 70ch;
   padding: 1rem;
@@ -95,7 +95,7 @@ h2 {
 
 .post-title p {
   font-size: 0.8rem;
-  color: darkgray;
+  color: #6F6E69;
   margin: 0;
   padding: 0;
 }
@@ -131,13 +131,13 @@ ul.postNames li:after {
 
 ul.postNames span:first-child {
   padding-right: 0.6em;
-  background-color: #eeeeee;
+  background-color: #E6E4DA;
 }
 
 ul.postNames span+span {
   float: right;
   padding-left: 0.33em;
-  background-color: #eeeeee;
+  background-color: #E6E4DA;
   position: relative;
 }
 

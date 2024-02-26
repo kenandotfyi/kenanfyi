@@ -7,7 +7,7 @@ import remarkMath from "remark-math";
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-    remarkPlugins: [remarkReadingTime],
+    remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [
       [
         rehypeExternalLinks,
