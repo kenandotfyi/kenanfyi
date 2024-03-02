@@ -32,8 +32,6 @@ This is a little complicated since I also use some software for my work which ma
 - [Obsidian](https://obsidian.md)
 - iA Writer
 
-[using-obsidian-as-an-engineer](using-obsidian-as-an-engineer.md) 
-
 # Utility
 
 - Raycast
