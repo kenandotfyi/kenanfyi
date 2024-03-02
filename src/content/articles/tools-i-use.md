@@ -37,7 +37,7 @@ This is a little complicated since I also use some software for my work which ma
 - [Raycast](https://raycast.com): Alfred on steroids. It was time anyway for Alfred to retire on my Mac, so I'm happy with Raycast since their launch. And they keep delivering constantly!
 - [BetterTouchTool](https://folivora.ai/): I recently started using the trackpad and BTT is a must for custom gestures.  
 - [Dropover](https://dropoverapp.com/): Making file copy/cut/paste intuitively easier using small boxes as some kind of staging area.
-- [Cleanshot X](https://cleanshot.cloud/): My tool of choice for screenshots. I think I use it, just because it is a well designed and an extensive piece of software. Otherweise there are dozens of screenshot apps out there.
+- [Cleanshot X](https://cleanshot.com/): My tool of choice for screenshots. I think I use it, just because it is a well designed and an extensive piece of software. Otherweise there are dozens of screenshot apps out there.
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/): One and only reason I use Karabiner is to assign my Caps Lock key as my Hyper Key. 
 
 # Coding
