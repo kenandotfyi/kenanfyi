@@ -13,13 +13,13 @@ tags: ["no-topic"]
 
 [Arc Browser](https://arc.net/): Arc is my browser of choice on desktop since the beta has been released. I quickly got used to the vertical tabs and other tiny bits of it. Being a Chromium based browser also allows me to use my favorite extensions, such as [Vimium](https://github.com/philc/vimium/wiki), [WhatFont](https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm), [Zotero Connector](https://www.zotero.org/download/connectors) and so on.
 
-[Vivaldi](https://vivaldi.com/): Vivaldi is another nice Chromium based browser which I currently use at work, since we are on Windows. It is quite customizable, therefore I like to use it as my daily-driver at work.
+[Vivaldi](https://vivaldi.com/): Vivaldi is another nice Chromium based browser which I currently use at work, since we are on Windows. It is quite customisable, therefore I like to use it as my daily-driver at work.
 
 # Design
 
 This is a little complicated since I also use some software for my work which mainly includes drawing schematics and diagrams for electronic circuits.
 
-[Figma](https://figma.com/): I use Figma since couple of years but I am not an expert of it. Only use-case for me is to quickly sketch some ideas about websites or logos and some typograpy stuff as well as some color palette generating.
+[Figma](https://figma.com/): I use Figma since couple of years but I am not an expert of it. Only use-case for me is to quickly sketch some ideas about websites or logos and some typography stuff as well as some color palette generating.
 
 [Monodraw](https://monodraw.helftone.com/): Monodraw is very interesting Plain Text based art creation tool which lets you virtually draw anything from layouts to flow charts and diagrams. I use it to quickly sketch some connection diagrams since I like the vector output option which I use in couple of places.
 
@@ -31,6 +31,8 @@ This is a little complicated since I also use some software for my work which ma
 
 - [Obsidian](https://obsidian.md)
 - iA Writer
+
+[using-obsidian-as-an-engineer](using-obsidian-as-an-engineer.md) 
 
 # Utility
 
@@ -45,7 +47,7 @@ This is a little complicated since I also use some software for my work which ma
 - VS Code
 - Warp
 
-# Organizational
+# Organisational
 
 - Things
 - Fantastical
