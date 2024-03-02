@@ -38,6 +38,7 @@ This is a little complicated since I also use some software for my work which ma
 - BetterTouchTool
 - Dropover
 - Cleanshot X
+- Karabiner Elements
 
 # Coding
 
@@ -47,3 +48,4 @@ This is a little complicated since I also use some software for my work which ma
 # Organizational
 
 - Things
+- Fantastical
