@@ -3,7 +3,7 @@ draft: false
 title: "Tools I use"
 description: "Tools, software and stuff I use."
 pubDate: 2024-02-19
-updated: 2024-02-25
+updated: 2024-03-02
 status: "wip"
 type: article
 tags: ["no-topic"]
@@ -41,4 +41,9 @@ This is a little complicated since I also use some software for my work which ma
 
 # Coding
 
+- VS Code
+- Warp
+
 # Organizational
+
+- Things

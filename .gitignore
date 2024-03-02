@@ -3,6 +3,10 @@ dist/
 # generated types
 .astro/
 
+#obsidian
+.obsidian
+_templates
+
 # dependencies
 node_modules/
 
