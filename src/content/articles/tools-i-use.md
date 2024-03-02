@@ -29,7 +29,7 @@ This is a little complicated since I also use some software for my work which ma
 
 # Note-taking
 
-- [Obsidian](about-obsidian.md)
+- [Obsidian](https://obsidian.md)
 - iA Writer
 
 # Utility
