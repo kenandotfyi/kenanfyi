@@ -29,7 +29,7 @@ This is a little complicated since I also use some software for my work which ma
 
 # Note-taking
 
-- Obsidian
+- [[about-obsidian|Obsidian]]
 - iA Writer
 
 # Utility
@@ -49,3 +49,4 @@ This is a little complicated since I also use some software for my work which ma
 
 - Things
 - Fantastical
+
