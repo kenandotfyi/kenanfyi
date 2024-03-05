@@ -16,7 +16,7 @@
 }
 
 html {
-  background-color: #E6E4DA;
+  background-color: #eeece3;
   overflow: scroll;
 }
 
@@ -45,9 +45,9 @@ body {
 }
 
 a {
-  color: #272727;
+  color: #100F0F;
   text-decoration: none;
-  border-bottom: 1px solid #272727;
+  border-bottom: 1px solid #100F0F;
   cursor: pointer;
 }
 
@@ -131,13 +131,13 @@ ul.postNames li:after {
 
 ul.postNames span:first-child {
   padding-right: 0.6em;
-  background-color: #E6E4DA;
+  background-color: #eeece3;
 }
 
 ul.postNames span+span {
   float: right;
   padding-left: 0.33em;
-  background-color: #E6E4DA;
+  background-color: #eeece3;
   position: relative;
 }
 
