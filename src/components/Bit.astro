@@ -11,7 +11,7 @@ const { frontmatter } = Astro.props;
   <div class="bit-metadata">
     <span
       >{
-        frontmatter.bitPostDate.toLocaleDateString("en-us", {
+        frontmatter.pubDate.toLocaleDateString("en-us", {
           year: "numeric",
           month: "long",
           day: "numeric",

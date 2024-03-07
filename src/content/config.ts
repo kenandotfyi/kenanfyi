@@ -17,7 +17,7 @@ const articlesCollection = defineCollection({
 const bitsCollection = defineCollection({
   type: "content",
   schema: z.object({
-    bitPostDate: z.coerce.date(),
+    pubDate: z.coerce.date(),
     tags: z.array(z.string()),
   }),
 });

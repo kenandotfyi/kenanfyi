@@ -7,14 +7,14 @@ const { frontmatter, slug } = Astro.props;
   <div class="bit">
     <div class="bit-content">
       <p>
-        <p>{slug}</p>
+        <p><b>{slug}</b></p>
         <slot />
       </p>
     </div>
     <div class="bit-metadata">
       <span
         >{
-          frontmatter.bitPostDate.toLocaleDateString("en-us", {
+          frontmatter.pubDate.toLocaleDateString("en-us", {
             year: "numeric",
             month: "long",
             day: "numeric",

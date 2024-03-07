@@ -1,6 +1,7 @@
 ---
-bitPostDate: 2024-03-06
 tags: ["vim"]
+pubDate: 2024-03-06
+updated: 2024-03-07
 ---
 
 the more I use Vim motions, the more want to use them across the whole OS.
