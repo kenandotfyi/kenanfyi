@@ -141,6 +141,18 @@ ul.postNames span+span {
   position: relative;
 }
 
+.bit {
+  background: white;
+  padding-left: 0.2rem;
+  border-bottom: 1px dashed #100F0F;
+}
+
+.bit-metadata {
+  color: #6F6E69;
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: right;
+}
 
 /* .astro-code {
   padding: 1rem;

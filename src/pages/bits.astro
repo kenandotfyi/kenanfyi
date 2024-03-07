@@ -1,9 +1,27 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import Bit from "../components/Bit.astro";
+import { getEntryBySlug } from "astro:content";
+import { getEntries } from "astro:content";
+
+const bits = await getCollection("bits");
+
 const pageTitle = "bits";
+
+// TODO: Add the Content Promise for Markdown formatted text.
 ---
 
 <Base pageTitle={pageTitle}>
   <h1>{pageTitle}</h1>
-  <p>short format content will come here. something like tweets I guess.</p>
+  {
+    bits.map(async (b) => {
+      const { Content } = await b.render();
+      return (
+        <Bit frontmatter={b.data}>
+          <Content />
+        </Bit>
+      );
+    })
+  }
 </Base>

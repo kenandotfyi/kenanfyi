@@ -14,6 +14,15 @@ const articlesCollection = defineCollection({
   }),
 });
 
+const bitsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    bitPostDate: z.coerce.date(),
+    tags: z.array(z.string()),
+  }),
+});
+
 export const collections = {
   articles: articlesCollection,
+  bits: bitsCollection,
 };

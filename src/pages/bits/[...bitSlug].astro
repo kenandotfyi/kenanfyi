@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import BitLayout from "../../layouts/BitLayout.astro";
+
+export async function getStaticPaths() {
+  const bits = await getCollection("bits");
+
+  return bits.map((b) => ({
+    params: { bitSlug: b.slug },
+    props: { b },
+  }));
+}
+
+const { b } = Astro.props;
+const { Content } = await b.render();
+---
+
+<BitLayout frontmatter={b.data} slug={b.slug}>
+  <Content />
+</BitLayout>

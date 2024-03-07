@@ -1,0 +1,27 @@
+---
+import Base from "./Base.astro";
+const { frontmatter, slug } = Astro.props;
+---
+
+<Base pageTitle={slug}>
+  <div class="bit">
+    <div class="bit-content">
+      <p>
+        <p>{slug}</p>
+        <slot />
+      </p>
+    </div>
+    <div class="bit-metadata">
+      <span
+        >{
+          frontmatter.bitPostDate.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }</span
+      > ~
+      <span>{frontmatter.tags}</span>
+    </div>
+  </div>
+</Base>

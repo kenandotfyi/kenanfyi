@@ -1,0 +1,23 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<div class="bit">
+  <div class="bit-content">
+    <p>
+      <slot />
+    </p>
+  </div>
+  <div class="bit-metadata">
+    <span
+      >{
+        frontmatter.bitPostDate.toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }</span
+    > ~
+    <span>{frontmatter.tags}</span>
+  </div>
+</div>
