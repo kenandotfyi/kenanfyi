@@ -43,7 +43,7 @@ This is a little complicated since I also use some software for my work which ma
 # Coding
 
 - [VS Code](https://code.visualstudio.com/): For obvious reasons. I tried Neovim, WebStorm, Sublime, Brackets, Atom in the past too but VS Code is still the straightforward choice for me because of the extensions. I use a very minimal and distraction-free setup which also reduces opening time.
-- [Warp](https://warp.dev): My terminal of choise. I use oh-my-zsh shell together.
+- [Warp](https://warp.dev): My terminal of choice. I use oh-my-zsh shell together.
 
 # Organisational
 
