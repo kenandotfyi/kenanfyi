@@ -12,7 +12,7 @@ tags: ["no-topic"]
 # Note-taking
 
 - [Obsidian](https://obsidian.md): I use Obsidian as my PKM (Personal Knowledge Management) tool. In fact, I'm writing these sentences in Obsidian right now. Since the beta, I'm completely hooked and will not change to another tool in the near future. My workflow is quite sophisticated and modified to my needs. I will also post quite a lot of stuff about it here in my blog. Besides being an Insider, I am also a Sync user and I highly recommend it.
-- [GoodNotes](https://goodnotes.com): Well designed note-taking tool for iPad. I use pretty much only for meeting notes and quick sketches during meetings. 
+- [GoodNotes](https://goodnotes.com): Well designed note-taking tool for iPad. I use pretty much only for meeting notes and quick sketches during meetings.
 
 # Browsing
 
@@ -35,10 +35,10 @@ This is a little complicated since I also use some software for my work which ma
 # Utility
 
 - [Raycast](https://raycast.com): Alfred on steroids. It was time anyway for Alfred to retire on my Mac, so I'm happy with Raycast since their launch. And they keep delivering constantly!
-- [BetterTouchTool](https://folivora.ai/): I recently started using the trackpad and BTT is a must for custom gestures.  
+- [BetterTouchTool](https://folivora.ai/): I recently started using the trackpad and BTT is a must for custom gestures.
 - [Dropover](https://dropoverapp.com/): Making file copy/cut/paste intuitively easier using small boxes as some kind of staging area.
-- [Cleanshot X](https://cleanshot.com/): My tool of choice for screenshots. I think I use it, just because it is a well designed and an extensive piece of software. Otherweise there are dozens of screenshot apps out there.
-- [Karabiner Elements](https://karabiner-elements.pqrs.org/): One and only reason I use Karabiner is to assign my Caps Lock key as my Hyper Key. 
+- [Cleanshot X](https://cleanshot.com/): My tool of choice for screenshots. I think I use it, just because it is a well designed and an extensive piece of software. Otherwise there are dozens of screenshot apps out there.
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/): One and only reason I use Karabiner is to assign my Caps Lock key as my Hyper Key.
 
 # Coding
 
@@ -48,5 +48,5 @@ This is a little complicated since I also use some software for my work which ma
 # Organisational
 
 - [Zotero](https://zotero.org): Academic reference manager. I use it together with Obsidian, mainly managing papers, application notes and technical documents in an academic sort of way. For bridging to Obsidian, I use the ZotLit plugin which is amazing. I will explain the Zotero-Obsidian combo later in the blog.
-- [Things](https://culturedcode.com/things/): Todo app. I used TickTick for years, but recently switched to Things. 
+- [Things](https://culturedcode.com/things/): Todo app. I used TickTick for years, but recently switched to Things.
 - [Fantastical](https://flexibits.com/fantastical): Using the free version and happy about since such a long time.
