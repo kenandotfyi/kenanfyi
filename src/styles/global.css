@@ -35,7 +35,7 @@ body {
   font-size: 1rem;
   color: var(--text);
   margin: 0 auto;
-  max-width: 65ch;
+  max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
   font-family: 'JetBrains Mono', monospace;
@@ -126,18 +126,20 @@ ul.postNames {
   max-width: 40em;
   padding: 0;
   overflow-x: hidden;
-  list-style: none
+  list-style: none;
 }
 
+.pubDates {
+  font-style: none;
+  font-size: 0.9rem;
+}
+/*
 ul.postNames li:after {
   float: left;
   width: 0;
   white-space: nowrap;
   color: #828181;
-  content:
-    "•••••••••••••••••••••••••••••••••••••••"
-    "•••••••••••••••••••••••••••••••••••••••"
-    "•••••••••••••••••••••••••••••••••••••••"
+  content:""
 }
 
 ul.postNames span:first-child {
@@ -150,7 +152,7 @@ ul.postNames span+span {
   padding-left: 0.5em;
   background-color: var(--bg);
   position: relative;
-}
+} */
 
 .bit {
   background: var(--block-bg);
@@ -173,3 +175,10 @@ ul.postNames span+span {
 .astro-code * {
   font-family: 'JetBrains Mono', monospace;
 } */
+
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

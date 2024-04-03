@@ -30,10 +30,10 @@ const pageTitle = "main";
         allArticles.map((article) => (
           <li>
             <span>
+              <span class="pubDates">
+                {article.data.pubDate.toISOString().split("T")[0]}
+              </span>
               <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
-            </span>
-            <span class="pubDates">
-              {article.data.pubDate.toISOString().split("T")[0]}
             </span>
           </li>
         ))
