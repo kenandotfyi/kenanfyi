@@ -1,9 +1,7 @@
 ---
-import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 import Bit from "../components/Bit.astro";
-import { getEntryBySlug } from "astro:content";
-import { getEntries } from "astro:content";
+import Base from "../layouts/Base.astro";
 
 const bits = await getCollection("bits");
 

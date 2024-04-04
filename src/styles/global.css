@@ -10,15 +10,14 @@
 }
 
 :root {
-  --bg: #E6EAEC;
-  --block-bg: #FEFEFE;
-  --text: #4E5051;
-  --links: #100F0F;
-  --red: #C20000;
-  --orange: #F4550F;
-  --teal: #07798F;
+  --bg: #fff;
+  --block-bg: #fefefe;
+  --text: #4e5051;
+  --links: #100f0f;
+  --red: #c20000;
+  --orange: #f4550f;
+  --teal: #07798f;
 }
-
 
 * {
   box-sizing: border-box;
@@ -34,16 +33,19 @@ html {
 body {
   font-size: 1rem;
   color: var(--text);
+  background-color: #f4f4f0;
   margin: 0 auto;
   max-width: 70ch;
   padding: 1rem;
   line-height: 1.5;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 @media only screen and (min-width: 768px) {
   body {
     font-size: 1rem;
+    border: 1px solid #dddddd;
+    margin-top: 12px;
     /* text-align: justify; */
   }
 
@@ -106,7 +108,7 @@ h2 {
 
 .post-title p {
   font-size: 0.8rem;
-  color: #6F6E69;
+  color: #6f6e69;
   margin: 0;
   padding: 0;
 }
@@ -114,7 +116,7 @@ h2 {
 .footer {
   margin-top: 1rem;
   font-size: 0.7rem;
-  color: #272727
+  color: #272727;
 }
 
 .footer-links a {
@@ -157,11 +159,11 @@ ul.postNames span+span {
 .bit {
   background: var(--block-bg);
   padding-left: 0.2rem;
-  border-bottom: 1px dashed #100F0F;
+  border-bottom: 1px dashed #100f0f;
 }
 
 .bit-metadata {
-  color: #6F6E69;
+  color: #6f6e69;
   font-style: italic;
   font-size: 0.8rem;
   text-align: right;
@@ -176,9 +178,8 @@ ul.postNames span+span {
   font-family: 'JetBrains Mono', monospace;
 } */
 
-
 img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
