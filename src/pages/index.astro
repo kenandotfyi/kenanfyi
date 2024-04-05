@@ -10,7 +10,7 @@ const pageTitle = "main";
 ---
 
 <Base pageTitle={pageTitle}>
-  <div>
+  <>
     <p>Hey,</p>
     <p>
       Kenan here. This blog is an experiment where I try new stuff out and keep
@@ -22,23 +22,28 @@ const pageTitle = "main";
     Also the update date. I will implement a more friendly metadata display in the
     upcoming days. Since I am building in public, I do my updates in the prod.
 
-    <div style="text-align: center; margin-top: 24px">*</div>
+    <div style="text-align: center; margin-top: 24px">✶</div>
     <p>
       <i>Some recent posts:</i>
     </p>
-    <ul class="postNames">
-      {
-        allArticles.map((article) => (
-          <li>
-            <span>
-              <span class="pubDates">
-                {article.data.pubDate.toISOString().split("T")[0]}
-              </span>
-              <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
-            </span>
-          </li>
-        ))
-      }
+      <ul class="postNames">
+        {
+          allArticles.map((article) => (
+            <div class="postList">
+              <li class="pubDates">
+                  {article.data.pubDate.toLocaleDateString("en-uk", {
+                    month: "short",
+                    year: "numeric",
+                    day: "2-digit",
+                  })}
+                  </li>
+                  <span>・</span>  
+                  <span>
+                      <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
+                  </span>
+                  </div>
+                ))
+              }
     </ul>
   </div>
 </Base>
