@@ -2,7 +2,7 @@
 draft: false
 title: "Serenity of Good Enough"
 description: My contribution to the April 2024 IndieWeb Carnival
-status: wip
+status: finished
 type: article
 tags:
   - indie-web
