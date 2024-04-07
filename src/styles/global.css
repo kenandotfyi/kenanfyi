@@ -193,3 +193,10 @@ img {
   margin-right: auto;
   width: 100%;
 }
+
+hr {
+  width: 25%;
+  border: 1px solid var(--text);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
