@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--text);
   background-color: #f4f4f0;
   margin: 0 auto;
@@ -41,9 +41,9 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1920px) {
   body {
-    font-size: 0.875rem;
+    font-size: 1rem;
     border: 1px solid #dddddd;
     margin-top: 12px;
     margin-bottom: 24px;
