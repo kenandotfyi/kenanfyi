@@ -43,7 +43,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 1rem;
+    font-size: 0.875rem;
     border: 1px solid #dddddd;
     margin-top: 12px;
     margin-bottom: 24px;
