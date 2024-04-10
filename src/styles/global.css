@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text);
   background-color: #f4f4f0;
   margin: 0 auto;
@@ -50,102 +50,114 @@ body {
     /* text-align: justify; */
   }
 
-  a:hover {
-    color: #eeeeee;
-    /* padding: 2px; */
-    background-color: #272727;
-    transition: ease-in 0.3s;
+  @media only screen and (min-width: 768px) {
+
+    body {
+      font-size: 0.875rem;
+      border: 1px solid #dddddd;
+      margin-top: 12px;
+      margin-bottom: 24px;
+
+    }
+
+
+    a:hover {
+      color: #eeeeee;
+      /* padding: 2px; */
+      background-color: #272727;
+      transition: ease-in 0.3s;
+    }
   }
-}
 
-a {
-  color: var(--links);
-  text-decoration: none;
-  border-bottom: 1px solid var(--links);
-  cursor: pointer;
-}
+  a {
+    color: var(--links);
+    text-decoration: none;
+    border-bottom: 1px solid var(--links);
+    cursor: pointer;
+  }
 
-a.external-link {
-  background-image: url(../assets/arrow_hardedge.svg);
-  background-repeat: no-repeat;
-  background-size: 0.8rem;
-  background-position: right;
-  padding-right: 1em;
-}
+  a.external-link {
+    background-image: url(../assets/arrow_hardedge.svg);
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: right;
+    padding-right: 1em;
+  }
 
-.logo a {
-  font-weight: 900;
-  border-bottom: 0px;
-  padding-left: 0.5rem;
-}
+  .logo a {
+    font-weight: 900;
+    border-bottom: 0px;
+    padding-left: 0.5rem;
+  }
 
-.nav-links {
-  background-color: var(--block-bg);
-  border-bottom: 4px solid;
-  padding: 0.2rem;
-  text-decoration: none;
-}
+  .nav-links {
+    background-color: var(--block-bg);
+    border-bottom: 4px solid;
+    padding: 0.2rem;
+    text-decoration: none;
+  }
 
-h1 {
-  font-size: 1.4rem;
-}
+  h1 {
+    font-size: 1.4rem;
+  }
 
-h2 {
-  font-size: 1.1rem;
-}
+  h2 {
+    font-size: 1.1rem;
+  }
 
-.post-title {
-  /* height: 53px; */
-  background: var(--block-bg);
-  padding-left: 0.2rem;
-  /* border: 2px solid #272727; */
-  border-bottom: 4px solid;
-}
+  .post-title {
+    /* height: 53px; */
+    background: var(--block-bg);
+    padding-left: 0.2rem;
+    /* border: 2px solid #272727; */
+    border-bottom: 4px solid;
+  }
 
-.post-title h1 {
-  font-size: 1.6rem;
-  margin-bottom: 0;
-}
+  .post-title h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
 
-.post-title p {
-  font-size: 0.8rem;
-  color: #6f6e69;
-  margin: 0;
-  padding: 0;
-}
+  .post-title p {
+    font-size: 0.8rem;
+    color: #6f6e69;
+    margin: 0;
+    padding: 0;
+  }
 
-.footer {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  color: #272727;
-}
+  .footer {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: #272727;
+  }
 
-.footer-links a {
-  font-size: 0.7rem;
-  border-bottom: 0px solid;
-}
+  .footer-links a {
+    font-size: 0.7rem;
+    border-bottom: 0px solid;
+  }
 
-ul.postNames {
-  max-width: 40em;
-  padding: 0;
-  overflow-x: hidden;
-  list-style: none;
-}
+  ul.postNames {
+    max-width: 40em;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none;
+  }
 
-.pubDates {
-  font-style: none;
-  font-size: 0.9rem;
-  padding-right: 0rem;
-  white-space: nowrap;
-}
+  .pubDates {
+    font-style: none;
+    font-size: 0.9rem;
+    padding-right: 0rem;
+    white-space: nowrap;
+  }
 
-.postList {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 10px;
-}
-/*
+  .postList {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  /*
 ul.postNames li:after {
   float: left;
   width: 0;
@@ -166,20 +178,20 @@ ul.postNames span+span {
   position: relative;
 } */
 
-.bit {
-  background: var(--block-bg);
-  padding-left: 0.2rem;
-  border-bottom: 1px dashed #100f0f;
-}
+  .bit {
+    background: var(--block-bg);
+    padding-left: 0.2rem;
+    border-bottom: 1px dashed #100f0f;
+  }
 
-.bit-metadata {
-  color: #6f6e69;
-  font-style: italic;
-  font-size: 0.8rem;
-  text-align: right;
-}
+  .bit-metadata {
+    color: #6f6e69;
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: right;
+  }
 
-/* .astro-code {
+  /* .astro-code {
   padding: 1rem;
   font-size: 14px;
 }
@@ -188,15 +200,15 @@ ul.postNames span+span {
   font-family: 'JetBrains Mono', monospace;
 } */
 
-img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 
-hr {
-  width: 25%;
-  border: 1px solid var(--text);
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
+  hr {
+    width: 25%;
+    border: 1px solid var(--text);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
