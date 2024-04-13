@@ -1,7 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions, slide } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
@@ -17,7 +17,6 @@ const { pageTitle } = Astro.props;
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width,user-scalable=yes" />
-
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="bits from my second brain" />
     <title>{pageTitle}</title>
