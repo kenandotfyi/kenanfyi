@@ -4,25 +4,23 @@ import rehypeKatex from "rehype-katex";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 import remarkMath from "remark-math";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          properties: { className: "external-link" },
-          target: "_blank",
-        },
-      ],
-      [rehypeKatex, {}],
-    ],
+    rehypePlugins: [[rehypeExternalLinks, {
+      properties: {
+        className: "external-link"
+      },
+      target: "_blank"
+    }], [rehypeKatex, {}]],
     shikiConfig: {
       theme: "vitesse-dark",
-      wrap: true,
-    },
+      wrap: true
+    }
   },
   site: "https://kenan.fyi",
-  integrations: [],
+  integrations: [mdx()]
 });
