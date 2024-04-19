@@ -25,7 +25,7 @@ export async function GET(context: any) {
       description: article.data.description,
       pubDate: new Date(article.data.pubDate.toISOString()),
       link: `${context.site}articles/${article.slug}`,
-      content: parser.render(article.body),
+      content: article.body,
     })),
   });
 }
