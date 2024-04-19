@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-// import sanitizeHtml from "sanitize-html";
+import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
@@ -25,7 +25,7 @@ export async function GET(context: any) {
       description: article.data.description,
       pubDate: new Date(article.data.pubDate.toISOString()),
       link: `${context.site}articles/${article.slug}`,
-      content: parser.render(article.body),
+      content: sanitizeHtml(parser.render(article.body)),
     })),
   });
 }
