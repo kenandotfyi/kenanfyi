@@ -30,7 +30,7 @@ It is not perfect, but good enough. It will always be. It will change many times
 
 This was written for the [April 2024 IndieWeb Carnival](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April) hosted by [Aaron "RisingThumb" Leonard](https://risingthumb.xyz).
 
-This month's theme is: Good Enough" – the Drop in Quality's Siren Call
+This month's theme is: "Good Enough" – the Drop in Quality's Siren Call
 
 If you want to see the posts written until now, check [this](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Roundup) here. Looking forward to reading your contribution!
 
