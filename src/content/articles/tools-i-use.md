@@ -7,6 +7,7 @@ updated: 2024-04-20
 status: "wip"
 type: article
 tags: ["no-topic"]
+backlinks: [""]
 ---
 
 # Note-taking

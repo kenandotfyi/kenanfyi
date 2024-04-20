@@ -8,6 +8,7 @@ tags:
   - indie-web
 pubDate: 2024-04-07
 updated: 2024-04-07
+backlinks: [""]
 ---
 
 Lately, I have been trying to guess how much effort I have put into the things that I'm interested in up to now and the general outcomes from them. Not like guessing a quantitative sum of it, but more like a general feeling to assess. This led me to think about the concept of this month's IndieWeb topic:
@@ -33,4 +34,3 @@ This was written for the [April 2024 IndieWeb Carnival](https://risingthumb.xyz/
 This month's theme is: "Good Enough" – the Drop in Quality's Siren Call
 
 If you want to see the posts written until now, check [this](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Roundup) here. Looking forward to reading your contribution!
-

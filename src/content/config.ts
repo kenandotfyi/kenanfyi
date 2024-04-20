@@ -9,6 +9,7 @@ const articlesCollection = defineCollection({
     updated: z.coerce.date(),
     status: z.string(),
     description: z.string(),
+    backlinks: z.array(z.string()),
     type: z.string(),
     tags: z.array(z.string()),
   }),

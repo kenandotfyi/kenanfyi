@@ -1,5 +1,6 @@
 ---
 import Base from "./Base.astro";
+import Extra from "../components/Extra.astro";
 const { frontmatter, minutes } = Astro.props;
 ---
 
@@ -13,10 +14,29 @@ const { frontmatter, minutes } = Astro.props;
           month: "long",
           day: "numeric",
         })
-      } • {minutes}{frontmatter.status === "wip" ? ", work in progress" : ""}
+      }
+      • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
     </p>
+    {
+      frontmatter.updated.toLocaleDateString("en-us") ===
+      frontmatter.pubDate.toLocaleDateString("en-us") ? (
+        " "
+      ) : (
+        <p>
+          <i>
+            updated:
+            {frontmatter.updated.toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </i>
+        </p>
+      )
+    }
   </div>
   <main>
     <slot />
   </main>
+  <Extra backlinks={frontmatter.backlinks} />
 </Base>

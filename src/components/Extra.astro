@@ -1,0 +1,18 @@
+---
+const { backlinks } = Astro.props;
+---
+
+<div class="backlink-area">
+  <h3>Linked mentions to this post:</h3>
+  {
+    backlinks == "" ? (
+      <i>no backlinks yet</i>
+    ) : (
+      <ul>
+        {backlinks.map((bl: string) => (
+          <li>{bl}</li>
+        ))}
+      </ul>
+    )
+  }
+</div>

@@ -258,3 +258,19 @@ hr {
 }
 
 /* sidenotes */
+
+.backlink-area {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #dfdfd3;
+  border-right: 1px solid #dfdfd3;
+  margin-right: calc(-1rem + -1px);
+  margin-left: calc(-1rem + -1px);
+  padding-bottom: 20px;
+  padding-left: 20px;
+  background: #dfdfd3;
+}
+
+.backlink-area h3 {
+  text-decoration: underline;
+}
