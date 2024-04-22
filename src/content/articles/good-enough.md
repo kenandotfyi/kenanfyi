@@ -8,7 +8,8 @@ tags:
   - indie-web
 pubDate: 2024-04-07
 updated: 2024-04-07
-backlinks: [""]
+backlinks: ["bits/indieweb-april-2024"]
+forwards: [""]
 ---
 
 Lately, I have been trying to guess how much effort I have put into the things that I'm interested in up to now and the general outcomes from them. Not like guessing a quantitative sum of it, but more like a general feeling to assess. This led me to think about the concept of this month's IndieWeb topic:

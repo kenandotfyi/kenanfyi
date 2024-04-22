@@ -8,6 +8,7 @@ status: "wip"
 type: article
 tags: ["no-topic"]
 backlinks: [""]
+forwards: ["rust"]
 ---
 
 # Note-taking
@@ -44,8 +45,12 @@ This is a little complicated since I also use some software for my work which ma
 
 # Coding
 
+- [Neovim](https://neovim.io): I have recently started using it again for creating a basic Rust
+  development environment for learning purposes, which I mentioned [here](/articles/rust). LazyVim is my distribution of choice currently.
 - [VS Code](https://code.visualstudio.com/): For obvious reasons. I tried Neovim, WebStorm, Sublime, Brackets, Atom in the past too but VS Code is still the straightforward choice for me because of the extensions. I use a very minimal and distraction-free setup which also reduces opening time.
 - [Warp](https://warp.dev): My terminal of choice. I use oh-my-zsh shell together.
+- [iTerm2](https://iterm2.com/): I use iTerm mainly for my nvim instances.
+- [tmux](https://github.com/tmux/tmux/wiki): tmux is my terminal multiplexer and I use it extensively together with iTerm2 during my neovim coding sessions.
 
 # Organisational
 

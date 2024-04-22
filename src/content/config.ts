@@ -10,6 +10,7 @@ const articlesCollection = defineCollection({
     status: z.string(),
     description: z.string(),
     backlinks: z.array(z.string()),
+    forwards: z.array(z.string()),
     type: z.string(),
     tags: z.array(z.string()),
   }),

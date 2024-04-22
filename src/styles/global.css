@@ -259,6 +259,13 @@ hr {
 
 /* sidenotes */
 
+.con-list-backlink {
+  list-style: "<- ";
+}
+.con-list-forward {
+  list-style: "-> ";
+}
+
 .backlink-area {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -266,11 +273,39 @@ hr {
   border-right: 1px solid #dfdfd3;
   margin-right: calc(-1rem + -1px);
   margin-left: calc(-1rem + -1px);
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-left: 20px;
   background: #dfdfd3;
 }
 
 .backlink-area h3 {
-  text-decoration: underline;
+  background-image: url(../assets/backlink-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  background-position: left;
+  /* border-bottom: 1px solid #282828; */
+  padding-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.forward-link-area {
+  border-top: 1px dashed #282828;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #dfdfd3;
+  border-right: 1px solid #dfdfd3;
+  margin-right: calc(-1rem + -1px);
+  margin-left: calc(-1rem + -1px);
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background: #dfdfd3;
+}
+
+.forward-link-area h3 {
+  background-image: url(../assets/forward-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  background-position: left;
+  /* border-bottom: 1px solid #282828; */
+  padding-left: 1.2rem;
+  margin-right: 1.2rem;
 }

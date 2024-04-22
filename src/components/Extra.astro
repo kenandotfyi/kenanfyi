@@ -1,16 +1,50 @@
 ---
-const { backlinks } = Astro.props;
+import { getCollection } from "astro:content";
+const { backlinks, forwards} = Astro.props;
+
+const allArticles = await getCollection("articles", ({ data }) => {
+  return data.draft !== true;
+});
+
+const backlinksFiltered = allArticles.filter(item => backlinks.includes(item.slug));
+console.log(backlinksFiltered)
+
+
+const forwardsFiltered = allArticles.filter(item => forwards.includes(item.slug));
 ---
 
 <div class="backlink-area">
-  <h3>Linked mentions to this post:</h3>
+  <h3 class="con-header">Backlinks</h3>
   {
-    backlinks == "" ? (
-      <i>no backlinks yet</i>
+    backlinksFiltered.length === 0  ? (
+    <ul style="list-style: none">
+      <li>no backlinks yet</li>
+    </ul>
     ) : (
-      <ul>
-        {backlinks.map((bl: string) => (
-          <li>{bl}</li>
+      <ul class="con-list-backlink">
+        {backlinksFiltered.map((b) => (
+          <li>
+            <a href=`/articles/${b.slug}`>{b.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>
+
+<div class="forward-link-area">
+  <h3>Forward links</h3>
+  {
+    forwardsFiltered.length === 0  ? (
+    <ul style="list-style: none">
+      <li>no forward links yet</li>
+    </ul>
+    ) : (
+      <ul class="con-list-forward">
+        {forwardsFiltered.map((b) => (
+          <li>
+            <a href=`/articles/${b.slug}`>{b.data.title}</a>
+          </li>
         ))}
       </ul>
     )

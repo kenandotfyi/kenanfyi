@@ -38,5 +38,5 @@ const { frontmatter, minutes } = Astro.props;
   <main>
     <slot />
   </main>
-  <Extra backlinks={frontmatter.backlinks} />
+  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
 </Base>
