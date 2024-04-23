@@ -41,7 +41,7 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1920px) and (min-width: 770px) {
   body {
     font-size: 0.875rem;
     border: 1px solid #dddddd;
@@ -54,6 +54,15 @@ body {
     /* padding: 2px; */
     background-color: #272727;
     transition: ease-in 0.3s;
+  }
+  img {
+    border-top: 2px solid #dfdfd3;
+    border-bottom: 2px solid #dfdfd3;
+    max-width: 100ch;
+    min-width: 70ch;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -95,6 +104,16 @@ body {
   blockquote em {
     font-style: normal;
   }
+
+  img {
+    border-top: 2px solid #dfdfd3;
+    border-bottom: 2px solid #dfdfd3;
+    max-width: 100ch;
+    min-width: 70ch;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -109,6 +128,13 @@ body {
     /* padding: 2px; */
     background-color: #272727;
     transition: ease-in 0.3s;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -243,19 +269,15 @@ ul.postNames span+span {
   font-family: 'JetBrains Mono', monospace;
 } */
 
-img {
-  border-top: 2px solid #dfdfd3;
-  border-bottom: 2px solid #dfdfd3;
-  max-width: 100ch;
-  min-width: 70ch;
-  height: auto;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
-img:hover {
-  max-width: 150ch;
-}
+/* img { */
+/*   border-top: 2px solid #dfdfd3; */
+/*   border-bottom: 2px solid #dfdfd3; */
+/*   max-width: 100ch; */
+/*   min-width: 70ch; */
+/*   height: auto; */
+/*   margin-left: 50%; */
+/*   transform: translateX(-50%); */
+/* } */
 
 hr {
   width: 25%;
