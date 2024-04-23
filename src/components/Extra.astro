@@ -7,7 +7,6 @@ const allArticles = await getCollection("articles", ({ data }) => {
 });
 
 const backlinksFiltered = allArticles.filter(item => backlinks.includes(item.slug));
-console.log(backlinksFiltered)
 
 
 const forwardsFiltered = allArticles.filter(item => forwards.includes(item.slug));
