@@ -2,14 +2,24 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="nav-links">
-  <span class="logo"
-    ><a href="/">~/</a>{currentPath.toString().split("/")[1]}</span
-  >
-  <span style="color: var(--red)">●</span>
-  <a href="/now/">now</a>
-
-  <a href="/bits/">bits</a>
-  <!-- <a href="/blogroll/">blogroll</a> -->
-  <a href="/about/">about</a>
+<div class="nav">
+  <div>
+    <span class="logo"
+      ><a href="/">~/</a>{currentPath.toString().split("/")[1]}</span
+    >
+    <span style="color: var(--red); padding-right:0.2rem">●</span>
+  </div>
+  <div class="drop-container">
+    <ul class="drop-menu">
+      <li><a href="/now">now</a></li>
+      <li><a href="/bits">bits</a></li>
+      <li><a href="/about">about</a></li>
+      <li>
+        <a href="#"><i>more:</i></a>
+        <ul class="dropdown">
+          <li><a href="/blogroll">blogroll</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>

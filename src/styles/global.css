@@ -123,7 +123,8 @@ body {
     margin-top: 0;
   }
 
-  a:hover {
+  a:hover,
+  a:active {
     color: #eeeeee;
     /* padding: 2px; */
     background-color: #272727;
@@ -337,4 +338,65 @@ hr {
   /* border-bottom: 1px solid #282828; */
   padding-left: 1.2rem;
   margin-right: 1.2rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--block-bg);
+  border-bottom: 4px solid;
+  text-decoration: none;
+}
+
+.drop-container {
+  padding-left: 0.2rem;
+}
+
+ul.drop-menu,
+ul.dropdown {
+  list-style: none;
+  margin: 0;
+  padding-left: 0rem;
+}
+
+ul.drop-menu > li {
+  display: block;
+  float: left;
+  position: relative;
+  padding: 0.2rem;
+  text-decoration: none;
+}
+
+ul.drop-menu li ul {
+  border: 1px solid #ddd;
+  box-shadow: 4px 4px;
+  background: var(--bg);
+  visibility: hidden;
+  opacity: 0;
+  width: 10ch;
+  position: absolute;
+  padding: 0.4rem;
+  margin-top: -0.5rem;
+  margin-left: 0.75rem;
+  left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li:active > ul,
+ul li ul:active {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul.drop-menu li ul li {
+  clear: both;
+  width: 100%;
 }
