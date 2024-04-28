@@ -3,7 +3,7 @@ draft: false
 title: "Tools I use"
 description: "Tools, software and stuff I use."
 pubDate: 2024-02-19
-updated: 2024-04-20
+updated: 2024-04-28
 status: "wip"
 type: article
 tags: ["no-topic"]
