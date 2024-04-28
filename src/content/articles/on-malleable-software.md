@@ -11,7 +11,7 @@ backlinks: [""]
 forwards: ["tools-i-use"]
 ---
 
-As I mentioned in [this](tools-i-use.md) post, I use Obsidian extensively for my note taking and I have modified it to such an extent that every time I sit in front of my computer to write something, I appreciate their manifesto. Especially [this](https://arc.net/l/quote/mzzapwic) part:
+As I mentioned in [this](/articles/tools-i-use) post, I use Obsidian extensively for my note taking and I have modified it to such an extent that every time I sit in front of my computer to write something, I appreciate their manifesto. Especially [this](https://arc.net/l/quote/mzzapwic) part:
 
 > ### Malleable
 > We believe that tools should adapt to your way of thinking, not the other way around. That's why we design our tools to be highly customizable and extensible, so you can shape them to your unique needs.
