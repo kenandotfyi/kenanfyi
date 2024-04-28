@@ -8,12 +8,12 @@ status: "wip"
 type: article
 tags: ["no-topic"]
 backlinks: ["on-malleable-software"]
-forwards: ["rust"]
+forwards: ["rust", "on-malleable-software"]
 ---
 
 # Note-taking
 
-- [Obsidian](https://obsidian.md): I use Obsidian as my PKM (Personal Knowledge Management) tool. In fact, I'm writing these sentences in Obsidian right now. Since the beta, I'm completely hooked and will not change to another tool in the near future. My workflow is quite sophisticated and modified to my needs. I will also post quite a lot of stuff about it here in my blog. Besides being an Insider, I am also a Sync user and I highly recommend it.
+- [Obsidian](https://obsidian.md): I use Obsidian as my PKM (Personal Knowledge Management) tool. In fact, I'm writing these sentences in Obsidian right now. Since the beta, I'm completely hooked and will not change to another tool in the near future. My workflow is quite sophisticated and modified to my needs. I will also post quite a lot of stuff about it here in my blog. Besides being an Insider, I am also a Sync user and I highly recommend it. Their mindset on being a [malleable software](on-malleable-software) is also my main attraction.
 - [GoodNotes](https://goodnotes.com): Well designed note-taking tool for iPad. I use pretty much only for meeting notes and quick sketches during meetings.
 
 # Browsing
