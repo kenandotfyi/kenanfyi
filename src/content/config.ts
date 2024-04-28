@@ -9,10 +9,10 @@ const articlesCollection = defineCollection({
     updated: z.coerce.date(),
     status: z.string(),
     description: z.string(),
-    backlinks: z.array(z.string()),
-    forwards: z.array(z.string()),
+    backlinks: z.array(z.string()).optional(),
+    forwards: z.array(z.string()).optional(),
     type: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
