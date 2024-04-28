@@ -376,8 +376,8 @@ ul.drop-menu li ul {
   width: 10ch;
   position: absolute;
   padding: 0.4rem;
-  margin-top: -0.5rem;
-  margin-left: 0.75rem;
+  margin-top: -0.2rem;
+  margin-left: 2rem;
   left: 0;
   display: none;
 }
