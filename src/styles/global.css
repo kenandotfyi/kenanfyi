@@ -55,7 +55,16 @@ body {
     background-color: #272727;
     transition: ease-in 0.3s;
   }
-  img {
+
+  blockquote {
+    border-left: 1px solid;
+    padding-left: 1rem;
+    font-style: italic;
+    font-size: 0.75rem;
+    background-color: white;
+  }
+
+  p img {
     border-top: 2px solid #dfdfd3;
     border-bottom: 2px solid #dfdfd3;
     max-width: 100ch;
@@ -65,12 +74,8 @@ body {
     transform: translateX(-50%);
   }
 
-  blockquote {
-    border-left: 1px solid;
-    padding-left: 1rem;
-    font-style: italic;
-    font-size: 0.75rem;
-    background-color: white;
+  p img:hover {
+    width: 120ch;
   }
 }
 
@@ -97,11 +102,24 @@ body {
     background-color: white;
   }
 
+  p img {
+    border-top: 2px solid #dfdfd3;
+    border-bottom: 2px solid #dfdfd3;
+    max-width: 100ch;
+    min-width: 70ch;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  p img:hover {
+    width: 120ch;
+  }
+
   /* SAVED FOR LATER. TODO: implement the side-notes logic*/
   /* blockquote p { */
   /*   border: 1px solid #ddd; */
   /*   /* border-left: 2px solid #c20000; */
-  */
   /*   background-color: #fbfbf9; */
   /*   box-shadow: 4px 4px #ddd; */
   /*   width: 60%; */
@@ -122,16 +140,6 @@ body {
   /* blockquote em { */
   /*   font-style: normal; */
   /* } */
-
-  img {
-    border-top: 2px solid #dfdfd3;
-    border-bottom: 2px solid #dfdfd3;
-    max-width: 100ch;
-    min-width: 70ch;
-    height: auto;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -149,11 +157,11 @@ body {
     transition: ease-in 0.3s;
   }
 
-  img {
-    width: 100%;
+  p img {
+    border-top: 2px solid #dfdfd3;
+    border-bottom: 2px solid #dfdfd3;
+    width: 37.5ch;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   blockquote {
@@ -295,16 +303,6 @@ ul.postNames span+span {
 .astro-code * {
   font-family: 'JetBrains Mono', monospace;
 } */
-
-/* img { */
-/*   border-top: 2px solid #dfdfd3; */
-/*   border-bottom: 2px solid #dfdfd3; */
-/*   max-width: 100ch; */
-/*   min-width: 70ch; */
-/*   height: auto; */
-/*   margin-left: 50%; */
-/*   transform: translateX(-50%); */
-/* } */
 
 hr {
   width: 25%;
