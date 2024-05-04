@@ -125,7 +125,10 @@ body {
   .footer {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
   }
 
   /* SAVED FOR LATER. TODO: implement the side-notes logic*/
@@ -215,6 +218,18 @@ a.external-link {
   font-weight: 900;
   border-bottom: 0px;
   padding-left: 0.5rem;
+}
+
+.logo-bot {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-bot a {
+  border-bottom: 0;
+  background-color: unset;
 }
 
 .nav-links {

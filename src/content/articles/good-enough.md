@@ -36,7 +36,6 @@ This month's theme is: "Good Enough" – the Drop in Quality's Siren Call
 
 If you want to see the posts written until now, check [this](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Roundup) here. Looking forward to reading your contribution!
 
-<hr />
+<hr/>
 
 April 2024 IndieWeb Carnival is finished now. Check out the final roundup from Aaron [here](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Final_Roundup).
-
