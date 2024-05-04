@@ -6,8 +6,8 @@ status: finished
 type: article
 tags:
   - indie-web
-pubDate: 2024-04-07
-updated: 2024-04-07
+pubDate: 2024-04-07, 15:43
+updated: 2024-05-04, 15:49
 backlinks: ["bits/indieweb-april-2024"]
 forwards: [""]
 ---
@@ -26,12 +26,17 @@ This blog was a big example of it. I have designed it, even before going online,
 
 This just kept me away from the actual thing: blogging. Just writing and leaving the other parts as _good enough_. Because how it looks right now will probably change over time. Instead of spending an enormous effort perfecting it, I chose to get rid of the bee nest in my head and feel the serenity of good enough.
 
-It is not perfect, but good enough. It will always be. It will change many times and it will never be complete, just good enough.
+<mark class="hltr-ah">It is not perfect, but good enough. It will always be. It will change many times and it will never be complete, just good enough.</mark>
 
-<hr>
+<hr />
 
 This was written for the [April 2024 IndieWeb Carnival](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April) hosted by [Aaron "RisingThumb" Leonard](https://risingthumb.xyz).
 
 This month's theme is: "Good Enough" – the Drop in Quality's Siren Call
 
 If you want to see the posts written until now, check [this](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Roundup) here. Looking forward to reading your contribution!
+
+<hr />
+
+April 2024 IndieWeb Carnival is finished now. Check out the final roundup from Aaron [here](https://risingthumb.xyz/Writing/Blog/IndieWeb_Carnival_of_April_Final_Roundup).
+

@@ -1,6 +1,7 @@
 ---
 import Base from "./Base.astro";
 import Extra from "../components/Extra.astro";
+import { zeit } from "../../utils/zeit.ts";
 const { frontmatter, minutes } = Astro.props;
 ---
 
@@ -8,28 +9,17 @@ const { frontmatter, minutes } = Astro.props;
   <div class="post-title">
     <h1>{frontmatter.title}</h1>
     <p>
-      {
-        frontmatter.pubDate.toLocaleDateString("en-us", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-      }
+      {zeit(frontmatter.pubDate)}
       • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
     </p>
     {
-      frontmatter.updated.toLocaleDateString("en-us") ===
-      frontmatter.pubDate.toLocaleDateString("en-us") ? (
+      zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
         " "
       ) : (
         <p>
           <i>
             updated:
-            {frontmatter.updated.toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            {zeit(frontmatter.updated)}
           </i>
         </p>
       )

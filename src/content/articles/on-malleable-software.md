@@ -2,8 +2,8 @@
 draft: false
 title: "On Malleable Software"
 description: "my thoughs on software that you can modify"
-pubDate: 2024-04-28
-updated: 2024-04-28
+pubDate: 2024-04-28, 19:23
+updated: 2024-04-28, 19:23
 status: finished
 type: article
 tags: ["obsidian"]
@@ -28,7 +28,7 @@ Manipulating software is a job for a skilled soul and they are the minority amon
 
 This permission is the real key here in my opinion. The conflict between open and closed software is that closed-source software is owned by an entity where the main goal is to make money, almost all the time. Understandably this entity does not want to let people make modifications to the software they have developed. This is basic stuff. We all know a good functioning software needs much effort from many individuals and at the end of the day, these people need to earn their lives. I'm not saying something utopic here that all software should be open sourced no matter what. Not gonna go deep into the never-ending growth mindset, but what I'm saying is, that even if open sourcing everything is not a realistic thing to expect, **making the software malleable should be the way that we choose**. 
 
-# Malleable software for everyone
+# Malleable Software for Everyone
 
 Another point is the way we interact with the software.
 

@@ -1,5 +1,6 @@
 ---
 import Base from "./Base.astro";
+import { datum } from "../../utils/zeit.ts";
 const { frontmatter, slug } = Astro.props;
 ---
 
@@ -12,15 +13,7 @@ const { frontmatter, slug } = Astro.props;
       </p>
     </div>
     <div class="bit-metadata">
-      <span
-        >{
-          frontmatter.pubDate.toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        }</span
-      > ~
+      <span>{datum(frontmatter.pubDate)} </span> ~
       <span>{frontmatter.tags}</span>
     </div>
   </div>
