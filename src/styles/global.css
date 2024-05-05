@@ -77,12 +77,6 @@ body {
   p img:hover {
     width: 120ch;
   }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
 }
 
 @media screen and (min-width: 1921px) {
@@ -120,15 +114,6 @@ body {
 
   p img:hover {
     width: 120ch;
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
   }
 
   /* SAVED FOR LATER. TODO: implement the side-notes logic*/
@@ -222,7 +207,7 @@ a.external-link {
 
 .logo-bot {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
   display: flex;
   justify-content: center;
 }
@@ -276,9 +261,20 @@ h2 {
 }
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
   margin-top: 1rem;
-  font-size: 0.7rem;
   color: #272727;
+  font-size: 0.7rem;
+}
+
+.footer-links a {
+  font-size: 0.7rem;
+  border-bottom: 0px solid;
 }
 
 .articles {
@@ -453,11 +449,6 @@ ul.drop-menu li ul li {
   width: 100%;
 }
 
-.footer-links a {
-  font-size: 0.7rem;
-  border-bottom: 0px solid;
-}
-
 .webring {
   font-size: 0.7rem;
   border-bottom: 0px solid;
@@ -470,4 +461,10 @@ ul.drop-menu li ul li {
 
 .webring a:hover {
   background-color: unset;
+}
+
+/* utils section like dark theme switcher etc. */
+.utils {
+  display: flex;
+  margin-left: auto;
 }
