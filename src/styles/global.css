@@ -121,7 +121,7 @@ h1 {
   }
 
   blockquote {
-    border-left: 1px solid;
+    margin: 0;
     padding: 0.5rem;
     padding-left: 1rem;
     font-style: italic;
@@ -192,7 +192,7 @@ h1 {
   }
 
   blockquote {
-    border-left: 1px solid;
+    margin: 0;
     padding: 0.5rem;
     padding-left: 1rem;
     font-style: italic;
