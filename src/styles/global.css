@@ -12,6 +12,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "iAwriterBold";
+  src: url("/fonts/iAWriterQuattroS-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 ::selection {
   color: #fefefe;
   background: #272727;
@@ -51,6 +59,11 @@ body {
   padding: 1rem;
   line-height: 1.6;
   font-family: "iAwriter", sans-serif;
+}
+
+b,
+strong {
+  font-family: "iAWriterBold", sans-serif;
 }
 
 h1,
@@ -328,6 +341,10 @@ h2 {
   font-size: 0.75rem;
   color: #d4563f;
   visibility: hidden;
+}
+
+.date {
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* highlighted sections in articles */

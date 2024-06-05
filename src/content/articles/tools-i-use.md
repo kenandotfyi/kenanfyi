@@ -3,7 +3,7 @@ draft: false
 title: "Tools I use"
 description: "Tools, software and stuff I use."
 pubDate: 2024-02-19, 19:35
-updated: 2024-04-28, 12:12
+updated: 2024-06-05, 22:42
 status: "wip"
 type: article
 tags: ["no-topic"]
@@ -14,19 +14,22 @@ forwards: ["rust", "on-malleable-software"]
 # Note-taking
 
 - [Obsidian](https://obsidian.md): I use Obsidian as my PKM (Personal Knowledge Management) tool. In fact, I'm writing these sentences in Obsidian right now. Since the beta, I'm completely hooked and will not change to another tool in the near future. My workflow is quite sophisticated and modified to my needs. I will also post quite a lot of stuff about it here in my blog. Besides being an Insider, I am also a Sync user and I highly recommend it. Their mindset on being a [malleable software](/articles/on-malleable-software) is also my main attraction.
+
 - [GoodNotes](https://goodnotes.com): Well designed note-taking tool for iPad. I use pretty much only for meeting notes and quick sketches during meetings.
 
 # Browsing
 
-- [Arc Browser](https://arc.net/): Arc is my browser of choice on desktop since the beta has been released. I quickly got used to the vertical tabs and other tiny bits of it. Being a Chromium based browser also allows me to use my favorite extensions, such as [Vimium](https://github.com/philc/vimium/wiki), [WhatFont](https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm), [Zotero Connector](https://www.zotero.org/download/connectors) and so on.
+- ~~[Arc Browser](https://arc.net/): Arc is my browser of choice on desktop since the beta has been released. I quickly got used to the vertical tabs and other tiny bits of it. Being a Chromium based browser also allows me to use my favorite extensions, such as [Vimium](https://github.com/philc/vimium/wiki), [WhatFont](https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm), [Zotero Connector](https://www.zotero.org/download/connectors) and so on.~~
 
-- [Vivaldi](https://vivaldi.com/): Vivaldi is another nice Chromium based browser which I currently use at work, since we are on Windows. It is quite customisable, therefore I like to use it as my daily-driver at work.
+- ~~[Vivaldi](https://vivaldi.com/): Vivaldi is another nice Chromium based browser which I currently use at work, since we are on Windows. It is quite customisable, therefore I like to use it as my daily-driver at work.~~
+- As of June 2024, I have stopped using Chromium based browsers and fully switched to hardened [Firefox](https://github.com/yokoffing/Betterfox).
 
 # Design
 
 This is a little complicated since I also use some software for my work which mainly includes drawing schematics and diagrams for electronic circuits.
 
-- [Figma](https://figma.com/): I use Figma since couple of years but I am not an expert of it. Only use-case for me is to quickly sketch some ideas about websites or logos and some typography stuff as well as some color palette generating.
+- ~~[Figma](https://figma.com/): I use Figma since couple of years but I am not an expert of it. Only use-case for me is to quickly sketch some ideas about websites or logos and some typography stuff as well as some color palette generating.~~
+	- As of June 2024, I stopped using Figma and switched to [Penpot](https://penpot.app/).
 
 - [Monodraw](https://monodraw.helftone.com/): Monodraw is very interesting Plain Text based art creation tool which lets you virtually draw anything from layouts to flow charts and diagrams. I use it to quickly sketch some connection diagrams since I like the vector output option which I use in couple of places.
 
@@ -37,23 +40,32 @@ This is a little complicated since I also use some software for my work which ma
 # Utility
 
 - [Raycast](https://raycast.com): Alfred on steroids. It was time anyway for Alfred to retire on my Mac, so I'm happy with Raycast since their launch. And they keep delivering constantly!
+
 - [BetterTouchTool](https://folivora.ai/): I recently started using the trackpad and BTT is a must for custom gestures.
+
 - [MonitorControl](https://github.com/MonitorControl/MonitorControl): Amazing small utility for controlling external monitors on MacOS. I can change volume, brightness and even contrast using keyboard, instead of monitor's on-screen controls.
+
 - [Dropover](https://dropoverapp.com/): Making file copy/cut/paste intuitively easier using small boxes as some kind of staging area.
+
 - [Cleanshot X](https://cleanshot.com/): My tool of choice for screenshots. I think I use it, just because it is a well designed and an extensive piece of software. Otherwise there are dozens of screenshot apps out there.
+
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/): One and only reason I use Karabiner is to assign my Caps Lock key as my Hyper Key.
 
 # Coding
 
-- [Neovim](https://neovim.io): I have recently started using it again for creating a basic Rust
-  development environment for learning purposes, which I mentioned [here](/articles/rust). LazyVim is my distribution of choice currently.
-- [VS Code](https://code.visualstudio.com/): For obvious reasons. I tried Neovim, WebStorm, Sublime, Brackets, Atom in the past too but VS Code is still the straightforward choice for me because of the extensions. I use a very minimal and distraction-free setup which also reduces opening time.
-- [Warp](https://warp.dev): My terminal of choice. I use oh-my-zsh shell together.
+- [Neovim](https://neovim.io): I have recently started using it again for creating a basic Rust development environment for learning purposes, which I mentioned [here](/articles/rust). LazyVim is my distribution of choice currently.
+
 - [iTerm2](https://iterm2.com/): I use iTerm mainly for my nvim instances.
+
 - [tmux](https://github.com/tmux/tmux/wiki): tmux is my terminal multiplexer and I use it extensively together with iTerm2 during my neovim coding sessions.
 
 # Organisational
 
 - [Zotero](https://zotero.org): Academic reference manager. I use it together with Obsidian, mainly managing papers, application notes and technical documents in an academic sort of way. For bridging to Obsidian, I use the ZotLit plugin which is amazing. I will explain the Zotero-Obsidian combo later in the blog.
+
 - [Things](https://culturedcode.com/things/): Todo app. I used TickTick for years, but recently switched to Things.
+
 - [Fantastical](https://flexibits.com/fantastical): Using the free version and happy about since such a long time.
+
+- [Reeder](https://www.reederapp.com/): Straightforward and simple RSS Reader
+

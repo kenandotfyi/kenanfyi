@@ -22,6 +22,13 @@ const pageTitle = "main";
     future. Since I am building in public, I do my updates in the prod.
 
     <div style="text-align: center; margin-top: 24px">✶</div>
+    ✯ <i>Pinned:</i>
+    <p>
+      <span class="date">05 Jun 2024</span>
+      <span>・</span>
+      <span><a href="/articles/junited-2024">Junited 2024</a></span>
+    </p>
+    <div style="text-align: center; margin-top: 24px">✶</div>
     <p>
       <i>Some recent posts:</i>
     </p>
@@ -30,7 +37,7 @@ const pageTitle = "main";
         allArticles.map((article) => (
           <div class="articleList">
             <li class="article">
-              {datum(article.data.pubDate)}
+              <span class="date">{datum(article.data.pubDate)}</span>
               <span>・</span>
               <span>
                 <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
