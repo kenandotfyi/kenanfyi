@@ -28,8 +28,9 @@
 :root {
   --bg: #fff;
   --block-bg: #fefefe;
-  --body-bg: #f6f5f0;
-  --text: #4b5361;
+  --body-bg: #f9f9f7;
+  /* --body-bg: #f6f5f0; */
+  --text: #353535;
   --links: #100f0f;
   --red: #c20000;
   --orange: #f4550f;
@@ -64,6 +65,7 @@ body {
 b,
 strong {
   font-family: "iAWriterBold", sans-serif;
+  font-weight: normal;
 }
 
 h1,
@@ -113,10 +115,6 @@ h1 {
     margin-left: 50%;
     transform: translateX(-50%);
   }
-
-  p img:hover {
-    width: 120ch;
-  }
 }
 
 @media screen and (min-width: 1921px) {
@@ -150,10 +148,6 @@ h1 {
     height: auto;
     margin-left: 50%;
     transform: translateX(-50%);
-  }
-
-  p img:hover {
-    width: 120ch;
   }
 
   /* SAVED FOR LATER. TODO: implement the side-notes logic*/
@@ -404,7 +398,7 @@ hr {
   /* margin-left: calc(-1rem + -1px); */
   padding-bottom: 10px;
   padding-left: 20px;
-  /* background: #dfdfd3; */
+  background: #fff;
 }
 
 .backlink-area h3 {
