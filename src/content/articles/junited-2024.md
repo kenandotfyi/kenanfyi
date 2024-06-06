@@ -3,7 +3,7 @@ draft: false
 title: "Junited 2024"
 description: "Sharing posts throughout June 2024"
 pubDate: 2024-06-05, 21:37
-updated: 2024-06-05, 21:37
+updated: 2024-06-06, 21:49
 status: wip
 type: article
 tags: ["no-topic"]
@@ -18,6 +18,7 @@ Junited is this simple but excellent idea from [Robert Birming](https://birming.
 3. [The alternative to AI is talking to other people](https://librarian.aedileworks.com/2023/09/19/the-alternative-to-ai-is-talking-to-other-people/)
 4. [How do you decide what to work on?](https://jvns.ca/blog/2016/08/16/how-do-you-work-on-something-important/)
 5. [Singularities and jackpots and fugues](https://interconnected.org/home/2022/02/09/apocalypsi)
+6. [Multi-Layered Calendars](https://julian.digital/2023/07/06/multi-layered-calendars/)
 
 <hr>
 
