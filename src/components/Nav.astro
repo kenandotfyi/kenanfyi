@@ -5,20 +5,22 @@ const currentPath = Astro.url.pathname;
 <div class="nav">
   <div>
     <span class="logo"
-      ><a href="/">~/</a>{currentPath.toString().split("/")[1]}</span
+      ><a href="/" class="no-prev">~/</a>{
+        currentPath.toString().split("/")[1]
+      }</span
     >
     <span style="color: var(--red); padding-right:0.2rem">●</span>
   </div>
   <div class="drop-container">
     <ul class="drop-menu">
-      <li><a href="/now">now</a></li>
-      <li><a href="/bits">bits</a></li>
-      <li><a href="/about">about</a></li>
+      <li><a href="/now" class="no-prev">now</a></li>
+      <li><a href="/bits" class="no-prev">bits</a></li>
+      <li><a href="/about" class="no-prev">about</a></li>
       <li>
-        <a href="#"><i>more:</i></a>
+        <a href="#" class="no-prev"><i>more:</i></a>
         <ul class="dropdown">
-          <li><a href="/blogroll">blogroll</a></li>
-          <li><a href="/why">why</a></li>
+          <li><a href="/blogroll" class="no-prev">blogroll</a></li>
+          <li><a href="/why" class="no-prev">why</a></li>
         </ul>
       </li>
     </ul>

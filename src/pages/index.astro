@@ -40,7 +40,9 @@ const pageTitle = "main";
               <span class="date">{datum(article.data.pubDate)}</span>
               <span>・</span>
               <span>
-                <a href={`/articles/${article.slug}/ `}>{article.data.title}</a>
+                <a href={`/articles/${article.slug}/ `} class="no-prev">
+                  {article.data.title}
+                </a>
               </span>
               {datum(article.data.updated) === datum(article.data.pubDate) ? (
                 ""
