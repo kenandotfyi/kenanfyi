@@ -6,6 +6,10 @@
     let previewHeader;
     let hideTimeout;
 
+    function isMobile() {
+      return window.innerWidth < 769; // my own mobile breakpoint
+    }
+
     function createPreviewElements() {
       if (!previewContainer) {
         previewContainer = document.createElement("div");
@@ -76,6 +80,8 @@
     }
 
     function showPreview(url, x, y) {
+      // skip if mobile
+      if (isMobile()) return;
       createPreviewElements();
       const viewportHeight = window.innerHeight;
       const bottomTH = viewportHeight * 0.85;
@@ -127,6 +133,9 @@
     }
 
     function initializeHoverPreviews() {
+      // skip if mobile
+      if (isMobile()) return;
+
       addHoverListeners();
 
       // const observer = new MutationObserver(() => {

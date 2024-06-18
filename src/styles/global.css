@@ -507,3 +507,16 @@ ul.drop-menu li ul li {
   display: flex;
   margin-left: auto;
 }
+
+.container-404 {
+  width: 480px;
+  border: 2px solid;
+  padding: 10px;
+  background: #f9f9f7;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
