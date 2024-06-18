@@ -3,7 +3,7 @@ draft: false
 title: "Junited 2024"
 description: "Sharing posts throughout June 2024"
 pubDate: 2024-06-05, 21:37
-updated: 2024-06-08, 17:29
+updated: 2024-06-18, 12:15
 status: wip
 type: article
 tags: ["no-topic"]
@@ -20,6 +20,7 @@ Junited is this simple but excellent idea from [Robert Birming](https://birming.
 5. [Singularities and jackpots and fugues](https://interconnected.org/home/2022/02/09/apocalypsi)
 6. [Multi-Layered Calendars](https://julian.digital/2023/07/06/multi-layered-calendars/)
 7. [How to converse online](https://manuelmoreale.com/how-to-converse-online)
+8. [Home-Cooked Software and Barefoot Developers](https://maggieappleton.com/home-cooked-software)
 
 <hr>
 
