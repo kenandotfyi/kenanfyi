@@ -1,7 +1,7 @@
 ::-moz-selection {
   /* Code for Firefox */
   color: #fefefe;
-  background: #272727;
+  background: var(--teal);
 }
 
 @font-face {
@@ -22,19 +22,20 @@
 
 ::selection {
   color: #fefefe;
-  background: #272727;
+  background: var(--teal);
 }
 
 :root {
-  --bg: #fff;
-  --block-bg: #fefefe;
-  --body-bg: #f9f9f7;
+  --bg: #fff; /* white bg for blocks*/
+  --body-bg: #eeefe9;
   /* --body-bg: #f6f5f0; */
   --text: #353535;
   --links: #100f0f;
-  --red: #c20000;
-  --orange: #f4550f;
-  --teal: #07798f;
+  --red: #af2e1b;
+  --orange: #cc6324;
+  --teal: #3b4b59;
+  --beige1: #bfa07a;
+  --beige2: #d9c3b0;
 }
 
 * {
@@ -78,7 +79,7 @@ h6 {
 }
 
 h1 {
-  color: rgb(194, 0, 0, 0.75);
+  color: var(--red);
 }
 
 @media screen and (max-width: 1920px) and (min-width: 770px) {
@@ -92,23 +93,22 @@ h1 {
   a:hover {
     color: #eeeeee;
     /* padding: 2px; */
-    background-color: #272727;
+    background-color: var(--teal);
     transition: ease-in 0.3s;
   }
 
   blockquote {
-    /* border-left: 1px solid; */
+    /*border-left: 1px solid;*/
     margin: 0;
     padding: 0.5rem;
     padding-left: 1rem;
     font-style: italic;
     font-size: 0.75rem;
-    background-color: white;
+    background-color: var(--bg);
+    border: 1px solid #ddd;
   }
 
   p img {
-    border-top: 2px solid #dfdfd3;
-    border-bottom: 2px solid #dfdfd3;
     max-width: 100ch;
     min-width: 70ch;
     height: auto;
@@ -127,7 +127,7 @@ h1 {
   a:hover {
     color: #eeeeee;
     /* padding: 2px; */
-    background-color: #272727;
+    background-color: var(--teal);
     transition: ease-in 0.3s;
   }
 
@@ -137,12 +137,11 @@ h1 {
     padding-left: 1rem;
     font-style: italic;
     font-size: 0.75rem;
-    background-color: white;
+    background-color: var(--bg);
+    border: 1px solid #ddd;
   }
 
   p img {
-    border-top: 2px solid #dfdfd3;
-    border-bottom: 2px solid #dfdfd3;
     max-width: 100ch;
     min-width: 70ch;
     height: auto;
@@ -187,13 +186,11 @@ h1 {
   a:active {
     color: #eeeeee;
     /* padding: 2px; */
-    background-color: #272727;
+    background-color: var(--teal);
     transition: ease-in 0.3s;
   }
 
   p img {
-    border-top: 2px solid #dfdfd3;
-    border-bottom: 2px solid #dfdfd3;
     width: 37.5ch;
     height: auto;
   }
@@ -204,7 +201,8 @@ h1 {
     padding-left: 1rem;
     font-style: italic;
     font-size: 0.75rem;
-    background-color: white;
+    background-color: var(--bg);
+    border: 1px solid #ddd;
   }
 
   .footer {
@@ -252,18 +250,13 @@ a.external-link {
   background-color: unset;
 }
 
-.nav-links {
-  background-color: var(--block-bg);
-  border-bottom: 4px solid;
-  padding: 0.2rem;
-  text-decoration: none;
-}
-
 .nav {
   display: flex;
   align-items: center;
-  background-color: var(--block-bg);
-  border-bottom: 4px solid;
+  background-color: var(--bg);
+  /*border-bottom: 4px solid var(--teal);*/
+  border: 1px solid #ccc;
+  box-shadow: 4px 4px 0px var(--teal);
   text-decoration: none;
 }
 
@@ -276,10 +269,6 @@ h2 {
 }
 
 .post-title {
-  /* height: 53px; */
-  /* background: var(--block-bg); */
-  /* padding-left: 0.2rem; */
-  /* border-bottom: 4px solid; */
   text-align: center;
 }
 
@@ -333,7 +322,7 @@ h2 {
 .article-updated-text {
   font-style: italic;
   font-size: 0.75rem;
-  color: #d4563f;
+  color: var(--orange);
   visibility: hidden;
 }
 
@@ -343,14 +332,14 @@ h2 {
 
 /* highlighted sections in articles */
 .hltr-ah {
-  color: #fefefe;
-  background: #272727;
+  color: #fff;
+  background: var(--orange);
 }
 
 /* bits */
 
 .bit {
-  background: var(--block-bg);
+  background: var(--bg);
   padding-left: 0.2rem;
   border-bottom: 1px dashed #100f0f;
 }
@@ -390,10 +379,12 @@ hr {
 }
 
 .backlink-area {
-  border-top: 4px solid;
+  /*border-top: 4px solid var(--teal);*/
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  border-left: 1px solid #dfdfd3;
-  border-right: 1px solid #dfdfd3;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  box-shadow: 4px 4px 0px var(--teal);
   /* margin-right: calc(-1rem + -1px); */
   /* margin-left: calc(-1rem + -1px); */
   padding-bottom: 10px;
@@ -456,7 +447,7 @@ ul.drop-menu > li {
 
 ul.drop-menu li ul {
   border: 1px solid #ddd;
-  box-shadow: 4px 4px;
+  box-shadow: 4px 4px 0px var(--teal);
   background: var(--bg);
   visibility: hidden;
   opacity: 0;

@@ -35,24 +35,22 @@ const pageTitle = "main";
     <ul class="articles">
       {
         allArticles.map((article) => (
-          <div class="articleList">
-            <li class="article">
-              <span class="date">{datum(article.data.pubDate)}</span>
-              <span>・</span>
-              <span>
-                <a href={`/articles/${article.slug}/ `} class="no-prev">
-                  {article.data.title}
-                </a>
+          <li class="article">
+            <span class="date">{datum(article.data.pubDate)}</span>
+            <span>・</span>
+            <span>
+              <a href={`/articles/${article.slug}/`} class="no-prev">
+                {article.data.title}
+              </a>
+            </span>
+            {datum(article.data.updated) === datum(article.data.pubDate) ? (
+              ""
+            ) : (
+              <span class="article-updated-text">
+                {"(updated: " + zeit(article.data.updated) + ")"}
               </span>
-              {datum(article.data.updated) === datum(article.data.pubDate) ? (
-                ""
-              ) : (
-                <span class="article-updated-text">
-                  {"(updated: " + zeit(article.data.updated) + ")"}
-                </span>
-              )}
-            </li>
-          </div>
+            )}
+          </li>
         ))
       }
     </ul>

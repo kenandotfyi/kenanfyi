@@ -16,9 +16,9 @@
         previewContainer.style.position = "absolute";
         previewContainer.style.width = "480px";
         previewContainer.style.height = "320px";
-        previewContainer.style.border = "2px solid #353535";
+        previewContainer.style.border = "2px solid var(--teal)";
         previewContainer.style.background = "#fff";
-        previewContainer.style.boxShadow = "4px 4px 0px #353535";
+        previewContainer.style.boxShadow = "4px 4px 0px var(--teal)";
         previewContainer.style.display = "none";
         previewContainer.style.zIndex = "1000";
         previewContainer.style.overflow = "hidden";
@@ -29,15 +29,13 @@
         previewHeader.style.fontFamily = "JetBrains Mono, monospace";
         previewHeader.style.fontWeight = "bold";
         previewHeader.style.paddingLeft = "10px";
-        previewHeader.style.borderBottom = "1px solid #353535";
-        previewHeader.innerHTML += event.currentTarget.getAttribute("href");
+        previewHeader.style.borderBottom = "1px solid var(--teal)";
 
         previewIframe = document.createElement("iframe");
         previewIframe.style.width = "100%";
         previewIframe.style.height = "100%";
         previewIframe.style.border = "none";
         previewIframe.style.overflow = "scroll";
-        // previewIframe.style.overflowY = "hidden";
 
         previewContainer.appendChild(previewHeader);
         previewContainer.appendChild(previewIframe);
@@ -82,6 +80,7 @@
     function showPreview(url, x, y) {
       // skip if mobile
       if (isMobile()) return;
+
       createPreviewElements();
       const viewportHeight = window.innerHeight;
       const bottomTH = viewportHeight * 0.85;
@@ -95,6 +94,7 @@
       previewContainer.style.left = `${x}px`;
       previewContainer.style.display = "block";
       previewIframe.src = url;
+      previewHeader.innerHTML = url;
       extractMainContent();
     }
 
@@ -114,6 +114,7 @@
       const x = rect.right + window.scrollX; // Add scroll offsets
       const y = rect.bottom + window.scrollY; // Add scroll offsets
       console.log(rect.bottom, x, y);
+
       showPreview(url, x, y);
     }
 
