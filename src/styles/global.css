@@ -163,7 +163,7 @@ h1 {
   /*   margin-top: 0rem; */
   /*   padding-right: 5px; */
   /*   padding-top: 5px; */
-  /*   padding-left: 10px; */
+  /*   padding-left: 10px */
   /*   padding-bottom: 5px; */
   /*   font-size: 12px; */
   /*   vertical-align: baseline; */
@@ -451,7 +451,7 @@ ul.drop-menu li ul {
   background: var(--bg);
   visibility: hidden;
   opacity: 0;
-  width: 10ch;
+  width: 6ch;
   position: absolute;
   padding: 0.4rem;
   margin-top: -0.2rem;
@@ -510,4 +510,10 @@ ul.drop-menu li ul li {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+#commits {
+  list-style: none;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
 }
