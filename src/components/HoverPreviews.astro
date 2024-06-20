@@ -103,7 +103,7 @@
         if (previewContainer) {
           previewContainer.style.display = "none";
         }
-      }, 1000); // Slight delay to allow navigation between link and preview
+      }, 1000); // delay to allow navigation between link and preview
     }
 
     function handleMouseEnter(event) {
@@ -111,8 +111,8 @@
 
       const url = event.currentTarget.getAttribute("href");
       const rect = event.currentTarget.getBoundingClientRect();
-      const x = rect.right + window.scrollX; // Add scroll offsets
-      const y = rect.bottom + window.scrollY; // Add scroll offsets
+      const x = rect.right + window.scrollX; // scroll offsets
+      const y = rect.bottom + window.scrollY; // scroll offsets
       console.log(rect.bottom, x, y);
 
       showPreview(url, x, y);
@@ -156,7 +156,6 @@
     // document.addEventListener("astro:page-load", () => {
     //   initializeHoverPreviews();
     // });
-    // Custom Event Listener for Navigation
   }
 
   initializeHoverPreviews();

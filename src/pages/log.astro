@@ -28,14 +28,12 @@ const pageTitle = "log";
     function formatDate(dateString) {
       const date = new Date(dateString); // Convert the string to a Date object
 
-      // Define options for formatting the date
       const options = {
         year: "numeric",
         day: "2-digit",
         month: "short",
       };
 
-      // Format the date using Intl.DateTimeFormat
       return new Intl.DateTimeFormat("en-UK", options).format(date);
     }
 
@@ -56,15 +54,12 @@ const pageTitle = "log";
             </span>
           </li>`;
         }
-        // Assume the date information is in a property called 'date'
-
-        // You can also update your UI here with the formatted date
       } catch (error) {
         console.error("Error fetching or formatting data:", error);
       }
     }
 
-    displayDate(); // Call the function to fetch and format the date
+    displayDate();
 
     //     fetch("https://api.github.com/repos/kenandotfyi/kenanfyi/commits")
     //       .then((res) => res.json())
