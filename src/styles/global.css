@@ -517,3 +517,40 @@ ul.drop-menu li ul li {
   font-size: 0.75rem;
   font-family: "JetBrains Mono", monospace;
 }
+
+#toots {
+  opacity: 0.45;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+  background: var(--bg);
+  font-size: 0.8rem;
+
+  & .toots-actions > p:nth-of-type(1) {
+    opacity: 0.5;
+  }
+
+  & .toots-actions > p:nth-of-type(2) {
+    font-style: italic;
+  }
+
+  & .toots-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .toots-headers {
+    display: flex;
+    gap: 10px;
+
+    & img {
+      width: 48px;
+      filter: grayscale(100%);
+    }
+  }
+}
+
+#toots:hover {
+  opacity: 0.8;
+}

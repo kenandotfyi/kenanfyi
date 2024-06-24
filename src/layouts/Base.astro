@@ -2,6 +2,8 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
+import Toots from "../components/Toots.astro";
+import Logo from "../components/Logo.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
@@ -27,6 +29,8 @@ const { pageTitle } = Astro.props;
   <body>
     <Nav />
     <slot />
+    <Logo />
+    <Toots />
     <Footer />
   </body>
 </html>
