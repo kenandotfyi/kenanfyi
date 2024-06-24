@@ -27,7 +27,7 @@
       const data = await fetchData();
       document.getElementById("toots").innerHTML = "";
       document.getElementById("toots").innerHTML += `
-<div>${data[3].content}</div>
+<div>${data[0].content}</div>
 <div class="toots-actions">
 <p> ${formatDate(data[0].created_at)}</p>
 <p> <a href="${data[0].url}" target="_blank">join the discussion ↗</a></p>
