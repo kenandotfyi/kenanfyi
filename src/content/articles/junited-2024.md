@@ -3,7 +3,7 @@ draft: false
 title: "Junited 2024"
 description: "Sharing posts throughout June 2024"
 pubDate: 2024-06-05, 21:37
-updated: 2024-06-21, 20:17
+updated: 2024-06-28, 08:46
 status: wip
 type: article
 tags: ["no-topic"]
@@ -22,6 +22,7 @@ Junited is this simple but excellent idea from [Robert Birming](https://birming.
 7. [How to converse online](https://manuelmoreale.com/how-to-converse-online)
 8. [Home-Cooked Software and Barefoot Developers](https://maggieappleton.com/home-cooked-software)
 9. [The Absolute Minimum Every Software Developer Must Know About Unicode in 2023 (Still No Excuses!)](https://tonsky.me/blog/unicode/)
+10. [Local, first, forever](https://tonsky.me/blog/crdt-filesync/)
 
 <hr>
 
