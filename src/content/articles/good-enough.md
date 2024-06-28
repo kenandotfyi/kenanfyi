@@ -8,7 +8,7 @@ tags:
   - indie-web
 pubDate: 2024-04-07, 15:43
 updated: 2024-05-04, 15:49
-backlinks: ["bits/indieweb-april-2024"]
+backlinks: ["bits/indieweb-april-2024", "why-i-blog"]
 forwards: [""]
 ---
 

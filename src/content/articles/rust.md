@@ -7,7 +7,7 @@ type: article
 tags: ["dev-stuff"]
 pubDate: 2024-04-03, 12:47
 updated: 2024-04-03, 12:47
-backlinks: ["tools-i-use"]
+backlinks: ["tools-i-use", "why-i-blog"]
 forwards: [""]
 ---
 

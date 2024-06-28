@@ -82,7 +82,7 @@ h1 {
   color: var(--red);
 }
 
-@media screen and (max-width: 1920px) and (min-width: 770px) {
+@media screen and (min-width: 770px) {
   body {
     font-size: 1rem;
     /* border: 1px solid #dddddd; */
@@ -97,6 +97,13 @@ h1 {
     transition: ease-in 0.3s;
   }
 
+  p img {
+    max-width: 70ch;
+    min-width: 70ch;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
   blockquote {
     /*border-left: 1px solid;*/
     margin: 0;
@@ -107,73 +114,32 @@ h1 {
     background-color: var(--bg);
     border: 1px solid #ddd;
   }
-
-  p img {
-    max-width: 100ch;
-    min-width: 70ch;
-    height: auto;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
-@media screen and (min-width: 1921px) {
-  body {
-    font-size: 1rem;
-    margin-top: 12px;
-    margin-bottom: 24px;
-  }
-
-  a:hover {
-    color: #eeeeee;
-    /* padding: 2px; */
-    background-color: var(--teal);
-    transition: ease-in 0.3s;
-  }
-
-  blockquote {
-    margin: 0;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    font-style: italic;
-    font-size: 0.75rem;
-    background-color: var(--bg);
-    border: 1px solid #ddd;
-  }
-
-  p img {
-    max-width: 100ch;
-    min-width: 70ch;
-    height: auto;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* SAVED FOR LATER. TODO: implement the side-notes logic*/
-  /* blockquote p { */
-  /*   border: 1px solid #ddd; */
-  /*   /* border-left: 2px solid #c20000; */
-  /*   background-color: #fbfbf9; */
-  /*   box-shadow: 4px 4px #ddd; */
-  /*   width: 60%; */
-  /*   float: right; */
-  /*   clear: right; */
-  /*   margin-right: -69%; */
-  /*   margin-bottom: 1.2rem; */
-  /*   margin-top: 0rem; */
-  /*   padding-right: 5px; */
-  /*   padding-top: 5px; */
-  /*   padding-left: 10px */
-  /*   padding-bottom: 5px; */
-  /*   font-size: 12px; */
-  /*   vertical-align: baseline; */
-  /*   position: relative; */
-  /* } */
-  /**/
-  /* blockquote em { */
-  /*   font-style: normal; */
-  /* } */
-}
+/* SAVED FOR LATER. TODO: implement the side-notes logic*/
+/* blockquote p { */
+/*   border: 1px solid #ddd; */
+/*   /* border-left: 2px solid #c20000; */
+/*   background-color: #fbfbf9; */
+/*   box-shadow: 4px 4px #ddd; */
+/*   width: 60%; */
+/*   float: right; */
+/*   clear: right; */
+/*   margin-right: -69%; */
+/*   margin-bottom: 1.2rem; */
+/*   margin-top: 0rem; */
+/*   padding-right: 5px; */
+/*   padding-top: 5px; */
+/*   padding-left: 10px */
+/*   padding-bottom: 5px; */
+/*   font-size: 12px; */
+/*   vertical-align: baseline; */
+/*   position: relative; */
+/* } */
+/**/
+/* blockquote em { */
+/*   font-style: normal; */
+/* } */
 
 @media screen and (max-width: 769px) {
   body {
@@ -259,6 +225,8 @@ a.external-link {
   box-shadow: 4px 4px 0px var(--teal);
   text-decoration: none;
 }
+
+/*images*/
 
 h1 {
   font-size: 1.4rem;
@@ -451,7 +419,7 @@ ul.drop-menu li ul {
   background: var(--bg);
   visibility: hidden;
   opacity: 0;
-  width: 6ch;
+  width: 10ch;
   position: absolute;
   padding: 0.4rem;
   margin-top: -0.2rem;

@@ -7,7 +7,7 @@ updated: 2024-06-28, 08:46
 status: wip
 type: article
 tags: ["no-topic"]
-backlinks: [""]
+backlinks: ["why-i-blog"]
 forwards: [""]
 ---
 
@@ -26,7 +26,9 @@ Junited is this simple but excellent idea from [Robert Birming](https://birming.
 
 <hr>
 
-Check other participants [here](https://birming.com/junited-how-who/) and don't forget to share your updates through your socials like this: 
+Check other participants [here](https://birming.com/junited-how-who/) and don't forget to share your updates through your socials like this:
+
 > ### "I’ve just updated my #Junited2024 list with this great post: URL"
 
 <p></p>
+
