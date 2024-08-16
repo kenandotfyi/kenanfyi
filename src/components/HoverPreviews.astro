@@ -80,7 +80,6 @@
     function showPreview(url, x, y) {
       // skip if mobile
       if (isMobile()) return;
-
       createPreviewElements();
       const viewportHeight = window.innerHeight;
       const bottomTH = viewportHeight * 0.85;
@@ -103,7 +102,7 @@
         if (previewContainer) {
           previewContainer.style.display = "none";
         }
-      }, 1000); // delay to allow navigation between link and preview
+      }, 500); // delay to allow navigation between link and preview
     }
 
     function handleMouseEnter(event) {
@@ -115,7 +114,9 @@
       const y = rect.bottom + window.scrollY; // scroll offsets
       console.log(rect.bottom, x, y);
 
-      showPreview(url, x, y);
+      setTimeout(() => {
+        showPreview(url, x, y);
+      }, 500);
     }
 
     function handleMouseLeave() {
