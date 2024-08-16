@@ -20,6 +20,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "JetBrains";
+  src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 700;
+}
+
 ::selection {
   color: #fefefe;
   background: var(--teal);
@@ -41,7 +47,7 @@
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: antialiased;
   text-rendering: geometricPrecision !important;
   -webkit-font-smoothing: antialiased !important;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.01);
@@ -75,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains", monospace;
 }
 
 h1 {
