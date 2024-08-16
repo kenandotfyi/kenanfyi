@@ -10,17 +10,24 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
-    rehypePlugins: [[rehypeExternalLinks, {
-      properties: {
-        className: "external-link"
-      },
-      target: "_blank"
-    }], [rehypeKatex, {}]],
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          properties: {
+            className: "external-link",
+          },
+          target: "_blank",
+        },
+      ],
+      [rehypeKatex, {}],
+    ],
     shikiConfig: {
-      theme: "vitesse-dark",
-      wrap: true
-    }
+      theme: "vitesse-light",
+      wrap: true,
+    },
   },
   site: "https://kenan.fyi",
-  integrations: [mdx()]
+  integrations: [mdx()],
 });
+
