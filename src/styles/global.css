@@ -512,3 +512,19 @@ hr {
 #toots:hover {
   opacity: 0.8;
 }
+
+/*Sidenotes*/
+
+/*.sn {*/
+/*  position: absolute;*/
+/*  max-width: 37.5ch;*/
+/*  float: right;*/
+/*  clear: right;*/
+/*  margin-left: calc(712px - 50px - 4px);*/
+/*  background: var(--body-bg);*/
+/*  border: 1px solid;*/
+/*  border-left: 1px solid var(--body-bg);*/
+/*  padding-top: 8px;*/
+/*  padding-right: 8px;*/
+/*  font-size: 0.75rem;*/
+/*}*/
