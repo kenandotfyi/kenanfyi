@@ -4,17 +4,18 @@ const pageTitle = "log";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h1>{pageTitle}</h1>
-  <i>the last 30 commits</i>
-  <blockquote>
+  <div class="post-title">
+    <i>the last 30 commits</i>
+  </div>
+
+  <main class="main">
     <div id="commits"></div>
     <p>
       <a href="https://github.com/kenandotfyi/kenanfyi/commits/master/"
         >the rest</a
       >
     </p>
-  </blockquote>
-
+  </main>
   <script>
     //@ts-nocheck
     async function fetchData() {
@@ -37,7 +38,7 @@ const pageTitle = "log";
       return new Intl.DateTimeFormat("en-UK", options).format(date);
     }
 
-    async function displayDate() {
+    async function displayData() {
       try {
         const data = await fetchData();
         for (let r of data) {
@@ -59,7 +60,7 @@ const pageTitle = "log";
       }
     }
 
-    displayDate();
+    displayData();
 
     //     fetch("https://api.github.com/repos/kenandotfyi/kenanfyi/commits")
     //       .then((res) => res.json())

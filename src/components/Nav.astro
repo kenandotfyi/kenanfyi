@@ -1,28 +1,19 @@
 ---
-const currentPath = Astro.url.pathname;
+
 ---
 
 <div class="nav">
-  <div>
-    <span class="logo"
-      ><a href="/" class="no-prev">~/</a>{
-        currentPath.toString().split("/")[1]
-      }</span
-    >
-    <span style="color: var(--red); padding-right:0.2rem">●</span>
+  <a href="/" class="no-prev logo">
+    <div>
+      <span> kenan.fyi </span>
+      <span style="color: var(--red); padding-right:0.2rem">●</span>
+    </div>
+  </a>
+
+  <div class="nav-menu">
+    <a href="/now" class="no-prev">now</a>
+    <a href="/about" class="no-prev">about</a>
+    <a href="/blogroll" class="no-prev">blogroll</a>
+    <a href="/log" class="no-prev">log</a>
   </div>
-  <div class="drop-container">
-    <ul class="drop-menu">
-      <li><a href="/now" class="no-prev">now</a></li>
-      <!-- <li><a href="/bits" class="no-prev">bits</a></li> -->
-      <li><a href="/about" class="no-prev">about</a></li>
-      <li><a href="/blogroll" class="no-prev">blogroll</a></li>
-      <li><a href="/log">log</a></li>
-    </ul>
-  </div>
-  <!--   <div class="utils"> -->
-  <!--     <p>dark</p> -->
-  <!--     <p>turn-off sidenotes</p> -->
-  <!--   </div> -->
-  <!-- </div> -->
 </div>
