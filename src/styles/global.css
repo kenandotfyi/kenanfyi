@@ -4,28 +4,6 @@
     background: var(--teal);
 }
 
-@font-face {
-    font-family: "iAwriter";
-    src: url("/fonts/iAWriterQuattroS-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "iAwriterBold";
-    src: url("/fonts/iAWriterQuattroS-Bold.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "JetBrains";
-    src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
-    font-weight: 700;
-}
-
 ::selection {
     color: #fefefe;
     background: var(--teal);
@@ -34,12 +12,13 @@
 :root {
     --bg: #fff;
     /* white bg for blocks*/
-    --body-bg: #eeefe9;
+    --body-bg: #F6F6F6;
     /* --body-bg: #f6f5f0; */
     --text: #353535;
+    --metadata: #6f6e69;
     --links: #100f0f;
     --red: #af2e1b;
-    --orange: #cc6324;
+    --orange: #E66E4C;
     --teal: #3c4b59;
     --beige1: #bfa07a;
     --beige2: #d9c3b0;
@@ -51,7 +30,6 @@
     -moz-osx-font-smoothing: antialiased;
     text-rendering: geometricPrecision !important;
     -webkit-font-smoothing: antialiased !important;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.01);
 }
 
 html {
@@ -60,14 +38,13 @@ html {
 }
 
 body {
-    font-size: 1rem;
     color: var(--text);
     background-color: var(--bg);
     margin: 0 auto;
-    max-width: 75ch;
+    max-width: 65ch;
     padding: 1rem;
     line-height: 1.6;
-    font-family: "iAwriter", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     & a {
         color: var(--links);
@@ -75,148 +52,113 @@ body {
     }
 }
 
-b,
-strong {
-    font-family: "iAWriterBold", sans-serif;
-    font-weight: normal;
+.index {
+    border: 1px solid;
+
+    & .index-text {
+        padding: 20px;
+    }
+
+    & .index-articles {
+        background-color: var(--body-bg);
+        padding: 20px;
+    }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "JetBrains", monospace;
+blockquote {
+    margin: 0;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-style: italic;
+    font-size: 0.75rem;
+    background-color: var(--bg);
+    border: 1px solid #ddd;
 }
 
-h1 {
-    color: var(--red);
+
+img {
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+a:hover {
+    color: #eeeeee;
+    /* padding: 2px; */
+    background-color: var(--teal);
+    transition: ease-in 0.1s;
 }
 
 @media screen and (min-width: 770px) {
     body {
-        font-size: 1rem;
+        font-size: 1.25rem;
         /* border: 1px solid #dddddd; */
-        margin-top: 48px;
+        margin-top: 16px;
         margin-bottom: 24px;
     }
 
-    a:hover {
-        color: #eeeeee;
-        /* padding: 2px; */
-        background-color: var(--teal);
-        transition: ease-in 0.3s;
+    h1 {
+        font-size: 2rem;
     }
 
-    p img {
-        max-width: 70ch;
-        min-width: 70ch;
-        height: auto;
-        margin-left: 50%;
-        transform: translateX(-50%);
+    h2 {
+        font-size: 1.75rem;
     }
 
-    blockquote {
-        /*border-left: 1px solid;*/
-        margin: 0;
-        padding: 0.5rem;
-        padding-left: 1rem;
-        font-style: italic;
-        font-size: 0.75rem;
-        background-color: var(--bg);
-        border: 1px solid #ddd;
+    h3 {
+        font-size: 1.5rem;
+    }
+
+
+
+    .floating-button {
+        display: none !important;
+    }
+
+    .mobile-header {
+        display: none !important;
     }
 }
 
-/* SAVED FOR LATER. TODO: implement the side-notes logic*/
-/* blockquote p { */
-/*   border: 1px solid #ddd; */
-/*   /* border-left: 2px solid #c20000; */
-/*   background-color: #fbfbf9; */
-/*   box-shadow: 4px 4px #ddd; */
-/*   width: 60%; */
-/*   float: right; */
-/*   clear: right; */
-/*   margin-right: -69%; */
-/*   margin-bottom: 1.2rem; */
-/*   margin-top: 0rem; */
-/*   padding-right: 5px; */
-/*   padding-top: 5px; */
-/*   padding-left: 10px */
-/*   padding-bottom: 5px; */
-/*   font-size: 12px; */
-/*   vertical-align: baseline; */
-/*   position: relative; */
-/* } */
-/**/
-/* blockquote em { */
-/*   font-style: normal; */
-/* } */
 
 @media screen and (max-width: 769px) {
     body {
         font-size: 1rem;
-        border: 0px;
-        margin-top: 32px;
     }
 
-    a:hover,
-    a:active {
-        color: #eeeeee;
-        /* padding: 2px; */
-        background-color: var(--teal);
-        transition: ease-in 0.3s;
+    h1 {
+        font-size: 1.25rem;
     }
 
-    p img {
-        width: 37.5ch;
+    h2 {
+        font-size: 1.15rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p:has(img) {
+        text-align: center;
+    }
+
+    img {
+        max-width: 65vw;
         height: auto;
-    }
-
-    blockquote {
         margin: 0;
-        padding: 0.5rem;
-        padding-left: 1rem;
-        font-style: italic;
-        font-size: 0.75rem;
-        background-color: var(--bg);
-        border: 1px solid #ddd;
+        transform: unset;
     }
 
-    .footer {
-        display: flex;
-        flex-direction: column;
+    .navbar {
+        display: none !important;
     }
 
-    .webring {
-        float: right;
-        position: relative;
-        bottom: 50px;
+    .floating-button {
+        display: flex !important;
     }
 }
 
-.logo {
-    margin-top: -8px;
-    margin-left: -4px;
-    border: 1px solid;
-    padding-left: 4px;
-    padding-right: 4px;
-    position: absolute;
-    background: var(--bg);
-    z-index: 1;
-    box-shadow: 4px 4px 0px var(--teal);
-}
 
-.logo:hover,
-.logo:active {
-    transform: translate(4px, 4px);
-    border: 0;
-    border-right: 2px solid var(--teal);
-    box-shadow: 0px 0px 0px;
-    color: #fff;
-    transition: ease-in 0s;
-}
 
 .logo-bot {
     margin-top: 1rem;
@@ -230,68 +172,52 @@ h1 {
     background-color: unset;
 }
 
-.nav {
+.navbar {
     display: flex;
-    align-items: center;
     background-color: var(--bg);
-    /*border-bottom: 4px solid var(--teal);*/
-    border: 1px solid;
-    /*box-shadow: 4px 4px 0px var(--teal);*/
-    text-decoration: none;
-    margin-top: -32px;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 
     & a {
         text-decoration: none;
     }
-}
 
-.nav-menu {
-    margin-left: 110px;
-    display: flex;
-    justify-items: center;
-    gap: 0px;
-
-    & a {
-        border-left: 0.5px solid;
-        border-right: 0.5px solid;
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
-    & a:last-child {
+    & li {
         border-right: 1px solid;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
-/*images*/
 
-h1 {
-    font-size: 1.4rem;
-}
-
-h2 {
-    font-size: 1.1rem;
-}
 
 .post-title {
     text-align: left;
     border-bottom: 1px solid;
     border-left: 1px solid;
     border-right: 1px solid;
+    border-top: 1px solid;
     padding: 20px;
     background: var(--bg);
 
     & h1 {
-        font-size: 1.6rem;
-        margin-bottom: 0;
-        margin-top: 0;
+        margin: 0;
     }
 
     & p {
         font-size: 0.8rem;
-        color: #6f6e69;
+        color: var(--metadata);
         margin: 0;
-        padding: 0;
     }
 }
 
@@ -301,6 +227,7 @@ h2 {
     border-right: 1px solid;
     border-bottom: 1px solid;
     padding: 20px;
+    text-align: justify;
 
     & :first-child {
         margin-top: 0px;
@@ -345,9 +272,8 @@ h2 {
 }
 
 .articles {
-    max-width: 40em;
+    /* max-width: 40em; */
     padding: 0;
-    overflow-x: hidden;
     list-style: none;
 }
 
@@ -359,19 +285,17 @@ h2 {
 }
 
 .article:hover .article-updated-text {
-    visibility: visible;
+    display: inline;
 }
 
 .article-updated-text {
     font-style: italic;
     font-size: 0.75rem;
     color: var(--orange);
-    visibility: hidden;
+    display: none;
 }
 
-.date {
-    font-family: "JetBrains";
-}
+
 
 /* highlighted sections in articles */
 .hltr-ah {
@@ -414,13 +338,8 @@ hr {
 
 /* back and forward links */
 
-.con-list-backlink {
-    list-style: "";
-}
 
-.con-list-forward {
-    list-style: "> ";
-}
+
 
 .backlink-area {
     /*border-top: 4px solid var(--teal);*/
@@ -433,32 +352,23 @@ hr {
     padding-bottom: 10px;
     padding-left: 20px;
     background: #fff;
+
+    & h3 {
+        background-image: url(../assets/backlink-arrow.png);
+        background-repeat: no-repeat;
+        /* background-size: 1rem; */
+        background-position: left;
+        /* border-bottom: 1px solid #282828; */
+        padding-left: 2rem;
+        margin: 0;
+    }
+
+
+    & .con-list-backlink {
+        list-style: none;
+    }
 }
 
-.backlink-area h3 {
-    background-image: url(../assets/backlink-arrow.png);
-    background-repeat: no-repeat;
-    background-size: 0.8rem;
-    background-position: left;
-    /* border-bottom: 1px solid #282828; */
-    padding-left: 1.2rem;
-    margin-right: 1.2rem;
-    margin-top: 0px;
-}
-
-.webring {
-    font-size: 0.7rem;
-    border-bottom: 0px solid;
-    margin-left: auto;
-}
-
-.webring a {
-    border-bottom: 0px solid;
-}
-
-.webring a:hover {
-    background-color: unset;
-}
 
 /* utils section like dark theme switcher etc. */
 .utils {
@@ -536,3 +446,68 @@ hr {
 /*  padding-right: 8px;*/
 /*  font-size: 0.75rem;*/
 /*}*/
+
+
+
+
+.mobile-header {
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    color: var(--text);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--bg);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid;
+
+}
+
+
+/* Menu styling */
+.menu {
+    /* width: 310px; */
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    background-color: white;
+    /* overflow: hidden; */
+    display: none;
+    /* Initially hidden */
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    & ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding-left: 10px;
+        margin: 0;
+        list-style: none;
+
+        & li {
+            padding-right: 10px;
+        }
+
+    }
+}

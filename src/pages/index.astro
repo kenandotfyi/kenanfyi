@@ -10,10 +10,8 @@ const pageTitle = "main";
 ---
 
 <Base pageTitle={pageTitle}>
-  <>
-    <p>
-      <img src="/hello.svg" />
-    </p>
+  <div class="index">
+    <div class="index-text">
     <p>
       This is my playground where I try new stuff out and keep learning about
       web technologies plus posting some thoughts occasionally.
@@ -24,6 +22,8 @@ const pageTitle = "main";
     future. Since I am building in public, I do my updates in the prod.
 
     <div style="text-align: center; margin-top: 24px">✶</div>
+    </div>
+    <div class="index-articles">
     <p>
       <i>Some recent posts:</i>
     </p>
@@ -49,5 +49,6 @@ const pageTitle = "main";
         ))
       }
     </ul>
-  </>
+    </div>
+    </div>
 </Base>

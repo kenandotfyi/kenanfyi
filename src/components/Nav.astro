@@ -1,19 +1,44 @@
----
 
 ---
+const currentPath = Astro.url.pathname.toString().split("/")[1];
+---
 
-<div class="nav">
-  <a href="/" class="no-prev logo">
-    <div>
-      <span> kenan.fyi </span>
-      <span style="color: var(--red); padding-right:0.2rem">●</span>
-    </div>
-  </a>
-
-  <div class="nav-menu">
-    <a href="/now" class="no-prev">now</a>
-    <a href="/about" class="no-prev">about</a>
-    <a href="/blogroll" class="no-prev">blogroll</a>
-    <a href="/log" class="no-prev">log</a>
-  </div>
+<!-- Desktop -->
+<div class="mobile-header" id="mobileHeader">
+<a href="/" class="no-prev">
+    <span style="text-align: center;" >✶</span>
+    <span>kenan.fyi / {currentPath}</span>
+    <span style="text-align: center;">✶</span>
+</a>
 </div>
+    <nav class="navbar">
+        <ul class=nav-list>
+        <a href="/" class="no-prev">
+            <li>
+            <span>kenan.fyi</span>
+            <span style="color: var(--red); padding-right:0.2rem">●</span>
+            </li>
+        </a>
+        <a href="/now" class="no-prev"><li>now</li></a>
+        <a href="/about" class="no-prev"><li>about</li></a>
+        <a href="/blogroll" class="no-prev"><li>blogroll</li></a>
+        <a href="/log" class="no-prev"><li>log</li></a>
+        </ul>
+    </nav>
+
+
+<!-- Mobile  -->
+<div class="floating-button" id="floatingButton">
+        <span></span>
+    </div>
+<div class="menu" id="menu">
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/now">now</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/blogroll">blogroll</a></li>
+        <li><a href="/log">log</a></li>
+    </ul>
+</div>
+
+ <script src="../scripts/mobile-menu.js"></script>
