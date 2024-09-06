@@ -28,7 +28,7 @@ Junited is this simple but excellent idea from [Robert Birming](https://birming.
 
 Check other participants [here](https://birming.com/junited-how-who/) and don't forget to share your updates through your socials like this:
 
-> ### "I’ve just updated my #Junited2024 list with this great post: URL"
+> **"I’ve just updated my #Junited2024 list with this great post: URL"**
 
 <p></p>
 

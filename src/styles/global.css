@@ -11,10 +11,9 @@
 
 :root {
     --bg: #fff;
-    /* white bg for blocks*/
     --body-bg: #F6F6F6;
-    /* --body-bg: #f6f5f0; */
     --text: #353535;
+    --active-link: #fefefe;
     --metadata: #6f6e69;
     --links: #100f0f;
     --red: #af2e1b;
@@ -41,28 +40,58 @@ body {
     color: var(--text);
     background-color: var(--bg);
     margin: 0 auto;
-    max-width: 65ch;
+    max-width: 900px;
+    line-height: 1.5;
     padding: 1rem;
-    line-height: 1.6;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-weight: normal;
 
-    & a {
-        color: var(--links);
-        text-decoration: underline;
-    }
+}
+
+a {
+    color: var(--links);
+    text-decoration: underline;
+
+}
+
+a:hover {
+    color: #eeeeee;
+    background-color: var(--teal);
+    transition: ease-in 0.1s;
+
+}
+
+
+.active-path {
+    background-color: var(--orange);
+    color: var(--active-link);
+}
+
+h1,
+h2,
+h3 {
+    font-size: 1rem;
+    text-align: left;
 }
 
 .index {
-    border: 1px solid;
+    /* border: 1px solid; */
 
     & .index-text {
-        padding: 20px;
+        /* padding: 20px; */
+        text-align: justify;
     }
 
     & .index-articles {
         background-color: var(--body-bg);
-        padding: 20px;
+        padding: 16px;
+
+        & p {
+            margin: 0px;
+        }
     }
+
 }
 
 blockquote {
@@ -70,9 +99,8 @@ blockquote {
     padding: 0.5rem;
     padding-left: 1rem;
     font-style: italic;
-    font-size: 0.75rem;
     background-color: var(--bg);
-    border: 1px solid #ddd;
+    border: 2px dotted #632D2D;
 }
 
 
@@ -82,31 +110,13 @@ img {
     transform: translateX(-50%);
 }
 
-a:hover {
-    color: #eeeeee;
-    /* padding: 2px; */
-    background-color: var(--teal);
-    transition: ease-in 0.1s;
-}
 
 @media screen and (min-width: 770px) {
     body {
-        font-size: 1.25rem;
+        font-size: 1rem;
         /* border: 1px solid #dddddd; */
         margin-top: 16px;
         margin-bottom: 24px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
     }
 
 
@@ -123,19 +133,13 @@ a:hover {
 
 @media screen and (max-width: 769px) {
     body {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
-    h1 {
-        font-size: 1.25rem;
-    }
-
-    h2 {
-        font-size: 1.15rem;
-    }
-
+    h1,
+    h2,
     h3 {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     p:has(img) {
@@ -149,6 +153,7 @@ a:hover {
         transform: unset;
     }
 
+
     .navbar {
         display: none !important;
     }
@@ -160,17 +165,6 @@ a:hover {
 
 
 
-.logo-bot {
-    margin-top: 1rem;
-    margin-bottom: -1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.logo-bot a {
-    border-bottom: 0;
-    background-color: unset;
-}
 
 .navbar {
     display: flex;
@@ -178,8 +172,9 @@ a:hover {
     border-top: 1px solid;
     border-right: 1px solid;
     border-left: 1px solid;
-}
+    border-bottom: 1px solid;
 
+}
 
 .nav-list {
     display: flex;
@@ -187,15 +182,18 @@ a:hover {
     list-style: none;
     margin: 0;
     padding-left: 0;
+    text-transform: uppercase;
 
     & a {
         text-decoration: none;
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
 
     & li {
         border-right: 1px solid;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }
 
@@ -206,8 +204,8 @@ a:hover {
     border-bottom: 1px solid;
     border-left: 1px solid;
     border-right: 1px solid;
-    border-top: 1px solid;
     padding: 20px;
+    margin-bottom: 20px;
     background: var(--bg);
 
     & h1 {
@@ -223,9 +221,9 @@ a:hover {
 
 .main {
     background: var(--body-bg);
-    border-left: 1px solid;
+    /* border-left: 1px solid;
     border-right: 1px solid;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid; */
     padding: 20px;
     text-align: justify;
 
@@ -252,24 +250,17 @@ a:hover {
         color: #eee;
         background: var(--teal);
     }
+
+    h1 {
+        border-bottom: 1px solid;
+        margin-top: 40px;
+    }
+
+    p:is(:last-child) {
+        margin: 0;
+    }
 }
 
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    /* border-top: 1px solid #ddd; */
-    padding-top: 1rem;
-    margin-top: 1rem;
-    color: #272727;
-    font-size: 0.7rem;
-}
-
-.footer-links a {
-    font-size: 0.7rem;
-    border-bottom: 0px solid;
-}
 
 .articles {
     /* max-width: 40em; */
@@ -342,30 +333,28 @@ hr {
 
 
 .backlink-area {
-    /*border-top: 4px solid var(--teal);*/
-    border-left: 1px solid;
-    border-right: 1px solid;
-    border-bottom: 1px solid;
-    /* margin-right: calc(-1rem + -1px); */
-    /* margin-left: calc(-1rem + -1px); */
-    padding-top: 20px;
-    padding-bottom: 10px;
+    border: 1px solid;
+    margin-top: 20px;
     padding-left: 20px;
     background: #fff;
 
-    & h3 {
-        background-image: url(../assets/backlink-arrow.png);
-        background-repeat: no-repeat;
-        /* background-size: 1rem; */
-        background-position: left;
-        /* border-bottom: 1px solid #282828; */
-        padding-left: 2rem;
-        margin: 0;
-    }
-
-
     & .con-list-backlink {
+        padding-inline-start: 0px;
         list-style: none;
+    }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--metadata);
+    margin-top: 20px;
+    font-size: 0.8rem;
+
+    & a {
+        color: var(--metadata);
     }
 }
 
@@ -449,17 +438,17 @@ hr {
 
 
 
-
+/* MOBILE */
 .mobile-header {
-    border-top: 1px solid;
-    border-right: 1px solid;
-    border-left: 1px solid;
+    border: 1px solid;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--orange);
 
     & a {
         text-decoration: none;
+        color: var(--active-link);
     }
 }
 
@@ -481,9 +470,8 @@ hr {
 }
 
 
-/* Menu styling */
+/* Mobile menu styling */
 .menu {
-    /* width: 310px; */
     height: 40px;
     position: fixed;
     bottom: 20px;
@@ -495,12 +483,12 @@ hr {
     border-left: 1px solid;
     border-top: 1px solid;
     border-bottom: 1px solid;
+    text-transform: uppercase;
 
     & ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
         padding-left: 10px;
         margin: 0;
         list-style: none;

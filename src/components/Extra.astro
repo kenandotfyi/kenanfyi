@@ -12,10 +12,10 @@ const backlinksFiltered = allArticles.filter(item => backlinks.includes(item.slu
 ---
 
 <div class="backlink-area">
-  <h3 class="con-header">Backlinks</h3>
+  <p><strong>Backlinks</strong><p/>
   {
     backlinksFiltered.length === 0  ? (
-    <ul style="list-style: none">
+    <ul class="con-list-backlink">
       <li>no backlinks yet</li>
     </ul>
     ) : (
