@@ -23,6 +23,7 @@ const { frontmatter } = Astro.props;
     const toggles = document.querySelectorAll(`span[id^=${frontmatter.slug}]`);
     toggles.forEach((toggle) => {
       toggle.innerHTML = "×";
+      toggle.style.fontSize = "1.5rem";
       toggle.style.cursor = "pointer";
 
       //select a div with the same id

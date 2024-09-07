@@ -30,9 +30,9 @@ your.domain{
         }
         path_regexp title ^/(.*)$
     }
-    rewrite @title /index.php?title={re.title.1}&{query}
-    root * /var/www/html/mw #this might be mediawiki/ for you
-    php_fastcgi unix//var/run/php/php-fpm.sock # serving php applications with Caddy
+    rewrite @title /index.php?title={re.title.1}&{query}  // [!code highlight]
+    root * /var/www/html/mw #this might be mediawiki for you
+    php_fastcgi unix//var/run/php/php-fpm.sock # serving php applications
     file_server
 }
 ```
