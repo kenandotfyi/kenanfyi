@@ -50,7 +50,7 @@ body {
     line-height: 1.5;
     padding: 1rem;
     font-weight: normal;
-
+    font-size: 1rem;
 }
 
 a {
@@ -129,7 +129,6 @@ img {
 @media screen and (min-width: 770px) {
     body {
         font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-        font-size: 1rem;
         margin-bottom: 24px;
     }
 
@@ -151,7 +150,6 @@ img {
 
 @media screen and (max-width: 769px) {
     body {
-        font-size: 1rem !important;
         font-family: var(--sans-font);
         line-height: 1.6;
     }
