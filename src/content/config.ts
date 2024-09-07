@@ -15,15 +15,22 @@ const articlesCollection = defineCollection({
   }),
 });
 
-const bitsCollection = defineCollection({
+const notesCollection = defineCollection({
   type: "content",
   schema: z.object({
+    draft: z.boolean(),
+    title: z.string(),
     pubDate: z.coerce.date(),
-    tags: z.array(z.string()),
+    updated: z.coerce.date(),
+    status: z.string(),
+    description: z.string(),
+    backlinks: z.array(z.string()).optional(),
+    type: z.string(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
 export const collections = {
   articles: articlesCollection,
-  bits: bitsCollection,
+  notes: notesCollection,
 };

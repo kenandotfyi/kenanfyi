@@ -24,7 +24,7 @@ export default defineConfig({
     ],
     shikiConfig: {
       theme: "vitesse-light",
-      wrap: true,
+      wrap: false,
     },
   },
   site: "https://kenan.fyi",

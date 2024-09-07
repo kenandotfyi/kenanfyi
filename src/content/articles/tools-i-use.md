@@ -55,7 +55,8 @@ This is a little complicated since I also use some software for my work which ma
 
 - [Neovim](https://neovim.io): I have recently started using it again for creating a basic Rust development environment for learning purposes, which I mentioned [here](/articles/rust). LazyVim is my distribution of choice currently.
 
-- [iTerm2](https://iterm2.com/): I use iTerm mainly for my nvim instances.
+- ~~[iTerm2](https://iterm2.com/): I use iTerm mainly for my nvim instances.~~
+  - Using [Warp](https://warp.dev/) since August 2024.
 
 - [tmux](https://github.com/tmux/tmux/wiki): tmux is my terminal multiplexer and I use it extensively together with iTerm2 during my neovim coding sessions.
 
@@ -63,7 +64,8 @@ This is a little complicated since I also use some software for my work which ma
 
 - [Zotero](https://zotero.org): Academic reference manager. I use it together with Obsidian, mainly managing papers, application notes and technical documents in an academic sort of way. For bridging to Obsidian, I use the ZotLit plugin which is amazing. I will explain the Zotero-Obsidian combo later in the blog.
 
-- [Things](https://culturedcode.com/things/): Todo app. I used TickTick for years, but recently switched to Things.
+- ~~[Things](https://culturedcode.com/things/): Todo app. I used TickTick for years, but recently switched to Things.~~
+  - As of July 2024 I am using the default Reminder App in Apple ecosystem.
 
 - [Fantastical](https://flexibits.com/fantastical): Using the free version and happy about since such a long time.
 

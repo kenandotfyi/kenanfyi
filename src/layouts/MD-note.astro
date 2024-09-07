@@ -1,0 +1,38 @@
+---
+import Base from "./Base.astro";
+import Extra from "../components/Extra.astro";
+import { zeit } from "../../utils/zeit.ts";
+const { frontmatter, minutes } = Astro.props;
+const currentPath = Astro.url.pathname;
+import HoverPreviews from "../components/HoverPreviews.astro";
+---
+
+<Base pageTitle={frontmatter.title}>
+  <div class="post-title-note" id="post-title-note">
+    <p>
+      /{currentPath.toString().split("/")[1]}/
+    </p>
+    <h2>{frontmatter.title}</h2>
+    <p>
+      {zeit(frontmatter.pubDate)}
+      • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
+    </p>
+    {
+      zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+        " "
+      ) : (
+        <p>
+          <i>
+            updated:
+            {zeit(frontmatter.updated)}
+          </i>
+        </p>
+      )
+    }
+  </div>
+  <main id="main-note" class="main-note">
+    <slot />
+  </main>
+  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
+</Base>
+<!-- <HoverPreviews /> -->

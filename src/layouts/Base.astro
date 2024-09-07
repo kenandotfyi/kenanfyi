@@ -1,8 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import Toots from "../components/Toots.astro";
-import Logo from "../components/Logo.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
@@ -17,13 +15,10 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="posting occasionally" />
     <title>{pageTitle}</title>
-    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <Nav />
     <slot />
-    <!-- <Toots /> -->
-    <!-- <Logo /> -->
     <Footer />
   </body>
 </html>

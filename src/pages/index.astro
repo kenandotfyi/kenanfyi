@@ -2,53 +2,85 @@
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { datum, zeit } from "../../utils/zeit.ts";
+
+// GET ALL ARTICLES FROM articles COLLECTION
 const allArticles = await getCollection("articles", ({ data }) => {
   return data.draft !== true;
 });
 allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+
+
+// GET ALL NOTES FROM notes COLLECTION
+const allNotes = await getCollection("notes", ({ data }) => {
+  return data.draft !== true;
+});
+allNotes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 const pageTitle = "main";
 ---
 
 <Base pageTitle={pageTitle}>
-  <div class="index">
-    <div class="index-text">
-    <p>
-      This is my playground where I try new stuff out and keep learning about
-      web technologies plus posting some thoughts occasionally.
-    </p>
-    There are some metadata inside the posts, which gives the reader some ideas about
-    the articles. Like the status which shows if the article is completed or not.
-    Also the update date. I will implement a more friendly metadata display in the
-    future. Since I am building in public, I do my updates in the prod.
+    <div class="index">
+        <div class="index-text">
+            <p>
+            This is my playground where I try new stuff out and keep learning about
+            web technologies plus posting some thoughts occasionally.
+            </p>
+            There are some metadata inside the posts, which gives the reader some ideas about
+            the articles. Like the status which shows if the article is completed or not.
+            Also the update date. I will implement a more friendly metadata display in the
+            future. Since I am building in public, I do my updates in the prod.
 
-    <div style="text-align: center; margin-top: 24px">✶</div>
-    </div>
-    <div class="index-articles">
-    <p>
-      <i>Some recent posts:</i>
-    </p>
-    <ul class="articles">
-      {
-        allArticles.map((article) => (
-          <li class="article">
-            <span class="date">{datum(article.data.pubDate)}</span>
-            <span>・</span>
-            <span>
-              <a href={`/articles/${article.slug}/`} class="no-prev">
-                {article.data.title}
-              </a>
-            </span>
-            {datum(article.data.updated) === datum(article.data.pubDate) ? (
-              ""
-            ) : (
-              <span class="article-updated-text">
-                {"(updated: " + zeit(article.data.updated) + ")"}
-              </span>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-    </div>
+            <div style="text-align: center; margin-top: 24px; margin-bottom: 24px">✶</div>
+        </div>
+        <div class="index-articles">
+        <div class="notes-header">Recent articles</div>
+                <ul class="index-list">
+                {
+                    allArticles.map((article) => (
+                    <li class="index-list-element">
+                        <span class="date">{datum(article.data.pubDate)}</span>
+                        <span>・</span>
+                        <span>
+                        <a href={`/articles/${article.slug}/`} class="no-prev">
+                            {article.data.title}
+                        </a>
+                        </span>
+                            {datum(article.data.updated) === datum(article.data.pubDate) ? (
+                            ""
+                            ) : (
+                            <span class="element-updated-text">
+                              {"(updated: " + zeit(article.data.updated) + ")"}
+                        </span>
+                        )}
+                    </li>
+                    ))
+                }
+                </ul>
+        </div>
+        <div class="index-notes">
+            <div class="notes-header">Latest notes</div>
+            <ul class="index-list">
+                {
+                    allNotes.map((note) => (
+                    <li class="index-list-element">
+                        <span class="date">{datum(note.data.pubDate)}</span>
+                        <span>・</span>
+                        <span>
+                        <a href={`/notes/${note.slug}/`} class="no-prev">
+                            {note.data.title}
+                        </a>
+                        </span>
+                            {datum(note.data.updated) === datum(note.data.pubDate) ? (
+                            ""
+                            ) : (
+                            <span class="element-updated-text">
+                              {"(updated: " + zeit(note.data.updated) + ")"}
+                        </span>
+                        )}
+                    </li>
+                    ))
+                }
+                </ul>
+        </div>
     </div>
 </Base>

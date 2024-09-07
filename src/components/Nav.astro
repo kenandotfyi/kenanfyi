@@ -18,13 +18,12 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
             <span>kenan.fyi</span>
             <span style="color: var(--red); padding-right:0.2rem">●</span>
         </a>
-        <li>
-        <a href="/now" class={currentPath === "now" ? "active-path no-prev" : ""}>now</a></li>
-        <li><a href="/about" class={currentPath === "about" ? "active-path no-prev" : ""}>about</a></li>
+        <li><a href="/notes" class={currentPath === "notes" ? "active-path no-prev" : ""}>notes</a></li>
+        <li><a href="/articles" class={currentPath === "articles" ? "active-path no-prev" : ""}>articles</a></li>
+        <li><a href="/now" class={currentPath === "now" ? "active-path no-prev" : ""}>now</a></li>
         <li><a href="/blogroll" class={currentPath === "blogroll" ? "active-path no-prev" : ""}>blogroll</a></li>
-        <li><a href="/log" class={currentPath === "log" ? "active-path no-prev" : ""}>log</a></li>
-        <li><a href="/colophon" class={currentPath === "colophon" ? "active-path no-prev" : ""}>colophon</a></li>
-        <li><a href="/rss.xml" class="no-prev">rss</a></li>
+        <li><a href="/about" class={currentPath === "about" ? "active-path no-prev" : ""}>about</a></li>
+        <li><a href="/rss.xml" class="no-prev" style="color: grey">rss</a></li>
         </ul>
     </nav>
 
@@ -35,11 +34,11 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
     </div>
 <div class="menu" id="menu">
     <ul>
+        <li><a href="/notes">notes</a></li>
+        <li><a href="/articles">articles</a></li>
         <li><a href="/now">now</a></li>
-        <li><a href="/about">about</a></li>
         <li><a href="/blogroll">blogroll</a></li>
-        <li><a href="/log">log</a></li>
-        <li><a href="/colophon">colophon</a></li>
+        <li><a href="/about">about</a></li>
         <li><a href="/rss.xml">rss</a></li>
     </ul>
 </div>

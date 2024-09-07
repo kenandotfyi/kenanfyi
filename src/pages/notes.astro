@@ -1,0 +1,26 @@
+
+---
+import { getCollection } from "astro:content";
+import Note from "../components/Note.astro";
+import Base from "../layouts/Base.astro";
+
+// GET ALL NOTES FROM notes COLLECTION
+const allNotes = await getCollection("notes");
+
+
+const pageTitle = "NOTES";
+---
+  <Base pageTitle={pageTitle}>
+
+  <div class="post-title"><h1>{pageTitle}</h1></div>
+    {
+      allNotes.map(async (n) => {
+        const { Content } = await n.render();
+        return (
+        <Note frontmatter={n}>
+            <Content />
+        </Note>
+        );
+      })
+    }
+  </Base>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { datum, zeit } from "../../utils/zeit.ts";
+
+// GET ALL ARTICLES FROM articles COLLECTION
+const allArticles = await getCollection("articles", ({ data }) => {
+  return data.draft !== true;
+});
+allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+const pageTitle = "ARTICLES";
+---
+
+<Base pageTitle={pageTitle}>
+  <div class="post-title">
+    <h1>{pageTitle}</h1>
+  </div>
+
+  <div class="index-articles">
+          <ul class="index-list">
+          {
+              allArticles.map((article) => (
+              <li class="index-list-element">
+                  <span class="date">{datum(article.data.pubDate)}</span>
+                  <span>・</span>
+                  <span>
+                  <a href={`/articles/${article.slug}/`} class="no-prev">
+                      {article.data.title}
+                  </a>
+                  </span>
+                      {datum(article.data.updated) === datum(article.data.pubDate) ? (
+                      ""
+                      ) : (
+                      <span class="element-updated-text">
+                        {"(updated: " + zeit(article.data.updated) + ")"}
+                  </span>
+                  )}
+              </li>
+              ))
+          }
+          </ul>
+  </div>
+
+  </main>
+</Base>
