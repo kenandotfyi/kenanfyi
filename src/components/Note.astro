@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
     <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
     </span>
     <span>{zeit(frontmatter.data.pubDate)} </span>
-    <span id={frontmatter.slug}></span>
+    <span id={frontmatter.slug} style="display: block;"></span>
   </div>
   <div class="note-content" id={frontmatter.slug}>
       <slot />
@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
       const note = document.querySelector(`div#${frontmatter.slug}`);
       //add click events to the toggle element
       toggle.addEventListener("click", () => {
-        if (note.style.display == "block"){
+        if (note.style.display === "block" || note.style.display === ""){
           note.style.display = "none";
         }
         else {
