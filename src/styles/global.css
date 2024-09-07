@@ -37,12 +37,9 @@
       --beige2: #d9c3b0;
   }
 
-  /* * {
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased !important;
-  } */
+  * {
+      -webkit-text-size-adjust: 100%;
+  }
 
   strong,
   b {
