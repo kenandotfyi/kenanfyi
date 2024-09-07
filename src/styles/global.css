@@ -152,6 +152,7 @@ img {
     body {
         font-family: var(--sans-font);
         line-height: 1.6;
+        font-size: 1.25rem;
     }
 
     h1,
