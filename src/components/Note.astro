@@ -4,14 +4,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <div>
-  <div style="border:1px solid; padding-left:20px;">
+  <div class="note-header">
     <span style="font-weight: bold; text-transform: uppercase;">
     <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
     </span>
-    <span id={frontmatter.slug} style="border-left:1px solid; float:right; margin-left:20px; padding-left:20px; padding-right: 20px;"></span>
-    <span style="float: right;">{zeit(frontmatter.data.pubDate)} </span>
+    <span>{zeit(frontmatter.data.pubDate)} </span>
+    <span id={frontmatter.slug}></span>
   </div>
-  <div class="main-note" id={frontmatter.slug} style="display:block; border:1px dashed; border-top:0px solid; padding:20px;">
+  <div class="note-content" id={frontmatter.slug}>
       <slot />
   </div>
   <p></p>
@@ -22,15 +22,14 @@ const { frontmatter } = Astro.props;
     //first select all toggle elements on the page based on their id, matching with the unique slug
     const toggles = document.querySelectorAll(`span[id^=${frontmatter.slug}]`);
     toggles.forEach((toggle) => {
-      toggle.innerHTML = "✖︎";
+      toggle.innerHTML = "×";
       toggle.style.cursor = "pointer";
 
       //select a div with the same id
       const note = document.querySelector(`div#${frontmatter.slug}`);
-
       //add click events to the toggle element
       toggle.addEventListener("click", () => {
-        if (note.style.display === "block"){
+        if (note.style.display == "block"){
           note.style.display = "none";
         }
         else {

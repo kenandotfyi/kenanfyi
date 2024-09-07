@@ -44,8 +44,6 @@ body {
     max-width: 900px;
     line-height: 1.5;
     padding: 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-weight: normal;
 
 }
@@ -92,7 +90,6 @@ a:hover {
         background-color: var(--bg);
         padding: 16px;
 
-
         & p {
             margin: 0px;
         }
@@ -105,7 +102,6 @@ a:hover {
         padding: 10px;
         background-color: var(--bg);
     }
-
 }
 
 blockquote {
@@ -127,11 +123,13 @@ img {
 
 @media screen and (min-width: 770px) {
     body {
+        font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
         font-size: 1rem;
         /* border: 1px solid #dddddd; */
         margin-bottom: 24px;
-    }
 
+    }
 
     h1,
     h2,
@@ -151,7 +149,11 @@ img {
 
 @media screen and (max-width: 769px) {
     body {
-        font-size: 0.8rem;
+        font-size: 1rem;
+
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        text-rendering: optimizeLegibility;
     }
 
     h1,
@@ -171,6 +173,9 @@ img {
         transform: unset;
     }
 
+    .astro-code {
+        font-size: 0.8rem;
+    }
 
     .navbar {
         display: none !important;
@@ -304,7 +309,6 @@ img {
 
 .main-note {
     background: var(--bg);
-    text-align: justify;
 
     & :first-child {
         margin-top: 0px;
@@ -340,6 +344,40 @@ img {
     }
 }
 
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    padding-left: 20px;
+
+    & :first-child {
+        flex-grow: 2;
+    }
+
+    & span:last-child {
+        display: block;
+        border-left: 1px solid;
+        margin-left: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.note-content {
+    display: block;
+    border: 1px dashed;
+    border-top: 0px solid;
+    padding: 20px;
+
+    & :first-child {
+        margin-top: 0px;
+    }
+}
+
+
+
+/* INDEX PAGE */
 .index-list {
     padding: 0;
     list-style: none;
@@ -573,6 +611,7 @@ hr {
 
         & li {
             padding-right: 10px;
+            font-size: 0.75rem;
         }
 
     }
