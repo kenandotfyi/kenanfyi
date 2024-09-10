@@ -20,7 +20,7 @@ Configuration has two parts, one being the standard **Caddyfile** which I really
 
 Serving a PHP application through Caddy is straightforward, but I wanted to configure my installation with the so-called ShortURLs. This requires some setup in the Caddyfile:
 
-<Code lang="apache" file="Caddyfile">
+<Code file="Caddyfile">
 ```nginx
 your.domain{
     @title {
@@ -42,7 +42,7 @@ This configuration redirects the ugly MediaWiki URLs to a more structured **/wik
 
 After that you need to edit the LocalSettings.php too:
 
-<Code lang="php" file="LocalSettings.php">
+<Code file="LocalSettings.php">
 ```php
 $wgScriptPath = "";
 $wgArticlePath = "/wiki/$1"; #for redirecting to /wiki/
@@ -52,7 +52,7 @@ $wgUsePathInfo = true;
 
 Reload the Caddy config:
 
-<Code lang="php" file="terminal">
+<Code file="terminal">
 ```bash
 caddy reload --config /etc/caddy/Caddyfile
 ```

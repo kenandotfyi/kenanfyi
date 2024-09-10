@@ -18,6 +18,10 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover"
+  },
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [
@@ -28,6 +32,7 @@ export default defineConfig({
             className: "external-link",
           },
           target: "_blank",
+          rel: "noopener"
         },
       ],
       [rehypeKatex, {}],
@@ -47,6 +52,8 @@ export default defineConfig({
     },
   },
   site: "https://kenan.fyi",
-  integrations: [mdx()],
+  integrations: [mdx({
+    extendMarkdownConfig: true,
+  })],
 });
 

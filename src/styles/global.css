@@ -1,16 +1,3 @@
-  @font-face {
-      font-family: 'JB';
-      src: url('/fonts/JetBrainsMono-Regular.woff2');
-      font-display: block;
-  }
-
-  @font-face {
-      font-family: 'JBBold';
-      src: url('/fonts/JetBrainsMono-Bold.woff2');
-      font-weight: bold;
-      font-display: block;
-  }
-
   ::-moz-selection {
       /* Code for Firefox */
       color: #fefefe;
@@ -20,25 +7,6 @@
   ::selection {
       color: #fefefe;
       background: var(--teal);
-  }
-
-  :root {
-      --bg: #fff;
-      --body-bg: #F6F6F6;
-      --text: #353535;
-      --active-link: #fefefe;
-      --metadata: #6f6e69;
-      --links: #100f0f;
-      --black: #000;
-      --red: #af2e1b;
-      --orange: #E66E4C;
-      --teal: #3c4b59;
-      --beige1: #bfa07a;
-      --beige2: #d9c3b0;
-  }
-
-  * {
-      -webkit-text-size-adjust: 100%;
   }
 
   strong,
@@ -51,6 +19,7 @@
   h3 {
       font-size: 1rem;
       text-transform: uppercase;
+      text-align: left;
   }
 
   html {
@@ -222,6 +191,7 @@
 
       & li {
           border-right: 1px solid;
+
       }
   }
 

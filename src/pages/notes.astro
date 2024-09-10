@@ -6,9 +6,10 @@ import Base from "../layouts/Base.astro";
 
 // GET ALL NOTES FROM notes COLLECTION
 const allNotes = await getCollection("notes");
+allNotes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 
 
-const pageTitle = "NOTES";
+const pageTitle = "notes";
 ---
   <Base pageTitle={pageTitle}>
 

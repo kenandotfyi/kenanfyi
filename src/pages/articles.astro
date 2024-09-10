@@ -8,7 +8,7 @@ const allArticles = await getCollection("articles", ({ data }) => {
   return data.draft !== true;
 });
 allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
-const pageTitle = "ARTICLES";
+const pageTitle = "articles";
 ---
 
 <Base pageTitle={pageTitle}>

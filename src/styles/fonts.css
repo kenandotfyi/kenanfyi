@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'JB';
+    src: url('/fonts/JetBrainsMono-Regular.woff2');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'JBBold';
+    src: url('/fonts/JetBrainsMono-Bold.woff2');
+    font-weight: bold;
+    font-display: block;
+}

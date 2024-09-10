@@ -10,7 +10,13 @@ export async function GET(context: any) {
   let articles = await getCollection("articles", ({ data }) => {
     return data.draft !== true;
   });
-  articles = articles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+
+  let notes = await getCollection("notes", ({ data }) => {
+    return data.draft !== true;
+  });
+
+  let rssContent = [...articles, ...notes];
+  rssContent = rssContent.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 
   return rss({
     title: "kenan.fyi",
@@ -22,12 +28,12 @@ export async function GET(context: any) {
       dc: "http://purl.org/dc/elements/1.1/",
       content: "http://purl.org/rss/1.0/modules/content/",
     },
-    items: articles.map((article) => ({
-      title: article.data.title,
-      description: article.data.description,
-      pubDate: new Date(article.data.pubDate.toISOString()),
-      link: `${context.site}articles/${article.slug}`,
-      content: sanitizeHtml(parser.render(article.body)),
+    items: rssContent.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      pubDate: new Date(e.data.pubDate.toISOString()),
+      link: `${context.site}articles/${e.slug}`,
+      content: sanitizeHtml(parser.render(e.body)),
     })),
   });
 }
