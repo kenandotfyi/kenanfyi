@@ -31,7 +31,7 @@
       font-family: JB;
       color: var(--black);
       background-color: var(--bg);
-      margin: 0 auto;
+      /* margin: 0 auto; */
       max-width: 800px;
       line-height: 1.5;
       padding: 1rem;
@@ -107,6 +107,7 @@
 
 
   img {
+      max-width: 65ch;
       height: auto;
       margin-left: 50%;
       transform: translateX(-50%);
@@ -171,6 +172,7 @@
       top: 20px;
       position: sticky;
       box-shadow: 0px -20px 0px var(--bg);
+      z-index: 5;
 
   }
 
