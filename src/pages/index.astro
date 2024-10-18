@@ -15,7 +15,7 @@ const allNotes = await getCollection("notes", ({ data }) => {
   return data.draft !== true;
 });
 allNotes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
-const pageTitle = "main";
+const pageTitle = "kenan.fyi | posting occasionally";
 ---
 
 <Base pageTitle={pageTitle}>

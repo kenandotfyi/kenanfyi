@@ -1,0 +1,29 @@
+---
+import Base from "./Base-gallery.astro";
+import Extra from "../components/Extra.astro";
+import { zeit, datum } from "../../utils/zeit.ts";
+const { frontmatter, minutes } = Astro.props;
+const currentPath = Astro.url.pathname;
+import HoverPreviews from "../components/HoverPreviews.astro";
+---
+
+<Base pageTitle={frontmatter.title}>
+  <div class="photo">
+    <div>
+        <slot />
+    </div>
+    <div class="photo-meta">
+        <h2>{frontmatter.title.replace(/-/g, ' ')}</h2>
+        <p>
+        {datum(frontmatter.shotDate)}
+        </p>
+        <p>
+        {frontmatter.camera}
+        </p>
+        <p>
+            Original:<a href={`https://img.kenan.fyi/photos/originals/${frontmatter.title}.jpg`}>JPG</a>
+        </p>
+    </div>
+  </div>
+</Base>
+<!-- <HoverPreviews /> -->

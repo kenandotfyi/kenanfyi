@@ -18,6 +18,9 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    domains: ["img.kenan.fyi"],
+  },
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "hover"

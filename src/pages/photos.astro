@@ -1,0 +1,34 @@
+---
+import "../styles/fonts.css";
+import "../styles/colors.css";
+import "../styles/global.css";
+import { getCollection } from "astro:content";
+
+import BaseGallery from '../layouts/Base-gallery.astro';
+import Photo from "../components/Photo.astro";
+
+const pageTitle = "photo archive - kenan.fyi";
+
+
+const allPhotos = await getCollection("photos");
+allPhotos.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+
+
+---
+
+<BaseGallery pageTitle={pageTitle}>
+
+<div class="photos">
+    {
+      allPhotos.map(async (p) => {
+      const { Content } = await p.render();
+      return (
+      <Photo frontmatter={p}>
+        <Content />
+      </Photo>
+      )
+      })
+    }
+</div>
+
+</BaseGallery>

@@ -30,7 +30,18 @@ const notesCollection = defineCollection({
   }),
 });
 
+const photosCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    draft: z.boolean(),
+    title: z.string(),
+    shotDate: z.coerce.date().optional(),
+    camera: z.string().optional(),
+  })
+})
+
 export const collections = {
   articles: articlesCollection,
   notes: notesCollection,
+  photos: photosCollection
 };
