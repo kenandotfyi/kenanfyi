@@ -136,23 +136,36 @@
       padding: 10px;
       display: grid;
       align-items: center;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      a {
+          background-color: unset;
+          text-decoration: unset;
+      }
   }
 
 
   .photo-einzel {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
 
       & img {
           width: 200px;
           height: auto;
+          padding: 10px;
+          border: 1px solid transparent;
       }
 
       & p {
           margin: 0%;
       }
+
+
+
+  }
+
+  .photo-einzel img:hover {
+      border: 1px solid var(--teal);
   }
 
   .photo-meta {
