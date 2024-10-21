@@ -716,7 +716,7 @@
       max-width: 100%;
       overflow-x: auto;
       word-wrap: break-word;
-      white-space: pre-wrap;
+      /* white-space: pre-wrap; */
       font-family: JB;
   }
 
