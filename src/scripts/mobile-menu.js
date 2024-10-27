@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('menu');
 
   floatingButton.innerHTML = "☰";
-  floatingButton.style.fontSize = '1rem';
 
   floatingButton.addEventListener('click', () => {
     // Toggle the display of the menu
