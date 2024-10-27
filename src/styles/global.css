@@ -197,7 +197,7 @@
 
 
       .floating-button {
-          display: none !important;
+          display: none;
       }
 
       .mobile-header {
@@ -670,30 +670,30 @@
 
   /* Mobile menu styling */
   .menu {
-      height: 40px;
       position: fixed;
-      bottom: 20px;
-      right: 60px;
+      bottom: 61px;
+      right: 20px;
       background-color: white;
       /* overflow: hidden; */
       display: none;
       /* Initially hidden */
-      border-left: 1px solid;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
+      border: 1px solid;
       text-transform: uppercase;
+      box-shadow: -2px -2px 0px var(--metadata);
 
       & ul {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          gap: 6px;
+          flex-direction: column;
           padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
           margin: 0;
           list-style: none;
 
           & li {
               padding-right: 10px;
-              font-size: 12px;
+              font-size: 14px;
           }
 
       }

@@ -23,56 +23,63 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
                     href="/articles"
                     class={currentPath === "articles"
                         ? "active-path no-prev"
-                        : ""}>articles</a>
+                        : ""}>articles</a
+                >
             </li>
             <li>
                 <a
                     href="/notes"
                     class={currentPath === "notes" ? "active-path no-prev" : ""}
-                    >notes</a>
+                    >notes</a
+                >
             </li>
             <li>
                 <a
                     href="/photos"
                     class={currentPath === "photos"
                         ? "active-path no-prev"
-                        : ""}>photos</a>
+                        : ""}>photos</a
+                >
             </li>
             <li>
                 <a
                     href="/now"
                     class={currentPath === "now" ? "active-path no-prev" : ""}
-                    >now</a>
+                    >now</a
+                >
             </li>
             <li>
                 <a
                     href="/blogroll"
                     class={currentPath === "blogroll"
                         ? "active-path no-prev"
-                        : ""}>blogroll</a>
+                        : ""}>blogroll</a
+                >
             </li>
             <li>
                 <a
                     href="/about"
                     class={currentPath === "about" ? "active-path no-prev" : ""}
-                    >about</a>
+                    >about</a
+                >
             </li>
         </li>
     </ul>
-
-    <!-- Mobile  -->
-    <div class="floating-button" id="floatingButton">
-        <span></span>
-    </div>
-    <div class="menu" id="menu">
-        <ul>
-            <li><a href="/articles">articles</a></li>
-            <li><a href="/notes">notes</a></li>
-            <li><a href="/photos">photos</a></li>
-            <li><a href="/now">now</a></li>
-            <li><a href="/blogroll">blogroll</a></li>
-            <li><a href="/about">about</a></li>
-        </ul>
-    </div>
-    <script src="../scripts/mobile-menu.js"></script>
 </nav>
+
+<!-- Mobile  -->
+<div class="floating-button" id="floatingButton">
+    <span></span>
+</div>
+<div class="menu" id="menu">
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/articles">articles</a></li>
+        <li><a href="/notes">notes</a></li>
+        <li><a href="/photos">photos</a></li>
+        <li><a href="/now">now</a></li>
+        <li><a href="/blogroll">blogroll</a></li>
+        <li><a href="/about">about</a></li>
+    </ul>
+</div>
+<script src="../scripts/mobile-menu.js"></script>
