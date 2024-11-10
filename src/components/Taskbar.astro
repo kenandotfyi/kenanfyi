@@ -46,30 +46,24 @@ if (currentPath == "notes") {
         <span style="color: var(--red); padding-left:0.4rem">●</span>
     </div>
     <div
-        class={currentPath == undefined || null || ""
-            ? "hiddenItem"
-            : "taskbar-item"}
+        class={currentPath == "" ? "hiddenItem" : "taskbar-item"}
         id="menubarSecond"
     >
         ≡ {currentPath}
     </div>
-    <div
-        class={currentPathPage == undefined || null || ""
-            ? "hiddenItem"
-            : "taskbar-item"}
-    >
+    <div class={currentPathPage == "" ? "hiddenItem" : "taskbar-item"}>
         {currentPathPage}
     </div>
 
     <div class="menubarExt" id="menubarExt">
         <ul>
             <li><a href="/">home</a></li>
-            <li><a href="/articles">articles</a></li>
-            <li><a href="/notes">notes</a></li>
-            <li><a href="/photos">photos</a></li>
-            <li><a href="/now">now</a></li>
-            <li><a href="/blogroll">blogroll</a></li>
-            <li><a href="/about">about</a></li>
+            <li><a href="/articles/">articles</a></li>
+            <li><a href="/notes/">notes</a></li>
+            <li><a href="/photos/">photos</a></li>
+            <li><a href="/now/">now</a></li>
+            <li><a href="/blogroll/">blogroll</a></li>
+            <li><a href="/about/">about</a></li>
         </ul>
     </div>
 

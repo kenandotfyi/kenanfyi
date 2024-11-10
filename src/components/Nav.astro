@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
             </a>
             <li>
                 <a
-                    href="/articles"
+                    href="/articles/"
                     class={currentPath === "articles"
                         ? "active-path no-prev"
                         : ""}>articles</a
@@ -28,14 +28,14 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
             </li>
             <li>
                 <a
-                    href="/notes"
+                    href="/notes/"
                     class={currentPath === "notes" ? "active-path no-prev" : ""}
                     >notes</a
                 >
             </li>
             <li>
                 <a
-                    href="/photos"
+                    href="/photos/"
                     class={currentPath === "photos"
                         ? "active-path no-prev"
                         : ""}>photos</a
@@ -43,14 +43,14 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
             </li>
             <li>
                 <a
-                    href="/now"
+                    href="/now/"
                     class={currentPath === "now" ? "active-path no-prev" : ""}
                     >now</a
                 >
             </li>
             <li>
                 <a
-                    href="/blogroll"
+                    href="/blogroll/"
                     class={currentPath === "blogroll"
                         ? "active-path no-prev"
                         : ""}>blogroll</a
@@ -58,7 +58,7 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
             </li>
             <li>
                 <a
-                    href="/about"
+                    href="/about/"
                     class={currentPath === "about" ? "active-path no-prev" : ""}
                     >about</a
                 >
