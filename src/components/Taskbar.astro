@@ -1,8 +1,8 @@
 ---
 // @ts-nocheck
 import { getCollection } from "astro:content";
-const currentPath = Astro.url.pathname.toString().split("/")[1];
-const currentPathPage = Astro.url.pathname.toString().split("/")[2];
+let currentPath = Astro.url.pathname.toString().split("/")[1];
+let currentPathPage = Astro.url.pathname.toString().split("/")[2];
 let allLinks;
 
 function kebabToSentenceCase(str: string) {
@@ -46,7 +46,9 @@ if (currentPath == "notes") {
         <span style="color: var(--red); padding-left:0.4rem">●</span>
     </div>
     <div
-        class={currentPath == "" ? "hiddenItem" : "taskbar-item"}
+        class={currentPath == undefined || null || ""
+            ? "hiddenItem"
+            : "taskbar-item"}
         id="menubarSecond"
     >
         ≡ {currentPath}
