@@ -2,7 +2,7 @@
 // @ts-nocheck
 import { getCollection } from "astro:content";
 const currentPath = Astro.url.pathname.toString().split("/")[1];
-let currentPathPage = Astro.url.pathname.toString().split("/")[2];
+const currentPathPage = Astro.url.pathname.toString().split("/")[2];
 let allLinks;
 
 function kebabToSentenceCase(str: string) {
