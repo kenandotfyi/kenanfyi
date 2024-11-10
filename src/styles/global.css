@@ -26,6 +26,7 @@
       background-color: var(--bg);
       overflow-y: scroll;
       overscroll-behavior-y: none;
+      scroll-behavior: smooth;
   }
 
   body {
@@ -33,6 +34,7 @@
       color: var(--black);
       background-color: var(--bg);
       margin: 0 auto;
+      /* height: 100vh; */
       max-width: 800px;
       line-height: 1.5;
       padding: 1rem;
@@ -116,7 +118,7 @@
       margin-top: 20px;
 
       & img {
-          height: calc(100vh - 20px);
+          height: calc(80vh - 20px);
           width: auto;
       }
 
@@ -258,8 +260,8 @@
       border-right: 1px solid;
       border-left: 1px solid;
       border-bottom: 1px solid;
-      top: 20px;
-      position: sticky;
+      margin-top: 4px;
+      /* position: sticky; */
       box-shadow: 0px -20px 0px var(--bg);
       z-index: 5;
 
@@ -505,6 +507,7 @@
   .backlink-area {
       border: 1px solid;
       margin-top: 20px;
+      margin-bottom: 40px;
       padding-left: 20px;
       background: #fff;
 
@@ -516,15 +519,210 @@
 
   .footer {
       display: flex;
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      height: 24px;
+      width: 100%;
       align-items: center;
       justify-content: center;
       gap: 4px;
       color: var(--metadata);
-      margin-top: 20px;
+      background-color: var(--bg);
       font-size: 0.8rem;
+      border-top: 1px solid var(--taskbar-border);
 
       & a {
           color: var(--metadata);
+      }
+
+  }
+
+  .taskbar {
+      display: flex;
+      position: fixed;
+      align-items: center;
+      font-size: 14px;
+      bottom: 24px;
+      left: 0;
+      /* padding-left: 20px; */
+      width: 100%;
+      border-top: 1px solid var(--taskbar-border);
+      border-bottom: 1px solid var(--taskbar-border);
+      height: 24px;
+      background-color: var(--taskbar-border);
+      text-transform: uppercase;
+      /* box-shadow: 0px 24px 0px var(--body-bg); */
+
+      /* for enabling after scroll*/
+      opacity: 0;
+
+      &.visible {
+          opacity: 1;
+      }
+
+      & a {
+          text-decoration: none;
+      }
+  }
+
+  .taskbar-item {
+      font-family: JBBold;
+      border: 1px solid var(--taskbar-border);
+      height: 24px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-right: 11.5px;
+
+      &:nth-child(1) {
+          color: white;
+          background-color: var(--orange);
+          cursor: pointer;
+
+          &::after {
+              content: "";
+              position: absolute;
+              border-left: 12px solid var(--orange);
+              border-top: 12px solid transparent;
+              border-bottom: 12px solid transparent;
+              border-right: 0;
+              right: -12px;
+          }
+
+          @media screen and (max-width: 769px) {
+              white-space: nowrap;
+          }
+      }
+
+      &:nth-child(2) {
+          cursor: pointer;
+          background-color: var(--taskbar-fg);
+
+          &::before {
+              content: "";
+              position: absolute;
+              left: -12px;
+              border-left: 12px solid transparent;
+              border-top: 12px solid var(--taskbar-fg);
+              border-bottom: 12px solid var(--taskbar-fg);
+              border-right: 0;
+          }
+
+          &::after {
+              content: "";
+              position: absolute;
+              border-left: 12px solid var(--taskbar-fg);
+              border-top: 12px solid transparent;
+              border-bottom: 12px solid transparent;
+              border-right: 0;
+              right: -12px;
+          }
+
+          @media screen and (max-width: 769px) {
+              white-space: nowrap;
+          }
+      }
+
+      &:nth-child(3) {
+          background-color: var(--taskbar-fg);
+
+          &::before {
+              content: "";
+              position: absolute;
+              left: -12px;
+              border-left: 12px solid transparent;
+              border-top: 12px solid var(--taskbar-fg);
+              border-bottom: 12px solid var(--taskbar-fg);
+              border-right: 0;
+          }
+
+          &::after {
+              content: "";
+              position: absolute;
+              border-left: 12px solid var(--taskbar-fg);
+              border-top: 12px solid transparent;
+              border-bottom: 12px solid transparent;
+              border-right: 0;
+              right: -12px;
+          }
+
+          @media screen and (max-width: 769px) {
+              white-space: nowrap;
+          }
+      }
+  }
+
+  .hiddenItem {
+      display: none;
+  }
+
+  .menubarExt {
+      position: fixed;
+      bottom: 54px;
+      left: 4px;
+      width: 120px;
+      color: black;
+      background-color: var(--taskbar-fg);
+      /* overflow: hidden; */
+      display: none;
+      /* Initially hidden */
+      text-transform: uppercase;
+      border: 1px solid var(--taskbar-border);
+      border-left: 1px solid var(--taskbar-border);
+      border-right: 1px solid var(--taskbar-border);
+
+      & ul {
+          display: flex;
+          gap: 2px;
+          flex-direction: column;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin: 0;
+          list-style: none;
+
+          & li {
+              padding-right: 10px;
+              font-size: 14px;
+              color: black;
+          }
+      }
+  }
+
+  .menubarExtExt {
+      position: fixed;
+      bottom: 54px;
+      left: 60px;
+      width: 300px;
+      color: black;
+      background-color: var(--taskbar-fg);
+      /* overflow: hidden; */
+      display: none;
+      /* Initially hidden */
+      text-transform: uppercase;
+      border: 1px solid var(--taskbar-border);
+      border-left: 1px solid var(--taskbar-border);
+      border-right: 1px solid var(--taskbar-border);
+
+      & ul {
+          display: flex;
+          gap: 2px;
+          flex-direction: column;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin: 0;
+          list-style: none;
+
+          & li {
+              padding-right: 10px;
+              font-size: 14px;
+              color: black;
+          }
       }
   }
 
@@ -679,7 +877,7 @@
       /* Initially hidden */
       border: 1px solid;
       text-transform: uppercase;
-      box-shadow: -2px -2px 0px var(--metadata);
+      box-shadow: -2px -2px 0px var(--taskbar-bg);
 
       & ul {
           display: flex;
@@ -698,6 +896,8 @@
 
       }
   }
+
+
 
 
   /* SHIKI TRANSFORMERS */

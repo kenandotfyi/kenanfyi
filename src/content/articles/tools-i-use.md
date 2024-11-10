@@ -3,7 +3,7 @@ draft: false
 title: "Tools I use"
 description: "Tools, software and stuff I use."
 pubDate: 2024-02-19, 19:35
-updated: 2024-06-05, 22:42
+updated: 2024-11-10, 18:04
 status: "wip"
 type: article
 tags: ["no-topic"]
@@ -56,9 +56,11 @@ This is a little complicated since I also use some software for my work which ma
 - [Neovim](https://neovim.io): I have recently started using it again for creating a basic Rust development environment for learning purposes, which I mentioned [here](/articles/rust). LazyVim is my distribution of choice currently.
 
 - ~~[iTerm2](https://iterm2.com/): I use iTerm mainly for my nvim instances.~~
-  - Using [Warp](https://warp.dev/) since August 2024.
+  - ~~Using [Warp](https://warp.dev/) since August 2024.~~
+  - Using [Wezterm](https://wezfurlong.org/wezterm/) since Nov 2024, because Warp kept asking me to login constantly. Why the heck I would need an account for a terminal emulator?!
 
-- [tmux](https://github.com/tmux/tmux/wiki): tmux is my terminal multiplexer and I use it extensively together with iTerm2 during my neovim coding sessions.
+- ~~[tmux](https://github.com/tmux/tmux/wiki): tmux is my terminal multiplexer and I use it extensively together with iTerm2 during my neovim coding sessions.~~
+  - stopped using tmux. I guess I don't need this level of complexity.
 
 # Organisational
 
@@ -69,5 +71,6 @@ This is a little complicated since I also use some software for my work which ma
 
 - [Fantastical](https://flexibits.com/fantastical): Using the free version and happy about since such a long time.
 
-- [Reeder](https://www.reederapp.com/): Straightforward and simple RSS Reader
+- ~~[Reeder](https://www.reederapp.com/): Straightforward and simple RSS Reader~~
+  - switched to [NetNewsWire](https://netnewswire.com/) on desktop and mobile. Reeder was fine though.
 

@@ -8,31 +8,31 @@ import HoverPreviews from "../components/HoverPreviews.astro";
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <div class="post-title" id="post-title">
-    <p>
-      /{currentPath.toString().split("/")[1]}/
-    </p>
-    <h1>{frontmatter.title}</h1>
-    <p>
-      {zeit(frontmatter.pubDate)}
-      • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
-    </p>
-    {
-      zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
-        " "
-      ) : (
+    <div class="post-title" id="post-title">
         <p>
-          <i>
-            updated:
-            {zeit(frontmatter.updated)}
-          </i>
+            /{currentPath.toString().split("/")[1]}/
         </p>
-      )
-    }
-  </div>
-  <main id="main" class="main">
-    <slot />
-  </main>
-  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
+        <h1>{frontmatter.title}</h1>
+        <p>
+            {zeit(frontmatter.pubDate)}
+            • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
+        </p>
+        {
+            zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+                " "
+            ) : (
+                <p>
+                    <i>
+                        updated:
+                        {zeit(frontmatter.updated)}
+                    </i>
+                </p>
+            )
+        }
+    </div>
+    <main id="main" class="main">
+        <slot />
+    </main>
+    <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
 </Base>
 <!-- <HoverPreviews /> -->
