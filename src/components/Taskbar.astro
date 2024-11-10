@@ -51,7 +51,11 @@ if (currentPath == "notes") {
     >
         ≡ {currentPath}
     </div>
-    <div class={currentPathPage == undefined ? "hiddenItem" : "taskbar-item"}>
+    <div
+        class={currentPathPage == undefined || null || ""
+            ? "hiddenItem"
+            : "taskbar-item"}
+    >
         {currentPathPage}
     </div>
 
