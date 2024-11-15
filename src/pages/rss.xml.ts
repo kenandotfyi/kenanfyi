@@ -67,7 +67,7 @@ export async function GET(context: any) {
   for (const article of articles) {
     const { Content } = await article.render();
     const content = await container.renderToString(Content);
-    const link = new URL(`/article/${article.slug}`, context.url.origin).toString();
+    const link = new URL(`/articles/${article.slug}`, context.url.origin).toString();
     items.push({ ...article.data, link, content });
   }
 
