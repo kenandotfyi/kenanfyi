@@ -74,7 +74,7 @@ export async function GET(context: any) {
   for (const note of notes) {
     const { Content } = await note.render();
     const content = await container.renderToString(Content);
-    const link = new URL(`/note/${note.slug}`, context.url.origin).toString();
+    const link = new URL(`/notes/${note.slug}`, context.url.origin).toString();
     items.push({ ...note.data, link, content });
   }
 
