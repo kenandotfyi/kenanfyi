@@ -11,12 +11,12 @@ export async function GET(context: any) {
     return data.draft !== true;
   });
 
-  let notes = await getCollection("notes", ({ data }) => {
-    return data.draft !== true;
-  });
 
-  let rssContent = [...articles, ...notes];
-  rssContent = rssContent.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+  // let notes = await getCollection("notes", ({ data }) => {
+  //   return data.draft !== true;
+  // });
+
+  let rssContent = articles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 
   return rss({
     title: "kenan.fyi",
