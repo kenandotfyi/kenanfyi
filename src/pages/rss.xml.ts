@@ -40,13 +40,13 @@
 
 
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { getContainerRenderer as mdxRenderer } from "@astrojs/mdx";
+import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import { loadRenderers } from "astro:container";
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 
 export async function GET(context: any) {
-  const renderers = await loadRenderers([mdxRenderer()]);
+  const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
 
 
