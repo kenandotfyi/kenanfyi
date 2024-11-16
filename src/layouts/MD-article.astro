@@ -4,7 +4,7 @@ import Extra from "../components/Extra.astro";
 import { zeit } from "../../utils/zeit.ts";
 const { frontmatter, minutes } = Astro.props;
 const currentPath = Astro.url.pathname;
-import HoverPreviews from "../components/HoverPreviews.astro";
+import Hovers from "../components/Hovers.astro";
 ---
 
 <Base pageTitle={frontmatter.title}>
@@ -36,3 +36,4 @@ import HoverPreviews from "../components/HoverPreviews.astro";
     <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
 </Base>
 <!-- <HoverPreviews /> -->
+<Hovers />

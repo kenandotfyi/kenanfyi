@@ -31,7 +31,7 @@
 
   body {
       font-family: JB;
-      color: var(--black);
+      color: var(--text);
       background-color: var(--bg);
       margin: 0 auto;
       /* height: 100vh; */
@@ -346,6 +346,7 @@
   .main {
       background: var(--body-bg);
       padding: 20px;
+      border: 1px solid var(--taskbar-fg);
 
       & :first-child {
           margin-top: 0px;
@@ -656,8 +657,44 @@
       }
   }
 
-  .hiddenItem {
+  .hiddenContent {
+      position: absolute;
+      width: 480px;
+      height: 240px;
+      overflow-y: scroll;
+      background: var(--bg);
+      padding: 10px;
+      border-color: var(--text);
+      border-width: 4px;
+      border-style: double;
+
+      font-size: 0.85rem;
+      backdrop-filter: blur(2px);
+      box-shadow: 0px 0px 6px rgba(3, 7, 18, 0.09),
+          0px 0px 23px rgba(3, 7, 18, 0.18);
+
+      & p {
+          color: var(--metadata);
+      }
+
+  }
+
+  .hiddenContentTitleBar {
+      position: sticky;
+      top: 0px;
+      padding-left: 2px;
+      background: var(--orange);
+      color: var(--active-link);
+      box-shadow: 0px -10px 0px var(--bg);
+
+  }
+
+  .hiddenPrev {
       display: none;
+  }
+
+  .visiblePrev {
+      display: block;
   }
 
   .menubarExt {
