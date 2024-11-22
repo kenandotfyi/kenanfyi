@@ -6,67 +6,76 @@ import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import sanitizeHtml from "sanitize-html";
 
-export async function GET(context: any) {
+export async function GET(context: unknown) {
   const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
-
 
   let articles = await getCollection("articles", ({ data }) => {
     return data.draft !== true;
   });
 
-  articles = articles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+  articles = articles.sort(
+    (a: unknown, b: unknown) => b.data.pubDate - a.data.pubDate,
+  );
 
   let notes = await getCollection("notes", ({ data }) => {
     return data.draft !== true;
   });
 
-  notes = notes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+  notes = notes.sort(
+    (a: unknown, b: unknown) => b.data.pubDate - a.data.pubDate,
+  );
 
   // remove the .hiddenContent divs, so they don't show up in the feed readers
   //
 
-  function removeElementsWithClass(htmlString: string, className: string) {
-    // Configure sanitize-html to transform and remove elements
-    const cleanHtml = sanitizeHtml(htmlString, {
-      // Allow all tags and attributes initially
-      allowedTags: false,
-      allowedAttributes: false,
-
-      // Use the transform function to filter elements
-      transformTags: {
-        'span': (tagName, attribs) => {
-          // Check if the element has the specific class
-          if (attribs.class && attribs.class.split(' ').includes(className)) {
-            return { tagName: false }; // Removes the tag
-          }
-          return { tagName, attribs }; // Keep the tag as is
+  function cleanContent(htmlString) {
+    // First, remove any divs with class 'hidden' or style="display: none"
+    const cleaned = sanitizeHtml(htmlString, {
+      exclusiveFilter: function (frame) {
+        // Remove elements with class 'hidden'
+        if (
+          frame.attribs &&
+          frame.attribs.class &&
+          frame.attribs.class.includes("hiddenContent")
+        ) {
+          return true;
         }
-      }
+        // Remove elements with display: none
+        if (
+          frame.attribs &&
+          frame.attribs.style &&
+          frame.attribs.style.includes("display: none")
+        ) {
+          return true;
+        }
+        return false;
+      },
     });
 
-    return cleanHtml;
+    return cleaned;
   }
 
   const items = [];
-  var classToBeHidden = 'hiddenContent'
 
   for (const article of articles) {
     const { Content } = await article.render();
     const content = await container.renderToString(Content);
-    const link = new URL(`/articles/${article.slug}`, context.url.origin).toString();
-    const sanitizedContent = removeElementsWithClass(content, classToBeHidden);
-    items.push({ ...article.data, link, sanitizedContent });
+    const link = new URL(
+      `/articles/${article.slug}`,
+      context.url.origin,
+    ).toString();
+    const sanitizedContent = cleanContent(content);
+    items.push({ ...article.data, link, content: sanitizedContent });
   }
 
   for (const note of notes) {
     const { Content } = await note.render();
     const content = await container.renderToString(Content);
     const link = new URL(`/notes/${note.slug}`, context.url.origin).toString();
-    const sanitizedContent = removeElementsWithClass(content, classToBeHidden);
-    items.push({ ...note.data, link, sanitizedContent });
+    const sanitizedContent = cleanContent(content);
+    items.push({ ...note.data, link, content: sanitizedContent });
   }
-
 
   return rss({
     title: "kenan.fyi",
