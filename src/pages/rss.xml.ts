@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
@@ -30,10 +31,16 @@ export async function GET(context: unknown) {
   //
 
   function cleanContent(htmlString) {
-    // First, remove any divs with class 'hidden' or style="display: none"
+    // First, remove any divs with class 'hiddenContent'
+
     const cleaned = sanitizeHtml(htmlString, {
+      allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+      allowedAttributes: {
+        ...sanitizeHtml.defaults.allowedAttributes,
+        img: ["src", "alt", "title", "width", "height", "loading"],
+      },
       exclusiveFilter: function (frame) {
-        // Remove elements with class 'hidden'
+        // Remove elements with class 'hiddenContent'
         if (
           frame.attribs &&
           frame.attribs.class &&
@@ -42,13 +49,7 @@ export async function GET(context: unknown) {
           return true;
         }
         // Remove elements with display: none
-        if (
-          frame.attribs &&
-          frame.attribs.style &&
-          frame.attribs.style.includes("display: none")
-        ) {
-          return true;
-        }
+
         return false;
       },
     });
