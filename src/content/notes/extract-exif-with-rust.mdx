@@ -11,18 +11,30 @@ backlinks: [""]
 forwards: [""]
 ---
 
-import Code from '../../components/Code.astro';
+import Code from "../../components/Code.astro";
 
-> Disclaimer: This is probably an overkill for such task, but I'm currently learning Rust and wanted to write a small program to do the job.
+> Disclaimer: This is probably an overkill for such task, but I'm currently learning Rust and wanted
+> to write a small program to do the job.
 
-I was coding my [photo gallery](/photos) this weekend and I had to extract EXIF data somehow programatically and include them in the individual photo pages. As in the other parts of my website, I also wanted to use the [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/), so there is a route for every photo with detailed information as the EXIF and possibly some comments and other stuff.
+I was coding my [photo gallery](/photos) this weekend and I had to extract EXIF data somehow
+programatically and include them in the individual photo pages. As in the other parts of my website,
+I also wanted to use the
+[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/), so there is a
+route for every photo with detailed information as the EXIF and possibly some comments and other
+stuff.
 
 <u>**Problem Description**:</u>
-Creating a bunch of MDX files with the same names as the images/photographs and put the EXIF, metadata and content inside them automatically in a directory.
+Creating a bunch of MDX files with the same names as the images/photographs and put the EXIF,
+metadata and content inside them automatically in a directory.
 
-So, I have a lot of photos and I need an .mdx file for every one of them in a directory. The photos are already processed -resized and converted to .webp- and being hosted on my server. Therefore I am not processing them using the Astro's image processing features. I could do it and push everything in my Astro deploy process, but I am hosting my photos on my own server and this website is still on the Netlify's free plan. Soon I will migrate it to my server too when I have time.
+So, I have a lot of photos and I need an .mdx file for every one of them in a directory. The photos
+are already processed -resized and converted to .webp- and being hosted on my server. Therefore I am
+not processing them using the Astro's image processing features. I could do it and push everything
+in my Astro deploy process, but I am hosting my photos on my own server and this website is still on
+the Netlify's free plan. Soon I will migrate it to my server too when I have time.
 
-Anyway, below is the code where I use the [rexiv2](https://docs.rs/rexiv2/latest/rexiv2) crate to generate the necessary files with the required EXIF data inside them in a formatted manner.
+Anyway, below is the code where I use the [rexiv2](https://docs.rs/rexiv2/latest/rexiv2) crate to
+generate the necessary files with the required EXIF data inside them in a formatted manner.
 
 <Code file="exif-to-md.rs">
 ```rust
@@ -31,10 +43,8 @@ use rexiv2::Metadata;
 use std::fs::{self, File};
 use std::io::Write;
 
-fn main() -> std::io::Result<()> {
-    let folder_path = "./photos";
-    // using MDX in Astro, so the files should be .mdx
-    let markdown_extension = ".mdx";
+fn main() -> std::io::Result<()> { let folder_path = "./photos"; // using MDX in Astro, so the files
+should be .mdx let markdown_extension = ".mdx";
 
     // initialize Rexiv2 crate
     let _ = rexiv2::initialize();
@@ -59,11 +69,22 @@ fn main() -> std::io::Result<()> {
 
                 // content of the files to match my Astro component structure
                 let md_content = r#"
-import {Picture} from 'astro:assets';
+
+import { Picture } from "astro:assets";
 
 <picture>
-<source srcset={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.webp`} type="image/webp"/>
-<img src={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.jpg`} alt="" width="2880" height="1200" loading="lazy" decoding="async"/>
+  <source
+    srcset={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.webp`}
+    type="image/webp"
+  />
+  <img
+    src={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.jpg`}
+    alt=""
+    width="2880"
+    height="1200"
+    loading="lazy"
+    decoding="async"
+  />
 </picture>
 "#;
 
@@ -104,7 +125,9 @@ import {Picture} from 'astro:assets';
         }
     }
     Ok(())
+
 }
+
 ```
 </Code>
 
@@ -122,3 +145,5 @@ I would probably implement a better program (maybe a CLI tool?) to streamline th
 
 Maybe I will post about them later too.
 Cheers.
+
+```

@@ -1,24 +1,20 @@
 ---
 import Base from "../layouts/Base.astro";
-const pageTitle = "what i am busy with recently";
+const pageTitle = "now";
 ---
 
 <Base pageTitle={pageTitle}>
-  <div class="post-title">
-    <h1>{pageTitle}</h1>
-  </div>
+  <section>
+    <div class="post-title">
+      <h1>{pageTitle}</h1>
+    </div>
 
-  <main class="main">
-    <p><i>Last updated: 22 Apr 2024</i></p>
-    <p>
-      Currently I'm trying to publish the articles I wrote already. But in the
-      meantime I am still making updates to the blog design. So the look will
-      probably be very different in the end.
-    </p>
+    <p><i>Last updated: 24 Nov 2024</i></p>
+    <p>I'm currently trying to publish the articles I wrote already. But in the meantime I am still making updates to the blog design. So the look will probably be very different in the end.</p>
 
     <p>Some open points about the design:</p>
     <ul>
-      <li>[ ] a proper working dark mode</li>
+      <li>[~] a proper working dark mode</li>
       <li>[ ] designing a logo</li>
       <li>[~] implementing the sidenotes</li>
       <li>[~] implementing the backlinking algorithm</li>
@@ -29,5 +25,5 @@ const pageTitle = "what i am busy with recently";
       <li>[x] added last toot feed for every page (experimental)</li>
       <li>[x] content collections such as bits and articles</li>
     </ul>
-  </main>
+  </section>
 </Base>

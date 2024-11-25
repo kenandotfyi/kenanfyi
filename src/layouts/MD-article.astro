@@ -5,35 +5,41 @@ import { zeit } from "../../utils/zeit.ts";
 const { frontmatter, minutes } = Astro.props;
 const currentPath = Astro.url.pathname;
 import Hovers from "../components/Hovers.astro";
+import Rn from "../components/Rn.astro";
+import SnMnHighlight from "../components/SnMnHighlight.astro";
 ---
 
 <Base pageTitle={frontmatter.title}>
-    <div class="post-title" id="post-title">
+  <article>
+    <section id="main" class="main">
+      <div class="post-title" id="post-title">
         <p>
-            /{currentPath.toString().split("/")[1]}/
+          /{currentPath.toString().split("/")[1]}/
         </p>
         <h1>{frontmatter.title}</h1>
         <p>
-            {zeit(frontmatter.pubDate)}
-            • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
+          {zeit(frontmatter.pubDate)}
+          — {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
         </p>
         {
-            zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
-                " "
-            ) : (
-                <p>
-                    <i>
-                        updated:
-                        {zeit(frontmatter.updated)}
-                    </i>
-                </p>
-            )
+          zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+            " "
+          ) : (
+            <p>
+              <i>
+                updated:
+                {zeit(frontmatter.updated)}
+              </i>
+            </p>
+          )
         }
-    </div>
-    <main id="main" class="main">
-        <slot />
-    </main>
-    <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
+      </div>
+      <slot />
+    </section>
+  </article>
+
+  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
 </Base>
-<!-- <HoverPreviews /> -->
 <Hovers />
+<SnMnHighlight />
+<Rn />

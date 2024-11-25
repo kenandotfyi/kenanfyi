@@ -1,119 +1,118 @@
 <script>
-    // @ts-nocheck
-    let hideTimeout;
+  // @ts-nocheck
+  let hideTimeout;
 
-    // select all the hidden containers which have the hiddenContent class
-    const toSanitizeDivs = document.querySelectorAll(".hiddenContent");
+  // select all the hidden containers which have the hiddenContent class
+  const toSanitizeDivs = document.querySelectorAll(".hiddenContent");
 
-    toSanitizeDivs.forEach((div) => {
-        // id is the slug of the post
-        const divSlug = div.getAttribute("id");
-        const divType = div.getAttribute("data-type");
-        const divTitle = div.getAttribute("data-title");
-        const divpD = div.getAttribute("data-pD");
+  toSanitizeDivs.forEach((div) => {
+    // id is the slug of the post
+    const divSlug = div.getAttribute("id");
+    const divType = div.getAttribute("data-type");
+    const divTitle = div.getAttribute("data-title");
+    const divpD = div.getAttribute("data-pD");
 
-        const htmlString = div.textContent;
+    const htmlString = div.textContent;
 
-        const parser = new DOMParser();
-        const parsedHtml = parser.parseFromString(htmlString, "text/html");
+    const parser = new DOMParser();
+    const parsedHtml = parser.parseFromString(htmlString, "text/html");
 
-        // get the first 3 p tags
-        const post = Array.from(parsedHtml.children);
+    // get the first 3 p tags
+    const post = Array.from(parsedHtml.children);
 
-        // add them together
-        div.innerHTML =
-            `<div class="hiddenContentTitleBar">${divTitle}</div>` +
-            `<p><i>published: ${divpD}</i></p>` +
-            `<div>` +
-            post.map((e) => e.innerHTML).join("") +
-            `</div>` +
-            `<p><a href=/${divType}s/${divSlug}/><i>read more...</i></a></p>`;
+    // add them together
+    div.innerHTML =
+      `<div class="hiddenContentTitleBar">${divTitle}<span><i>, ${divpD}</i></span></div>` +
+      `<p><a href=/${divType}s/${divSlug}/><i>read more...</i></a></p>` +
+      `<div>` +
+      post.map((e) => e.innerHTML).join("") +
+      `</div>`;
+  });
+
+  function isMobile() {
+    return window.innerWidth < 769; // my own mobile breakpoint
+  }
+
+  function showPreview(div) {
+    if (isMobile()) return;
+    div.classList.add("visiblePrev");
+    div.classList.remove("hiddenPrev");
+  }
+
+  function hidePreview(div) {
+    if (isMobile()) return;
+    div.classList.add("hiddenPrev");
+    div.classList.remove("visiblePrev");
+  }
+
+  document.querySelectorAll(".hiddenContent").forEach((box) => {
+    box.addEventListener("mouseenter", () => {
+      clearTimeout(hideTimeout);
     });
 
-    function isMobile() {
-        return window.innerWidth < 769; // my own mobile breakpoint
-    }
+    box.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        hidePreview(box);
+      }, 100);
+    });
+  });
 
-    function showPreview(div) {
-        if (isMobile()) return;
-        div.classList.add("visiblePrev");
-        div.classList.remove("hiddenPrev");
-    }
+  document.querySelectorAll(".prev-link").forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      const targetId = link.getAttribute("data-target");
+      const targetDiv = document.getElementById(targetId);
 
-    function hidePreview(div) {
-        if (isMobile()) return;
-        div.classList.add("hiddenPrev");
-        div.classList.remove("visiblePrev");
-    }
+      const rect = link.getBoundingClientRect();
+      const r = rect.right;
+      const t = rect.top;
+      const l = rect.left;
+      const b = rect.bottom;
 
-    document.querySelectorAll(".hiddenContent").forEach((box) => {
-        box.addEventListener("mouseenter", () => {
-            clearTimeout(hideTimeout);
-        });
+      const vpHeight = window.innerHeight;
+      const vpWidth = window.innerWidth;
 
-        box.addEventListener("mouseleave", () => {
-            setTimeout(() => {
-                hidePreview(box);
-            }, 100);
-        });
+      // condition 1
+      if (vpWidth - (l + r) / 2 > 490 && vpHeight - (t + b) / 2 > 400) {
+        targetDiv.style.left = `${l + 24}px`; // l + offset
+        targetDiv.style.top = `${t + 24 + window.scrollY}px`; // t + scroll offset + text height
+      }
+      //condition 2
+      if (vpWidth - (l + r) / 2 < 490 && vpHeight - (t + b) / 2 > 400) {
+        targetDiv.style.left = `${l - 480}px`; // l - container width
+        targetDiv.style.top = `${t + 24 + window.scrollY}px`; // t + scroll offset + text height
+      }
+      // condition 3
+      if (vpWidth - (l + r) / 2 > 490 && vpHeight - (t + b) / 2 < 400) {
+        targetDiv.style.left = `${l + 24}px`; // l + offset
+        targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
+      }
+      // condition 4
+      if (vpWidth - (l + r) / 2 < 490 && vpHeight - (t + b) / 2 < 400) {
+        targetDiv.style.left = `${l - 480}px`; // l - container width
+        targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
+      }
+
+      // for debugging
+      // console.table([t, r, b, l]);
+      // console.table([vpHeight, vpWidth]);
+      // console.table([window.scrollY, window.scrollX]);
+      // console.table([
+      //     targetDiv.style.top,
+      //     targetDiv.style.right,
+      //     targetDiv.style.bottom,
+      //     targetDiv.style.left,
+      // ]);
+
+      showPreview(targetDiv);
     });
 
-    document.querySelectorAll(".prev-link").forEach((link) => {
-        link.addEventListener("mouseenter", () => {
-            const targetId = link.getAttribute("data-target");
-            const targetDiv = document.getElementById(targetId);
+    link.addEventListener("mouseleave", () => {
+      const targetId = link.getAttribute("data-target");
+      const targetDiv = document.getElementById(targetId);
 
-            const rect = link.getBoundingClientRect();
-            const r = rect.right;
-            const t = rect.top;
-            const l = rect.left;
-            const b = rect.bottom;
-
-            const vpHeight = window.innerHeight;
-            const vpWidth = window.innerWidth;
-
-            // condition 1
-            if (vpWidth - (l + r) / 2 > 330 && vpHeight - (t + b) / 2 > 400) {
-                targetDiv.style.left = `${l + 24}px`; // l + offset
-                targetDiv.style.top = `${t + 24 + window.scrollY}px`; // t + scroll offset + text height
-            }
-            //condition 2
-            if (vpWidth - (l + r) / 2 < 330 && vpHeight - (t + b) / 2 > 400) {
-                targetDiv.style.left = `${l - 480}px`; // l - container width
-                targetDiv.style.top = `${t + 24 + window.scrollY}px`; // t + scroll offset + text height
-            }
-            // condition 3
-            if (vpWidth - (l + r) / 2 > 330 && vpHeight - (t + b) / 2 < 400) {
-                targetDiv.style.left = `${l + 24}px`; // l + offset
-                targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
-            }
-            // condition 4
-            if (vpWidth - (l + r) / 2 < 330 && vpHeight - (t + b) / 2 < 400) {
-                targetDiv.style.left = `${l - 480}px`; // l - container width
-                targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
-            }
-
-            // for debugging
-            // console.table([t, r, b, l]);
-            // console.table([vpHeight, vpWidth]);
-            // console.table([window.scrollY, window.scrollX]);
-            // console.table([
-            //     targetDiv.style.top,
-            //     targetDiv.style.right,
-            //     targetDiv.style.bottom,
-            //     targetDiv.style.left,
-            // ]);
-
-            showPreview(targetDiv);
-        });
-
-        link.addEventListener("mouseleave", () => {
-            const targetId = link.getAttribute("data-target");
-            const targetDiv = document.getElementById(targetId);
-
-            hideTimeout = setTimeout(() => {
-                hidePreview(targetDiv);
-            }, 100);
-        });
+      hideTimeout = setTimeout(() => {
+        hidePreview(targetDiv);
+      }, 100);
     });
+  });
 </script>

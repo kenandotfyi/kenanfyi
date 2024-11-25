@@ -5,11 +5,19 @@ shotDate: 2023-03-16
 camera: "FUJIFILM X-E4"
 ---
 
-
-import {Picture} from 'astro:assets';
+import { Picture } from "astro:assets";
 
 <picture>
-<source srcset={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.webp`} type="image/webp"/>
-<img src={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.jpg`} alt="" width="2880" height="1200" loading="lazy" decoding="async"/>
+  <source
+    srcset={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.webp`}
+    type="image/webp"
+  />
+  <img
+    src={`https://img.kenan.fyi/photos/originals/${frontmatter.title}_1920px.jpg`}
+    alt=""
+    width="2880"
+    height="1200"
+    loading="lazy"
+    decoding="async"
+  />
 </picture>
-

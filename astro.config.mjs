@@ -12,10 +12,11 @@ import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
   transformerRenderWhitespace,
-} from '@shikijs/transformers';
+} from "@shikijs/transformers";
 
 import mdx from "@astrojs/mdx";
 
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +25,7 @@ export default defineConfig({
   },
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "hover"
+    defaultStrategy: "hover",
   },
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
@@ -36,28 +37,37 @@ export default defineConfig({
             className: "external-link",
           },
           target: "_blank",
-          rel: "noopener"
+          rel: "noopener",
         },
       ],
       [rehypeKatex, {}],
     ],
-    syntaxHighlight: 'shiki',
+    syntaxHighlight: "shiki",
     shikiConfig: {
-      theme: "vitesse-light",
+      themes: {
+        light: "vitesse-light",
+
+        dark: "vitesse-dark",
+      },
       wrap: false,
-      transformers: [transformerNotationDiff(),
-      transformerNotationHighlight(),
-      transformerNotationWordHighlight(),
-      transformerNotationFocus(),
-      transformerNotationErrorLevel(),
-      transformerMetaHighlight(),
-      transformerMetaWordHighlight(),
-      transformerRenderWhitespace(),]
+      transformers: [
+        transformerNotationDiff(),
+        transformerNotationHighlight(),
+        transformerNotationWordHighlight(),
+        transformerNotationFocus(),
+        transformerNotationErrorLevel(),
+        transformerMetaHighlight(),
+        transformerMetaWordHighlight(),
+        transformerRenderWhitespace(),
+      ],
     },
   },
   site: "https://kenan.fyi",
-  trailingSlash: 'always',
-  integrations: [mdx({
-    extendMarkdownConfig: true,
-  })],
+  trailingSlash: "always",
+  integrations: [
+    mdx({
+      extendMarkdownConfig: true,
+    }),
+    icon(),
+  ],
 });

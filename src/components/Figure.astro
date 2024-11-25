@@ -1,0 +1,17 @@
+---
+const { caption, fw } = Astro.props;
+---
+
+{
+  fw ? (
+    <figure class="fullwidth">
+      <span class="marginnote">{caption}</span>
+      <slot />
+    </figure>
+  ) : (
+    <figure>
+      <span class="marginnote">{caption}</span>
+      <slot />
+    </figure>
+  )
+}

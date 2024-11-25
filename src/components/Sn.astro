@@ -1,0 +1,10 @@
+---
+const { id, img } = Astro.props;
+---
+
+<label for={id} class="margin-toggle sidenote-number" data-note={id}></label>
+<input type="checkbox" id={id} class="margin-toggle" />
+<span class="sidenote" data-note={id}
+  ><slot />
+  {img ? <img src={`${img}`} /> : ""}
+</span>

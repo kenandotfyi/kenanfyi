@@ -3,39 +3,16 @@ import { zeit } from "../../utils/zeit.ts";
 const { frontmatter } = Astro.props;
 ---
 
-<div>
+<article>
   <div class="note-header">
-    <span style="font-weight: bold; text-transform: uppercase;">
-    <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
-    </span>
-    <span>{zeit(frontmatter.data.pubDate)} </span>
-    <span id={frontmatter.slug} style="display: block;"></span>
+    <span id={frontmatter.slug} style="display: inline;"></span>
+    <h3>
+      <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
+    </h3>
+    <span>{zeit(frontmatter.data.pubDate)}</span>
   </div>
-  <div class="note-content" id={frontmatter.slug}>
-      <slot />
-  </div>
+  <section id={frontmatter.slug}>
+    <slot />
+  </section>
   <p></p>
-</div>
-
-  <script define:vars={{frontmatter}}>
-  //@ts-nocheck
-    //first select all toggle elements on the page based on their id, matching with the unique slug
-    const toggles = document.querySelectorAll(`span[id^=${frontmatter.slug}]`);
-    toggles.forEach((toggle) => {
-      toggle.innerHTML = "×";
-      toggle.style.fontSize = "1.5rem";
-      toggle.style.cursor = "pointer";
-
-      //select a div with the same id
-      const note = document.querySelector(`div#${frontmatter.slug}`);
-      //add click events to the toggle element
-      toggle.addEventListener("click", () => {
-        if (note.style.display === "block" || note.style.display === ""){
-          note.style.display = "none";
-        }
-        else {
-          note.style.display = "block";
-        }
-      })
-    });
-  </script>
+</article>

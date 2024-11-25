@@ -1,0 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { id, img } = Astro.props;
+---
+
+<label for={id} class="margin-toggle"><Icon name="ph:asterisk-fill" size="1.2rem" /></label>
+<input type="checkbox" id={id} class="margin-toggle" />
+<span class="marginnote"
+  ><slot />
+  {img ? <img src={`${img}`} /> : ""}
+</span>

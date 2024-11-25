@@ -1,17 +1,59 @@
-:root {
-    --bg: #fff;
-    --body-bg: #F6F6F6;
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #212121;
+    --body-bg: #f6f6f6;
+    --text: #ddd;
+    --active-link: #fefefe;
+    --metadata: #6f6e69;
+    --links: #100f0f;
+    --black: #000;
+    --red: #af2e1b;
+    --orange: #e66e4c;
+    --orange05: rgba(230, 110, 76, 0.5);
+    --teal: #3c4b59;
+    --beige1: #bfa07a;
+    --beige2: #d9c3b0;
+    --taskbar-fg: #2c2c2c;
+    --taskbar-bg: #181818;
+    --taskbar-border: #494949;
+    --selection: #6b3121;
+    --border: #ddd;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #fffff8;
+    --body-bg: #f6f6f6;
     --text: #353535;
     --active-link: #fefefe;
     --metadata: #6f6e69;
     --links: #100f0f;
     --black: #000;
     --red: #af2e1b;
-    --orange: #E66E4C;
+    --orange: #e66e4c;
+    --orange05: rgba(230, 110, 76, 0.5);
     --teal: #3c4b59;
     --beige1: #bfa07a;
     --beige2: #d9c3b0;
-    --taskbar-fg: #DBDBDB;
+    --taskbar-fg: #dbdbdb;
     --taskbar-bg: #555;
-    --taskbar-border: #A9A9A9;
+    --taskbar-border: #a9a9a9;
+    --selection: #ebebe6;
+    --border: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }

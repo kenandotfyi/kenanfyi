@@ -2,23 +2,6 @@
   "name": "kenanfyi",
   "type": "module",
   "version": "0.0.1",
-  "prettier": {
-    "astroAllowShorthand": false,
-    "overrides": [
-      {
-        "files": "*.astro",
-        "options": {
-          "parser": "astro"
-        }
-      }
-    ],
-    "pluginSearchDirs": [
-      "."
-    ],
-    "plugins": [
-      "prettier-plugin-astro"
-    ]
-  },
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
@@ -32,7 +15,10 @@
     "@astrojs/preact": "^3.5.3",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/tailwind": "^5.1.2",
+    "@iconify-json/mdi": "^1.2.1",
+    "@iconify-json/ph": "^1.2.1",
     "astro": "^4.16.13",
+    "astro-icon": "^1.1.4",
     "dayjs": "^1.11.11",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
@@ -40,17 +26,22 @@
     "rehype-infer-reading-time-meta": "^2.0.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
+    "rough-notation": "^0.5.1",
+    "typeit": "^8.8.7",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@shikijs/transformers": "^1.16.2",
     "@types/markdown-it": "^14.0.1",
     "@types/sanitize-html": "^2.11.0",
-    "@typescript-eslint/parser": "^7.0.1",
+    "@typescript-eslint/parser": "^7.18.0",
+    "globals": "^15.12.0",
     "markdown-it": "^14.1.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "prettier-config-standard": "^7.0.0",
-    "prettier-plugin-astro": "^0.13.0",
-    "sanitize-html": "^2.13.0"
+    "prettier-plugin-astro": "^0.14.1",
+    "sanitize-html": "^2.13.0",
+    "typescript-eslint": "^8.15.0"
   }
 }

@@ -1,12 +1,32 @@
 @font-face {
-    font-family: 'JB';
-    src: url('/fonts/JetBrainsMono-Regular.woff2');
-    font-display: block;
+  font-family: "JB";
+  src: url("/fonts/JetBrainsMono-Regular.woff2");
+  font-display: block;
 }
 
 @font-face {
-    font-family: 'JBBold';
-    src: url('/fonts/JetBrainsMono-Bold.woff2');
-    font-weight: bold;
-    font-display: block;
+  font-family: "JBBold";
+  src: url("/fonts/JetBrainsMono-Bold.woff2");
+  font-weight: bold;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "IBMPlexSerif";
+  src: url("/fonts/IBMPlexSerif-Regular.ttf");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "IBMPlexSerifBold";
+  src: url("/fonts/IBMPlexSerif-Bold.ttf");
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "IBMPlexSerifItalic";
+  src: url("/fonts/IBMPlexSerif-Italic.ttf");
+  font-weight: 400;
+  font-display: block;
 }

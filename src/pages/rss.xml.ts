@@ -48,8 +48,6 @@ export async function GET(context: unknown) {
         ) {
           return true;
         }
-        // Remove elements with display: none
-
         return false;
       },
     });

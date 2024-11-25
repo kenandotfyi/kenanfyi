@@ -17,9 +17,6 @@ const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
 ---
 
-<MDLayout
-  minutes={remarkPluginFrontmatter.minutesRead}
-  frontmatter={entry.data}
->
+<MDLayout minutes={remarkPluginFrontmatter.minutesRead} frontmatter={entry.data}>
   <Content />
 </MDLayout>

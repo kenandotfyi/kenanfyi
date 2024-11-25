@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MDLayout from "../../layouts/MD-note.astro";
+import MDLayout from "../../layouts/MD-article.astro";
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes", ({ data }) => {
@@ -17,9 +17,6 @@ const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
 ---
 
-<MDLayout
-  minutes={remarkPluginFrontmatter.minutesRead}
-  frontmatter={entry.data}
->
+<MDLayout minutes={remarkPluginFrontmatter.minutesRead} frontmatter={entry.data}>
   <Content />
 </MDLayout>

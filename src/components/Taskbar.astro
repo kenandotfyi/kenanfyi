@@ -1,93 +1,97 @@
 ---
 // @ts-nocheck
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 let currentPath = Astro.url.pathname.toString().split("/")[1];
 let currentPathPage = Astro.url.pathname.toString().split("/")[2];
 let allLinks;
 
 function kebabToSentenceCase(str: string) {
-    const words = str.split("-");
+  const words = str.split("-");
 
-    const sentence = words
-        .map((word: string, index: number) =>
-            index === 0 ? word.charAt(0) + word.slice(1) : word,
-        )
-        .join(" ");
+  const sentence = words.map((word: string, index: number) => (index === 0 ? word.charAt(0) + word.slice(1) : word)).join(" ");
 
-    return sentence;
+  return sentence;
 }
 
 if (currentPathPage) {
-    currentPathPage = kebabToSentenceCase(currentPathPage).toUpperCase();
+  currentPathPage = kebabToSentenceCase(currentPathPage).toUpperCase();
 }
 
 if (currentPath == "notes") {
-    allLinks = await getCollection("notes", ({ data }) => {
-        return data.draft !== true;
-    });
+  allLinks = await getCollection("notes", ({ data }) => {
+    return data.draft !== true;
+  });
 } else if (currentPath == "articles") {
-    allLinks = await getCollection("articles", ({ data }) => {
-        return data.draft !== true;
-    });
-    allLinks.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+  allLinks = await getCollection("articles", ({ data }) => {
+    return data.draft !== true;
+  });
+  allLinks.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 } else if (currentPath == "photos") {
-    allLinks = await getCollection("photos", ({ data }) => {
-        return data.draft !== true;
-    });
-    allLinks.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
+  allLinks = await getCollection("photos", ({ data }) => {
+    return data.draft !== true;
+  });
+  allLinks.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 } else {
-    allLinks = [];
+  allLinks = [];
 }
 ---
 
 <div class="taskbar">
-    <div class="taskbar-item" id="menubar">
-        <span>≡ kenan.fyi</span>
-        <span style="color: var(--red); padding-left:0.4rem">●</span>
-    </div>
-    <div
-        class={currentPath == "" ? "hiddenItem" : "taskbar-item"}
-        id="menubarSecond"
-    >
-        ≡ {currentPath}
-    </div>
-    <div class={currentPathPage == "" ? "hiddenItem" : "taskbar-item"}>
-        {currentPathPage}
-    </div>
+  <div class="taskbar-item">
+    <a href="/" class="home">
+      <Icon name="ph:house-duotone" size="20px" />
+    </a>
+  </div>
+  <div class="taskbar-item" id="menubar">
+    <!-- <span>≡ kenan.fyi</span> -->
+    <span style="color: var(--red); padding-left:0.4rem">●</span>
+  </div>
+  <div class={currentPath === "" ? "hiddenItem" : "taskbar-item"} id="menubarSecond">
+    {currentPath == "" ? currentPath : "≡ " + currentPath}
+  </div>
+  <div class={currentPathPage === "" ? "hiddenItem" : "taskbar-item"}>
+    {currentPathPage}
+  </div>
 
-    <div class="menubarExt" id="menubarExt">
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/articles/">articles</a></li>
-            <li><a href="/notes/">notes</a></li>
-            <li><a href="/photos/">photos</a></li>
-            <li><a href="/now/">now</a></li>
-            <li><a href="/blogroll/">blogroll</a></li>
-            <li><a href="/about/">about</a></li>
-        </ul>
-    </div>
+  <div class="menubarExt" id="menubarExt">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/articles/">articles</a></li>
+      <li><a href="/notes/">notes</a></li>
+      <li><a href="/photos/">photos</a></li>
+      <li><a href="/now/">now</a></li>
+      <li><a href="/blogroll/">blogroll</a></li>
+      <li><a href="/about/">about</a></li>
+    </ul>
+  </div>
 
-    <div class="menubarExtExt" id="menubarExtExt">
-        <ul>
-            {
-                allLinks
-                    .filter((link, i) => i < 10)
-                    .map((link) => (
-                        <li class="index-list-element">
-                            <span>
-                                <a
-                                    href={`/${currentPath}/${link.slug}/`}
-                                    class="no-prev"
-                                >
-                                    {link.data.title}
-                                </a>
-                            </span>
-                        </li>
-                    ))
-            }
-            <li><i><a href={`/${currentPath}`}>...the rest...</a></i></li>
-        </ul>
-    </div>
+  <div class="menubarExtExt" id="menubarExtExt">
+    <ul>
+      {
+        allLinks
+          .filter((link, i) => i < 10)
+          .map((link) => (
+            <li class="index-list-element">
+              <span>
+                <a href={`/${currentPath}/${link.slug}/`} class="no-prev">
+                  {link.data.title}
+                </a>
+              </span>
+            </li>
+          ))
+      }
+      <li style="color: var(--metadata)"><i><a href={`/${currentPath}/`}>{currentPath}...</a></i></li>
+    </ul>
+  </div>
 </div>
+
+<style>
+  .taskbar a {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+</style>
 
 <script src="../scripts/menubar.js"></script>

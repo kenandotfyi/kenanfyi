@@ -1,12 +1,9 @@
 ---
-const {frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-
 <div class="photo-einzel">
-
-    <a href={`/photos/${frontmatter.slug}/`}>
-
-<slot />
-    </a>
+  <a href={`/photos/${frontmatter.slug}/`}>
+    <slot />
+  </a>
 </div>

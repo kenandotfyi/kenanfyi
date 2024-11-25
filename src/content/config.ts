@@ -37,11 +37,11 @@ const photosCollection = defineCollection({
     title: z.string(),
     shotDate: z.coerce.date().optional(),
     camera: z.string().optional(),
-  })
-})
+  }),
+});
 
 export const collections = {
   articles: articlesCollection,
   notes: notesCollection,
-  photos: photosCollection
+  photos: photosCollection,
 };

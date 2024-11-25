@@ -1,0 +1,70 @@
+<script>
+  import { annotate } from "rough-notation";
+
+  function getAllTextElements(element: HTMLElement) {
+    const textElements: HTMLElement[] = [];
+
+    function processNode(node: Node) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent && node.textContent.trim()) {
+        const span = document.createElement("span");
+        span.textContent = node.textContent;
+        (node as ChildNode).replaceWith(span);
+        textElements.push(span);
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // If it's an inline element that contains only text, use it directly
+        if (node instanceof Element && ["A", "I", "STRONG", "EM", "SPAN"].includes(node.tagName) && Array.from(node.childNodes).every((child) => child.nodeType === Node.TEXT_NODE)) {
+          textElements.push(node as HTMLElement);
+        } else {
+          // Recursively process child nodes
+          Array.from(node.childNodes).forEach(processNode);
+        }
+      }
+    }
+
+    Array.from(element.childNodes).forEach(processNode);
+    return textElements;
+  }
+
+  document.querySelectorAll(".sidenote").forEach((sn) => {
+    const textElements = getAllTextElements(sn as HTMLElement);
+    const id = sn.getAttribute("data-note");
+    const label = document.querySelector(`label[data-note="${id}"]`);
+    let labelAnnotation: any = null;
+    let sidenoteAnnotation: any = null;
+
+    if (label && textElements.length > 0) {
+      labelAnnotation = annotate(label as HTMLElement, {
+        type: "circle",
+        color: "var(--orange)",
+        padding: [3, 10],
+      });
+
+      // Create a single span and move all text elements into it
+      const wrapper = document.createElement("span");
+      const firstElement = textElements[0];
+      const lastElement = textElements[textElements.length - 1];
+      const range = document.createRange();
+      range.setStartBefore(firstElement);
+      range.setEndAfter(lastElement);
+      range.surroundContents(wrapper);
+
+      sidenoteAnnotation = annotate(wrapper, {
+        type: "highlight",
+        color: "var(--orange05)",
+        iterations: 2,
+        strokeWidth: 2,
+      });
+    }
+
+    sn.addEventListener("mouseover", () => {
+      labelAnnotation?.show();
+      sidenoteAnnotation?.show();
+    });
+
+    sn.addEventListener("mouseout", () => {
+      labelAnnotation?.hide();
+
+      sidenoteAnnotation?.hide();
+    });
+  });
+</script>

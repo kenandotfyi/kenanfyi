@@ -8,32 +8,31 @@ import Hovers from "../components/Hovers.astro";
 ---
 
 <Base pageTitle={frontmatter.title}>
-    <div class="post-title-note" id="post-title-note">
+  <div class="post-title-note" id="post-title-note">
+    <p>
+      /{currentPath.toString().split("/")[1]}/
+    </p>
+    <h2>{frontmatter.title}</h2>
+    <p>
+      {zeit(frontmatter.pubDate)}
+      • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
+    </p>
+    {
+      zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+        " "
+      ) : (
         <p>
-            /{currentPath.toString().split("/")[1]}/
+          <i>
+            updated:
+            {zeit(frontmatter.updated)}
+          </i>
         </p>
-        <h2>{frontmatter.title}</h2>
-        <p>
-            {zeit(frontmatter.pubDate)}
-            • {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
-        </p>
-        {
-            zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
-                " "
-            ) : (
-                <p>
-                    <i>
-                        updated:
-                        {zeit(frontmatter.updated)}
-                    </i>
-                </p>
-            )
-        }
-    </div>
-    <main id="main-note" class="main-note">
-        <slot />
-    </main>
-    <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
+      )
+    }
+  </div>
+  <main id="main-note" class="main-note">
+    <slot />
+  </main>
+  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
 </Base>
-
 <Hovers />
