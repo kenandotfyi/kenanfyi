@@ -5,8 +5,7 @@
       "files": "*.astro",
       "options": {
         "parser": "astro",
-        "bracketSameLine": true,
-        "printWidth": 200
+        "printWidth": 120
       }
     },
     {

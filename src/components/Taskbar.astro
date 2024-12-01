@@ -9,7 +9,9 @@ let allLinks;
 function kebabToSentenceCase(str: string) {
   const words = str.split("-");
 
-  const sentence = words.map((word: string, index: number) => (index === 0 ? word.charAt(0) + word.slice(1) : word)).join(" ");
+  const sentence = words
+    .map((word: string, index: number) => (index === 0 ? word.charAt(0) + word.slice(1) : word))
+    .join(" ");
 
   return sentence;
 }
@@ -22,6 +24,7 @@ if (currentPath == "notes") {
   allLinks = await getCollection("notes", ({ data }) => {
     return data.draft !== true;
   });
+  allLinks.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 } else if (currentPath == "articles") {
   allLinks = await getCollection("articles", ({ data }) => {
     return data.draft !== true;
@@ -48,7 +51,8 @@ if (currentPath == "notes") {
     <span style="color: var(--red); padding-left:0.4rem">●</span>
   </div>
   <div class={currentPath === "" ? "hiddenItem" : "taskbar-item"} id="menubarSecond">
-    {currentPath == "" ? currentPath : "≡ " + currentPath}
+    <Icon name="ph:list-magnifying-glass-duotone" size="20px" />
+    {currentPath == "" ? currentPath : "" + currentPath}
   </div>
   <div class={currentPathPage === "" ? "hiddenItem" : "taskbar-item"}>
     {currentPathPage}
@@ -81,7 +85,9 @@ if (currentPath == "notes") {
             </li>
           ))
       }
-      <li style="color: var(--metadata)"><i><a href={`/${currentPath}/`}>{currentPath}...</a></i></li>
+      <li style="color: var(--metadata)">
+        <a href={`/${currentPath}/`}>{currentPath}...</a>
+      </li>
     </ul>
   </div>
 </div>

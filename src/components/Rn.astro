@@ -6,16 +6,16 @@
   //@ts-nocheck
   import { annotate } from "rough-notation";
 
-  const e = document.querySelectorAll("#rn").forEach((hl) => {
-    const annotation = annotate(hl, {
-      type: "bracket",
-      color: "red",
+  const e = document.querySelectorAll("#rn").forEach((highlight) => {
+    const annotation = annotate(highlight, {
+      type: "highlight",
+      color: "var(--orange)",
       padding: [0, 10],
       brackets: ["left", "right", "top", "bottom"],
       strokeWidth: 3,
     });
     setTimeout(() => {
       annotation.show();
-    }, 1000);
+    }, 500);
   });
 </script>

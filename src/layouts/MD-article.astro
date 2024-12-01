@@ -26,10 +26,8 @@ import SnMnHighlight from "../components/SnMnHighlight.astro";
             " "
           ) : (
             <p>
-              <i>
-                updated:
-                {zeit(frontmatter.updated)}
-              </i>
+              updated:
+              {zeit(frontmatter.updated)}
             </p>
           )
         }
@@ -38,7 +36,7 @@ import SnMnHighlight from "../components/SnMnHighlight.astro";
     </section>
   </article>
 
-  <Extra backlinks={frontmatter.backlinks} forwards={frontmatter.forwards} />
+  <Extra backlinks={frontmatter.backlinks} />
 </Base>
 <Hovers />
 <SnMnHighlight />

@@ -103,7 +103,9 @@
       //     targetDiv.style.left,
       // ]);
 
-      showPreview(targetDiv);
+      setTimeout(() => {
+        showPreview(targetDiv);
+      }, 100);
     });
 
     link.addEventListener("mouseleave", () => {

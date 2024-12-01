@@ -5,14 +5,24 @@
     const textElements: HTMLElement[] = [];
 
     function processNode(node: Node) {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent && node.textContent.trim()) {
+      if (
+        node.nodeType === Node.TEXT_NODE &&
+        node.textContent &&
+        node.textContent.trim()
+      ) {
         const span = document.createElement("span");
         span.textContent = node.textContent;
         (node as ChildNode).replaceWith(span);
         textElements.push(span);
       } else if (node.nodeType === Node.ELEMENT_NODE) {
         // If it's an inline element that contains only text, use it directly
-        if (node instanceof Element && ["A", "I", "STRONG", "EM", "SPAN"].includes(node.tagName) && Array.from(node.childNodes).every((child) => child.nodeType === Node.TEXT_NODE)) {
+        if (
+          node instanceof Element &&
+          ["A", "I", "STRONG", "EM", "SPAN"].includes(node.tagName) &&
+          Array.from(node.childNodes).every(
+            (child) => child.nodeType === Node.TEXT_NODE,
+          )
+        ) {
           textElements.push(node as HTMLElement);
         } else {
           // Recursively process child nodes
@@ -36,7 +46,7 @@
       labelAnnotation = annotate(label as HTMLElement, {
         type: "circle",
         color: "var(--orange)",
-        padding: [3, 10],
+        padding: [1, 10],
       });
 
       // Create a single span and move all text elements into it
@@ -62,9 +72,8 @@
     });
 
     sn.addEventListener("mouseout", () => {
-      labelAnnotation?.hide();
-
-      sidenoteAnnotation?.hide();
+      // labelAnnotation?.hide();
+      // sidenoteAnnotation?.hide();
     });
   });
 </script>

@@ -19,6 +19,8 @@
     --taskbar-border: #494949;
     --selection: #6b3121;
     --border: #ddd;
+    --block-bg: #121212;
+    --block-border: #333333;
   }
 }
 
@@ -43,6 +45,8 @@
     --taskbar-border: #a9a9a9;
     --selection: #ebebe6;
     --border: #000;
+    --block-bg: #f4f4f0;
+    --block-border: #dddddd;
   }
 }
 

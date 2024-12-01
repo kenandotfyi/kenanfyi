@@ -20,7 +20,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-left: 12.5%;
-  font-family: IBMPlexSerif, serif;
+  font-family: et-roman, serif;
   background-color: var(--bg);
   color: var(--text);
   max-width: 1400px;
@@ -88,7 +88,7 @@ p,
 dl,
 ol,
 ul {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 2rem;
 }
 
@@ -100,11 +100,11 @@ p {
 }
 
 strong {
-  font-family: IBMPlexSerifBold;
+  font-family: et-book-bold;
 }
 
 i {
-  font-family: IBMPlexSerifItalic;
+  font-family: et-roman;
 }
 
 blockquote {
@@ -114,7 +114,7 @@ blockquote {
     width: 55%;
     margin-right: 40px;
     font-style: italic;
-    font-family: IBMPLexSerifItalic;
+    font-family: et-roman;
   }
 
   & footer {
@@ -127,11 +127,15 @@ blockquote {
 section > p,
 section > footer,
 section > table,
+section > span#rn,
 section > h1,
 h2,
-h3,
-section > div.post-title {
+h3 {
   width: 55%;
+}
+
+section > div.post-title {
+  width: calc(55% - 20px);
 }
 
 /* 50 + 5 == 55, to be the same width as paragraph */
@@ -175,11 +179,18 @@ figure.fullwidth figcaption {
   margin-right: 24%;
 }
 
-a:link,
-a:visited {
+a {
   color: inherit;
-  text-underline-offset: 0.1em;
-  text-decoration-thickness: 0.05em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+a.external-link {
+  background-image: url(../assets/arrow_hardedge.svg);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: right;
+  padding-right: 0.7em;
 }
 
 img {
@@ -193,12 +204,10 @@ a:hover {
 
 /* title section */
 div.post-title {
-  width: 55%;
   margin-top: 3rem;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  border-left: 1px solid;
-  border-bottom: 1px solid;
+  padding: 10px;
+  background-color: var(--block-bg);
+  border: 1px solid var(--block-border);
   & h1 {
     margin: 0;
   }
@@ -217,6 +226,7 @@ div.post-title {
     border: 1px solid var(--border);
     margin-bottom: 0;
     font-family: JBBold;
+    font-size: 1rem;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -237,7 +247,7 @@ div.post-title {
 .marginnote {
   float: right;
   clear: right;
-  margin-right: -60%;
+  margin-right: -55%;
   width: 50%;
   margin-top: 0.3rem;
   margin-bottom: 0;
@@ -316,105 +326,18 @@ label.margin-toggle:not(.sidenote-number) {
   display: none;
 }
 
-@media (max-width: 1080px) {
-  body {
-    width: 84%;
-    padding-left: 8%;
-    padding-right: 8%;
-  }
-
-  hr,
-  section > p,
-  section > footer,
-  section > table,
-  section > h1,
-  h2,
-  h3,
-  section > div.post-title {
-    width: 100%;
-  }
-
-  section > dl,
-  section > ol,
-  section > ul {
-    width: 90%;
-  }
-
-  figure {
-    max-width: 90%;
-  }
-
-  figcaption,
-  figure.fullwidth figcaption {
-    margin-right: 0%;
-    max-width: none;
-  }
-
-  blockquote {
-    margin-left: 1.5em;
-    margin-right: 0em;
-  }
-
-  blockquote p,
-  blockquote footer {
-    width: 100%;
-  }
-
-  label.margin-toggle:not(.sidenote-number) {
-    display: inline;
-  }
-
-  .sidenote,
-  .marginnote {
-    display: none;
-  }
-
-  .margin-toggle:checked + .sidenote,
-  .margin-toggle:checked + .marginnote {
-    display: block;
-    float: left;
-    left: 1rem;
-    clear: both;
-    width: 95%;
-    margin: 1rem 2.5%;
-    position: relative;
-  }
-
-  label {
-    cursor: pointer;
-  }
-
-  div.table-wrapper,
-  table {
-    width: 85%;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .code-container {
-    & .code-file {
-      width: calc(100% - 10px);
-      border: 1px solid var(--border);
-      margin-bottom: 0;
-      font-family: JBBold;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    & .astro-code {
-      width: calc(100% - 10px);
-      font-family: JB;
-      border: 1px solid var(--border);
-      border-top: 0px solid;
-      margin-top: 0;
-      padding: 10px;
-    }
-  }
-}
+/* for smaller screens  */
 
 /* my utilities */
+
+.line {
+  stroke: #353535;
+}
+
+.hl {
+  color: #fff;
+  background: var(--orange);
+}
 
 /* INDEX PAGE */
 .index-list {
@@ -437,17 +360,14 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 .backlink-area {
-  width: 55%;
-  border-top: 1px solid;
-  border-left: 1px solid;
+  width: calc(55% - 20px);
+  border: 1px solid var(--block-border);
   margin-bottom: 200px;
   padding-left: 20px;
   & p {
     margin-top: 10px;
-    margin-bottom: 0px;
   }
   & .con-list-backlink {
-    margin-top: 0;
     padding-inline-start: 0px;
     list-style: none;
   }
@@ -615,9 +535,9 @@ label.margin-toggle:not(.sidenote-number) {
   width: 480px;
   height: 240px;
   overflow-y: hidden;
-  background: var(--bg);
+  background: var(--block-bg);
   padding: 10px;
-  border: 1px solid var(--text);
+  border: 2px solid var(--block-border);
 
   font-size: 1rem;
   backdrop-filter: blur(2px);
@@ -642,7 +562,6 @@ label.margin-toggle:not(.sidenote-number) {
   background: var(--orange);
   border: 1px solid var(--orange);
   color: var(--active-link);
-  box-shadow: 0px -10px 0px var(--bg);
 }
 
 .hiddenPrev {
@@ -717,5 +636,107 @@ label.margin-toggle:not(.sidenote-number) {
       padding-right: 10px;
       font-size: 1rem;
     }
+  }
+}
+
+@media (max-width: 1080px) {
+  body {
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  hr,
+  section > p,
+  section > footer,
+  section > table,
+  section > span#rn,
+  section > h1,
+  h2,
+  h3,
+  section > div.post-title {
+    width: 100%;
+  }
+
+  section > div.post-title {
+    width: calc(100% - 20px);
+
+    & h1 {
+      font-size: 2.8rem;
+    }
+  }
+
+  section > dl,
+  section > ol,
+  section > ul {
+    width: 90%;
+  }
+
+  figure {
+    max-width: 90%;
+  }
+
+  figcaption,
+  figure.fullwidth figcaption {
+    margin-right: 0%;
+    max-width: none;
+  }
+
+  blockquote {
+    margin-left: 1.5em;
+    margin-right: 0em;
+  }
+
+  blockquote p,
+  blockquote footer {
+    width: 100%;
+  }
+
+  label.margin-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+
+  .sidenote,
+  .marginnote {
+    display: none;
+  }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    position: relative;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  div.table-wrapper,
+  table {
+    width: 85%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .code-container {
+    & .code-file {
+      width: calc(100% - 10px);
+    }
+
+    & .astro-code {
+      width: calc(100% - 10px);
+    }
+  }
+
+  .backlink-area {
+    width: calc(100% - 10px);
   }
 }

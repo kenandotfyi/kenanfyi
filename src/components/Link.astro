@@ -4,7 +4,7 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx";
 import { loadRenderers } from "astro:container";
 import { getEntry } from "astro:content";
-import { datum, zeit } from "../../utils/zeit.ts";
+import { zeit } from "../../utils/zeit.ts";
 
 const { type, href } = Astro.props;
 // setup astro containers rendering
@@ -21,16 +21,6 @@ const { Content } = await entry.render();
 const cont = await container.renderToString(Content);
 ---
 
-<span
-    ><a href={`/${type}s/${href}/`} data-target={href} class="prev-link"
-        ><slot /></a
-    ></span
-><span
-    class="hiddenPrev hiddenContent"
-    id={href}
-    data-title={title}
-    data-type={type}
-    data-pD={pD}
->
-    {cont.substring(0, 580)}...
+<span><a href={`/${type}s/${href}/`} data-target={href} class="prev-link"><slot /></a></span><span class="hiddenPrev hiddenContent" id={href} data-title={title} data-type={type} data-pD={pD}>
+  {cont.substring(0, 580)}...
 </span>
