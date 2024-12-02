@@ -18,15 +18,11 @@ const pageTitle = "Articles";
     </div>
     <ul class="index-list">
       {
-        allArticles.map((article) => (
+        allArticles.map((article: any) => (
           <li class="index-list-element">
-            <span>
-              <a href={`/articles/${article.slug}/`} class="no-prev">
-                {article.data.title}
-              </a>
-            </span>
-            <span class="date">, {datum(article.data.pubDate)}</span>
-            {datum(article.data.updated) === datum(article.data.pubDate) ? "" : <span class="element-updated-text">{"(updated: " + zeit(article.data.updated) + ")"}</span>}
+            <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
+            <span class="date">{" " + datum(article.data.pubDate)}</span>
+            {datum(article.data.updated) === datum(article.data.pubDate) ? "" : <span class="element-updated-text">{"/" + zeit(article.data.updated)}</span>}
           </li>
         ))
       }

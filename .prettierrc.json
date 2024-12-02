@@ -5,7 +5,7 @@
       "files": "*.astro",
       "options": {
         "parser": "astro",
-        "printWidth": 120
+        "printWidth": 200
       }
     },
     {

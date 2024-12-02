@@ -9,9 +9,7 @@ let allLinks;
 function kebabToSentenceCase(str: string) {
   const words = str.split("-");
 
-  const sentence = words
-    .map((word: string, index: number) => (index === 0 ? word.charAt(0) + word.slice(1) : word))
-    .join(" ");
+  const sentence = words.map((word: string, index: number) => (index === 0 ? word.charAt(0) + word.slice(1) : word)).join(" ");
 
   return sentence;
 }
@@ -51,8 +49,8 @@ if (currentPath == "notes") {
     <span style="color: var(--red); padding-left:0.4rem">●</span>
   </div>
   <div class={currentPath === "" ? "hiddenItem" : "taskbar-item"} id="menubarSecond">
-    <Icon name="ph:list-magnifying-glass-duotone" size="20px" />
-    {currentPath == "" ? currentPath : "" + currentPath}
+    <Icon name="ph:list" size="20px" />
+    {currentPath}
   </div>
   <div class={currentPathPage === "" ? "hiddenItem" : "taskbar-item"}>
     {currentPathPage}
