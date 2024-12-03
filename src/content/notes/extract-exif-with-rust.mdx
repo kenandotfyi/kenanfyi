@@ -42,8 +42,9 @@ use rexiv2::Metadata;
 use std::fs::{self, File};
 use std::io::Write;
 
-fn main() -> std::io::Result<()> { let folder_path = "./photos"; // using MDX in Astro, so the files
-should be .mdx let markdown_extension = ".mdx";
+fn main() -> std::io::Result<()> { let folder_path = "./photos"; 
+// using MDX in Astro, so the files should be .mdx 
+let markdown_extension = ".mdx";
 
     // initialize Rexiv2 crate
     let _ = rexiv2::initialize();
