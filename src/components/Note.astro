@@ -3,16 +3,13 @@ import { zeit } from "../../utils/zeit.ts";
 const { frontmatter } = Astro.props;
 ---
 
-<article>
-  <div class="note-header">
-    <span id={frontmatter.slug} style="display: inline;"></span>
-    <h3>
-      <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
-    </h3>
-    <span>{zeit(frontmatter.data.pubDate)}</span>
-  </div>
-  <section id={frontmatter.slug}>
-    <slot />
-  </section>
-  <p></p>
-</article>
+<div class="note-header">
+  <span id={frontmatter.slug} style="display: inline;"></span>
+  <h3>
+    <a href={`/notes/${frontmatter.slug}/`}>{frontmatter.data.title}</a>
+  </h3>
+  <span>{zeit(frontmatter.data.pubDate)}</span>
+</div>
+<section id={frontmatter.slug}>
+  <slot />
+</section>

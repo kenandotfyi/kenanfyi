@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../layouts/Base.astro";
+import BasePage from "../layouts/BasePage.astro";
 import { datum, zeit } from "../../utils/zeit.ts";
 
 // GET ALL ARTICLES FROM articles COLLECTION
@@ -11,21 +11,34 @@ allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
 const pageTitle = "Articles";
 ---
 
-<Base pageTitle={pageTitle}>
+<BasePage pageTitle={pageTitle}>
   <section>
-    <div class="post-title">
-      <h1>{pageTitle}</h1>
+    <div>
+      <h3>
+        {pageTitle}
+      </h3>
     </div>
-    <ul class="index-list">
-      {
-        allArticles.map((article: any) => (
-          <li class="index-list-element">
-            <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
-            <span class="date">{" " + datum(article.data.pubDate)}</span>
-            {datum(article.data.updated) === datum(article.data.pubDate) ? "" : <span class="element-updated-text">{"/" + zeit(article.data.updated)}</span>}
-          </li>
-        ))
-      }
-    </ul>
+
+    <table class="index-table">
+      <thead>
+        <tr><td class="index-header" colspan="3">Index / <a href="/articles/">Articles</a></td></tr>
+      </thead>
+      <tbody>
+        {
+          allArticles.map((article: any) => (
+            <tr>
+              <td class="index-date">{datum(article.data.pubDate)}</td>
+              <td>{article.data.title}</td>
+              <td class="index-read">
+                <a href={`/articles/${article.slug}/`}>Read -></a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" class="article-excerpt">{article.data.excerpt}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
   </section>
-</Base>
+</BasePage>

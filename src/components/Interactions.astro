@@ -1,0 +1,35 @@
+---
+const { data } = Astro.props;
+---
+
+<div class="interactions">
+  <span class="btn"><a onclick="window.history.go(-1); return false;">&lt;- Go Back</a></span>
+  <span class="btn"><a href=`mailto:hey@kenan.fyi?subject=${data.title}`>Reply via E-Mail</a></span>
+  <span class="btn"><a id="copy-button">Copy URL</a></span>
+  <div id="popup" class="popup">Copied!</div>
+</div>
+
+<script is:inline>
+  const copyButt = document.getElementById("copy-button");
+
+  function copy(e) {
+    e.preventDefault();
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        // Show the popup
+        const popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        // Remove the 'show' class after 2 seconds
+        setTimeout(() => popup.classList.remove("show"), 2000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy URL: ", err);
+        alert("Failed to copy the URL. Please try again.");
+      });
+  }
+
+  copyButt.addEventListener("click", copy);
+  copyButt.addEventListener("touchstart", copy);
+</script>

@@ -23,10 +23,10 @@
     // add them together
     div.innerHTML =
       `<div class="hiddenContentTitleBar">${divTitle}<span><i>, ${divpD}</i></span></div>` +
-      `<p><a href=/${divType}s/${divSlug}/><i>read more...</i></a></p>` +
       `<div>` +
       post.map((e) => e.innerHTML).join("") +
-      `</div>`;
+      `</div>` +
+      `<p><a href=/${divType}s/${divSlug}/><i>read more...</i></a></p>`;
   });
 
   function isMobile() {

@@ -1,89 +1,17 @@
 ---
 const currentPath = Astro.url.pathname.toString().split("/")[1];
+
+const { path } = Astro.props;
 ---
 
-<!-- Mobile Header -->
-<div class="mobile-header" id="mobileHeader">
-    <a href="/" class="no-prev">
-        <span style="text-align: center;">✶</span>
-        <span>kenan.fyi{currentPath == "" ? "" : "/" + currentPath}</span>
-        <span style="text-align: center;">✶</span>
-    </a>
-    <!-- Desktop -->
-</div>
-<nav class="navbar">
-    <ul class="nav-list">
-        <li>
-            <a href="/" class={currentPath === "" ? "active-path no-prev" : ""}>
-                <span>kenan.fyi</span>
-                <span style="color: var(--red); padding-right:0.2rem">●</span>
-            </a>
-            <li>
-                <a
-                    href="/articles/"
-                    class={currentPath === "articles"
-                        ? "active-path no-prev"
-                        : ""}>articles</a
-                >
-            </li>
-            <li>
-                <a
-                    href="/notes/"
-                    class={currentPath === "notes" ? "active-path no-prev" : ""}
-                    >notes</a
-                >
-            </li>
-            <li>
-                <a
-                    href="/photos/"
-                    class={currentPath === "photos"
-                        ? "active-path no-prev"
-                        : ""}>photos</a
-                >
-            </li>
-            <li>
-                <a
-                    href="/now/"
-                    class={currentPath === "now" ? "active-path no-prev" : ""}
-                    >now</a
-                >
-            </li>
-            <li>
-                <a
-                    href="/blogroll/"
-                    class={currentPath === "blogroll"
-                        ? "active-path no-prev"
-                        : ""}>blogroll</a
-                >
-            </li>
-            <li>
-                <a
-                    href="/about/"
-                    class={currentPath === "about" ? "active-path no-prev" : ""}
-                    >about</a
-                >
-            </li>
-        </li>
-    </ul>
+<nav class="nav-basic">
+  <!-- <div id="menu" class="menu">Menu</div> -->
+  <div class="menubar">
+    <div class="sh"><a href="/">Home</a></div>
+    <div class="sh"><a href="/articles/">Articles</a></div>
+    <div class="sh"><a href="/notes/">Notes</a></div>
+    <div class="sh"><a href="/now/">Now</a></div>
+    <div class="sh"><a href="/blogroll/">Blogroll</a></div>
+    <div class="sh"><a href="/about/">About</a></div>
+  </div>
 </nav>
-<!-- Mobile  -->
-<!--
-
-<div class="floating-button" id="floatingButton">
-    <span></span>
-</div>
-<div class="menu" id="menu">
-    <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/articles">articles</a></li>
-        <li><a href="/notes">notes</a></li>
-        <li><a href="/photos">photos</a></li>
-        <li><a href="/now">now</a></li>
-        <li><a href="/blogroll">blogroll</a></li>
-        <li><a href="/about">about</a></li>
-    </ul>
-</div>
-
-<script src="../scripts/mobile-menu.js"></script>
-
--->

@@ -12,6 +12,7 @@ const articlesCollection = defineCollection({
     backlinks: z.array(z.string()).optional(),
     type: z.string(),
     tags: z.array(z.string()).optional(),
+    excerpt: z.string().optional(),
   }),
 });
 
@@ -27,6 +28,7 @@ const notesCollection = defineCollection({
     backlinks: z.array(z.string()).optional(),
     type: z.string(),
     tags: z.array(z.string()).optional(),
+    excerpt: z.string().optional(),
   }),
 });
 

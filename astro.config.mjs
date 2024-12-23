@@ -45,9 +45,9 @@ export default defineConfig({
     syntaxHighlight: "shiki",
     shikiConfig: {
       themes: {
-        light: "vitesse-light",
+        light: "catppuccin-latte",
 
-        dark: "vitesse-dark",
+        dark: "catppuccin-mocha",
       },
       wrap: false,
       transformers: [

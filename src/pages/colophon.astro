@@ -1,11 +1,10 @@
 ---
-import Base from "../layouts/Base.astro";
+import BasePage from "../layouts/BasePage.astro";
 const pageTitle = "colophon";
 ---
 
-<Base pageTitle={pageTitle}>
+<BasePage pageTitle={pageTitle}>
   <section class="main">
-    <div class="post-title"><h1>{pageTitle}</h1></div>
     <p><i>Last Updated: 01 Dec 2024</i></p>
     <p>
       <strong>kenan.fyi</strong> is my personal website, simultaneously serving as an experimental tool on web design. I'm building in public and the entire codebase is hosted at
@@ -31,4 +30,4 @@ const pageTitle = "colophon";
       For some icons I use the <a href="https://phosphoricons.com/">Phosphor Icons</a>.
     </p>
   </section>
-</Base>
+</BasePage>

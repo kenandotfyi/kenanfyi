@@ -1,6 +1,5 @@
 ---
 import Footer from "../components/Footer.astro";
-import Taskbar from "../components/Taskbar.astro";
 import "../styles/fonts.css";
 import "../styles/global.css";
 import "../styles/colors.css";
@@ -21,7 +20,9 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Nav />
     <slot />
     <Footer />
+    <!-- <Taskbar /> -->
   </body>
 </html>

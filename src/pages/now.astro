@@ -1,12 +1,14 @@
 ---
+import Nav from "../components/Nav.astro";
 import Base from "../layouts/Base.astro";
 const pageTitle = "now";
 ---
 
 <Base pageTitle={pageTitle}>
+  <Nav />
   <section>
     <div class="post-title">
-      <h1>{pageTitle}</h1>
+      <h3>{pageTitle}</h3>
     </div>
 
     <p><i>Last updated: 24 Nov 2024</i></p>

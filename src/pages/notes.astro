@@ -1,54 +1,44 @@
 ---
 import { getCollection } from "astro:content";
-import Note from "../components/Note.astro";
-import Base from "../layouts/Base.astro";
-import SnMnHighlight from "../components/SnMnHighlight.astro";
+import BasePage from "../layouts/BasePage.astro";
+import { datum, zeit } from "../../utils/zeit.ts";
 
-// GET ALL NOTES FROM notes COLLECTION
-
-const allNotes = await getCollection("notes", ({ data }: { data: any }) => {
+// GET ALL ARTICLES FROM articles COLLECTION
+const allNotes = await getCollection("notes", ({ data }) => {
   return data.draft !== true;
 });
 allNotes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
-
-const pageTitle = "notes";
+const pageTitle = "Notes";
 ---
 
-<Base pageTitle={pageTitle}>
+<BasePage pageTitle={pageTitle}>
   <section>
-    <div class="post-title"><h1>{pageTitle}</h1></div>
-    {
-      allNotes.map(async (n: any) => {
-        const { Content } = await n.render();
-        return (
-          <Note frontmatter={n}>
-            <Content />
-          </Note>
-        );
-      })
-    }
+    <div>
+      <h3>
+        {pageTitle}
+      </h3>
+    </div>
+
+    <table class="index-table">
+      <thead>
+        <tr><td class="index-header" colspan="3">Index / <a href="/articles/">Notes</a></td></tr>
+      </thead>
+      <tbody>
+        {
+          allNotes.map((article: any) => (
+            <tr>
+              <td class="index-date">{datum(article.data.pubDate)}</td>
+              <td>{article.data.title}</td>
+              <td class="index-read">
+                <a href={`/notes/${article.slug}/`}>Read -></a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" class="article-excerpt">{article.data.excerpt}...</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
   </section>
-</Base>
-<SnMnHighlight />
-
-<!-- <script>
-  //@ts-nocheck
-  //first select all toggle elements on the page based on their id, matching with the unique slug
-  const toggles = document.querySelectorAll(`span[id^=${frontmatter.slug}]`);
-  toggles.forEach((toggle) => {
-    toggle.innerHTML = "×";
-    toggle.style.fontSize = "1.5rem";
-    toggle.style.cursor = "pointer";
-
-    //select a div with the same id
-    const note = document.querySelector(`section#${frontmatter.slug}`);
-    //add click events to the toggle element
-    toggle.addEventListener("click", () => {
-      if (note.style.display === "block" || note.style.display === "") {
-        note.style.display = "none";
-      } else {
-        note.style.display = "block";
-      }
-    });
-  });
-</script> -->
+</BasePage>

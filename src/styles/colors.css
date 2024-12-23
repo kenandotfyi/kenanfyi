@@ -1,24 +1,23 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #212121;
+    --bg: #181818;
     --body-bg: #f6f6f6;
     --text: #ddd;
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #100f0f;
+    --links: #fefefe;
     --black: #000;
     --red: #af2e1b;
-    --orange: #e66e4c;
+    --orange: #cc6324;
+    --green: #736b1e;
+    --yellow: #f1b73a;
     --orange05: rgba(230, 110, 76, 0.5);
     --teal: #3c4b59;
-    --beige1: #bfa07a;
-    --beige2: #d9c3b0;
-    --taskbar-fg: #2c2c2c;
-    --taskbar-bg: #181818;
-    --taskbar-border: #494949;
-    --selection: #6b3121;
-    --border: #ddd;
+    --selection: #636363;
+    --table-bg: #eee;
+    --border: #bbb;
+    --boxsh: #ddd;
     --block-bg: #121212;
     --block-border: #333333;
   }
@@ -27,26 +26,26 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
-    --bg: #fffff8;
+    --bg: #fff;
     --body-bg: #f6f6f6;
-    --text: #353535;
+    --text: #000;
+    /* --text: #353535; */
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #100f0f;
+    --links: #3b4b59;
     --black: #000;
     --red: #af2e1b;
     --orange: #e66e4c;
+    --green: #736b1e;
+    --yellow: #f1b73a;
     --orange05: rgba(230, 110, 76, 0.5);
     --teal: #3c4b59;
-    --beige1: #bfa07a;
-    --beige2: #d9c3b0;
-    --taskbar-fg: #dbdbdb;
-    --taskbar-bg: #555;
-    --taskbar-border: #b2b2b2;
-    --selection: #ebebe6;
-    --border: #000;
-    --block-bg: #f4f4f0;
-    --block-border: #dddddd;
+    --selection: #d1d1cf;
+    --table-bg: #eee;
+    --border: #bbb;
+    --boxsh: #ddd;
+    --block-bg: #e4e4df;
+    --block-border: #cfcfbb;
   }
 }
 

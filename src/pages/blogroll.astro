@@ -1,12 +1,12 @@
 ---
-import Base from "../layouts/Base.astro";
+import BasePage from "../layouts/BasePage.astro";
 const pageTitle = "blogroll";
 ---
 
-<Base pageTitle={pageTitle}>
+<BasePage pageTitle={pageTitle}>
   <section>
-    <div class="post-title"><h1>{pageTitle}</h1></div>
-    <i>Last Updated: 21 Jun 2024</i>
+    <div><h3>{pageTitle}</h3></div>
+    <p><i>Last Updated: 21 Jun 2024</i></p>
     <p>below are some blogs I regularly read, in no particular order:</p>
     <ul>
       <li><a href="https://manuelmoreale.com/">Manuel Moreale</a></li>
@@ -45,4 +45,4 @@ const pageTitle = "blogroll";
       </li>
     </ul>
   </section>
-</Base>
+</BasePage>

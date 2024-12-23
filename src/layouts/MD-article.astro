@@ -3,39 +3,52 @@ import Base from "./Base.astro";
 import Extra from "../components/Extra.astro";
 import { zeit } from "../../utils/zeit.ts";
 const { frontmatter, minutes } = Astro.props;
-const currentPath = Astro.url.pathname;
 import Hovers from "../components/Hovers.astro";
 import Rn from "../components/Rn.astro";
 import SnMnHighlight from "../components/SnMnHighlight.astro";
+import Nav from "../components/Nav.astro";
+import Interactions from "../components/Interactions.astro";
+const { pageTitle, path } = Astro.props;
+const currentPath = Astro.url.pathname.toString().split("/")[1];
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <article>
-    <section id="main" class="main">
-      <div class="post-title" id="post-title">
-        <p>
-          /{currentPath.toString().split("/")[1]}/
-        </p>
-        <h1>{frontmatter.title}</h1>
-        <p>
-          {zeit(frontmatter.pubDate)}
-          — {minutes}{frontmatter.status === "wip" ? ", wip" : ""}
-        </p>
-        {
-          zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
-            " "
-          ) : (
-            <p>
-              updated:
-              {zeit(frontmatter.updated)}
-            </p>
-          )
-        }
-      </div>
-      <slot />
-    </section>
-  </article>
+  <Nav path={frontmatter.title} />
+  <section>
+    <div class="metadata sh soft">
+      <table class="metadata-table">
+        <thead>
+          <tr>
+            <td> -> {frontmatter.title}</td>
+            <td>{zeit(frontmatter.pubDate)}</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+              ""
+            ) : (
+              <tr>
+                <td>Updated</td>
+                <td>{zeit(frontmatter.updated)}</td>
+              </tr>
+            )
+          }
+          <tr>
+            <td>Category</td>
+            <td>{frontmatter.tags}</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>{minutes}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
+    <slot />
+  </section>
+  <Interactions data={frontmatter} />
   <Extra backlinks={frontmatter.backlinks} />
 </Base>
 <Hovers />
