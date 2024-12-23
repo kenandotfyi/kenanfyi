@@ -723,6 +723,10 @@ label.margin-toggle:not(.sidenote-number) {
 
   .interactions {
     font-size: 12px;
+
+    & span.copy {
+      display: none;
+    }
   }
 
   .backlink-area {
