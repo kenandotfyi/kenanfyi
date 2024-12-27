@@ -15,9 +15,9 @@
     --orange05: rgba(230, 110, 76, 0.5);
     --teal: #3c4b59;
     --selection: #636363;
-    --table-bg: #eee;
-    --border: #bbb;
-    --boxsh: #ddd;
+    --table-bg: #111111;
+    --border: #333333;
+    --boxsh: #000;
     --block-bg: #121212;
     --block-border: #333333;
   }
@@ -44,7 +44,7 @@
     --table-bg: #eee;
     --border: #bbb;
     --boxsh: #ddd;
-    --block-bg: #e4e4df;
+    --block-bg: #f4f4f5;
     --block-border: #cfcfbb;
   }
 }
