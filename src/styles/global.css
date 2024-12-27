@@ -177,13 +177,13 @@ a:hover {
 /* title section */
 
 .code-container {
+  font-size: 14px;
   & .code-file {
     width: calc(55% - 20px);
     border: 1px solid var(--border);
     box-shadow: 2px 2px 0px var(--boxsh);
     margin-bottom: 0;
     font-family: JBBold;
-    font-size: 1rem;
     padding-left: 10px;
     padding-right: 10px;
   }
