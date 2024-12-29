@@ -119,7 +119,7 @@ h3 {
 section > dl,
 section > ol,
 section > ul {
-  width: 55%;
+  width: 50%;
 }
 
 figure {
@@ -621,7 +621,7 @@ label.margin-toggle:not(.sidenote-number) {
   section > dl,
   section > ol,
   section > ul {
-    width: 94%;
+    width: 100%;
   }
 
   p,
@@ -664,9 +664,8 @@ label.margin-toggle:not(.sidenote-number) {
   .margin-toggle:checked + .marginnote {
     display: block;
     float: left;
-    left: 1rem;
     clear: both;
-    width: 95%;
+    width: 100%;
     margin: 1rem 2.5%;
     position: relative;
   }
