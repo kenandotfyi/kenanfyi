@@ -4,14 +4,13 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
 const { path } = Astro.props;
 ---
 
-<nav class="nav-basic">
-  <!-- <div id="menu" class="menu">Menu</div> -->
-  <div class="menubar">
-    <div class="sh"><a href="/">Home</a></div>
-    <div class="sh"><a href="/articles/">Articles</a></div>
-    <div class="sh"><a href="/notes/">Notes</a></div>
-    <div class="sh"><a href="/now/">Now</a></div>
-    <div class="sh"><a href="/blogroll/">Blogroll</a></div>
-    <div class="sh"><a href="/about/">About</a></div>
-  </div>
+<nav class="nav-simple">
+  <p class="logo"><a href="/">KENAN.FYI</a></p>
+  <ul class="nav-ul">
+    <li><a href="/articles/" class={currentPath === "articles" ? "active " : ""}>Articles</a></li>
+    <li><a href="/notes/" class={currentPath === "notes" ? "active " : ""}>Notes</a></li>
+    <li><a href="/blogroll/" class={currentPath === "blogroll" ? "active " : ""}>Blogroll</a></li>
+    <li><a href="/now/" class={currentPath === "now" ? "active " : ""}>Now</a></li>
+    <li><a href="/about/" class={currentPath === "about" ? "active " : ""}>About</a></li>
+  </ul>
 </nav>

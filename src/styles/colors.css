@@ -18,6 +18,7 @@
     --table-bg: #111111;
     --border: #333333;
     --boxsh: #000;
+    --menubg: #333;
     --block-bg: #121212;
     --block-border: #333333;
   }
@@ -44,6 +45,7 @@
     --table-bg: #eee;
     --border: #bbb;
     --boxsh: #ddd;
+    --menubg: #ddd;
     --block-bg: #f4f4f5;
     --block-border: #cfcfbb;
   }

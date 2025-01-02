@@ -36,7 +36,7 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
           }
           <tr>
             <td>Category</td>
-            <td>{frontmatter.tags}</td>
+            <td>{frontmatter.tags.map((t: string) => <span>{t} </span>)}</td>
           </tr>
           <tr>
             <td>Duration</td>
