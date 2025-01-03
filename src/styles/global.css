@@ -19,7 +19,7 @@ html {
 
 body {
   width: 87.5%;
-  margin-left: 24px;
+  margin-left: 60px;
   margin-right: 24px;
   margin-top: 0px;
   font-family: bdy;
@@ -56,7 +56,7 @@ h3 {
 hr {
   display: block;
   height: 1px;
-  width: 55%;
+  width: 60%;
   border: 0;
   border-top: 1px solid var(--border);
   margin: 1em 0;
@@ -93,7 +93,7 @@ strong {
 
 blockquote {
   & p {
-    width: 55%;
+    width: 60%;
     margin-right: 40px;
     font-style: italic;
     font-family: bdy;
@@ -107,18 +107,18 @@ section > span#rn,
 section > h1,
 h2,
 h3 {
-  width: 55%;
+  width: 60%;
 }
 
 section > p:first-child {
   margin-top: 0;
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
+/* 55 + 5 == 60, to be the same width as paragraph */
 section > dl,
 section > ol,
 section > ul {
-  width: 50%;
+  width: 55%;
 }
 
 figure {
@@ -127,7 +127,7 @@ figure {
   font-size: 0.8rem;
   font: inherit;
   vertical-align: baseline;
-  max-width: 55%;
+  max-width: 60%;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin: 0 0 3em 0;
@@ -178,7 +178,7 @@ a:hover {
 .code-container {
   font-size: 14px;
   & .code-file {
-    width: calc(55% - 20px);
+    width: calc(60% - 20px);
     border: 1px solid var(--border);
     box-shadow: 2px 2px 0px var(--boxsh);
     margin-bottom: 0;
@@ -188,7 +188,7 @@ a:hover {
   }
 
   & .astro-code {
-    width: calc(55% - 20px);
+    width: calc(60% - 20px);
     border: 1px solid var(--border);
     box-shadow: 2px 2px 0px var(--boxsh);
     border-top: 0px solid;
@@ -312,7 +312,7 @@ label.margin-toggle:not(.sidenote-number) {
   background-color: var(--bg);
   height: auto;
   margin-top: 24px;
-  width: 55%;
+  width: 60%;
 
   & .logo {
     margin: 0;
@@ -439,7 +439,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .metadata {
   padding: 0.5rem 1rem 1rem 1rem;
-  width: calc(55% - 2px - 2rem);
+  width: calc(60% - 2px - 2rem);
   border: 1px solid;
   font-family: JB;
   background-color: var(--block-bg);
@@ -535,7 +535,7 @@ label.margin-toggle:not(.sidenote-number) {
 /* article page */
 
 .backlink-area {
-  width: calc(55% - 10px);
+  width: calc(60% - 10px);
   background-color: var(--block-bg);
   border: 1px solid var(--border);
   box-shadow: 2px 2px 0px var(--boxsh);
@@ -747,6 +747,15 @@ label.margin-toggle:not(.sidenote-number) {
   .backlink-area {
     width: calc(100% - 20px);
   }
+
+  .nav-simple {
+    width: 98%;
+    flex-direction: column;
+
+    & .arrow {
+      display: none;
+    }
+  }
 }
 
 /* utilities */
@@ -776,7 +785,7 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 .nav-simple {
-  width: 55%;
+  width: 60%;
   margin-top: 24px;
   margin-bottom: 12px;
   font-family: JB;
@@ -788,7 +797,6 @@ label.margin-toggle:not(.sidenote-number) {
 
     & a {
       background-color: black;
-      border: 1px solid var(--border);
       color: white;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
@@ -796,8 +804,9 @@ label.margin-toggle:not(.sidenote-number) {
     }
   }
 
-  & .logo::after {
-    content: "->";
+  & .arrow {
+    font-family: JBBold;
+    margin: 0;
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -808,10 +817,6 @@ label.margin-toggle:not(.sidenote-number) {
     padding: 0;
     margin: 0;
     text-transform: uppercase;
-
-    & li::before {
-      content: "";
-    }
 
     & li a {
       text-decoration: none;
