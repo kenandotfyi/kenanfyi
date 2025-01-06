@@ -635,15 +635,13 @@ label.margin-toggle:not(.sidenote-number) {
   section > dl,
   section > ol,
   section > ul {
-    width: 100%;
+    width: 94%;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
-  p,
-  ol,
-  ul,
-  dl,
-  li {
-    width: 94%;
+  section li > * {
+    width: 84%;
     font-size: 13px;
     line-height: 1.5;
   }
@@ -751,6 +749,9 @@ label.margin-toggle:not(.sidenote-number) {
     width: calc(100% - 20px);
   }
 
+  .backlink-area ul {
+    font-size: 13px;
+  }
   .nav-simple {
     width: 98%;
     flex-direction: column;
