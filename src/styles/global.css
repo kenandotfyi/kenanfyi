@@ -639,6 +639,9 @@ label.margin-toggle:not(.sidenote-number) {
   }
 
   p,
+  ol,
+  ul,
+  dl,
   li {
     width: 94%;
     font-size: 13px;
