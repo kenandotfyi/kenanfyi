@@ -21,11 +21,19 @@ const pageTitle = "kenan.fyi | posting occasionally";
 <Base pageTitle={pageTitle}>
   <Nav />
   <section>
-    <p><img src="/img/banner-8.png" alt="" class="banner" /></p>
-    <p>Hey! This is my playground where I try new stuff out and keep learning about web technologies plus posting some thoughts occasionally.</p>
+    <p><img id="randomBanner" src="" alt="" class="banner" /></p>
+    <p>Hey! Kenan here, an hardware engineer focused on power electronics, from Germany.</p>
     <p>
-      There are some metadata inside the posts, which gives the reader some ideas about the articles. Like the status which shows if the article is completed or not. Also the update date. I will
-      implement a more friendly metadata display in the future. Since I am building in public, I do my updates in the prod.
+      Here I blog about software and other things that interest me. I write mostly for myself, but maybe you find them interesting too. This site is constantly being re-designed and re-organized,
+      because it is serving me as a playground while I am improving myself in web development.
+
+      <p>I believe everyone should have their own place in web and freely express themselves the way they want.</p>
+
+      <p>
+        You can find me on <a href="https://mas.to/@ingenieur">Mastodon°</a>, <a href="https://github.com/kenandotfyi">GitHub°</a> or contact me directly via <a href="mailto:hey@kenan.fyi">e-mail</a>.
+        I always appreciate a meaningful and friendly conversation on topics such as software development, design, minimalism, electronics and non-fiction books.
+      </p>
+      <p class="dim">That place generally sucks, but you can also find me on <a href="https://linkedin.com/in/kenanakinci">LinkedIn</a>.</p>
     </p>
     <p>✶</p>
     <table class="index-table">
@@ -39,7 +47,7 @@ const pageTitle = "kenan.fyi | posting occasionally";
               <td class="index-date">{datum(article.data.pubDate)}</td>
               <td>{article.data.title}</td>
               <td class="index-read">
-                <a href={`/articles/${article.slug}/`}>Read -></a>
+                <a href={`/articles/${article.slug}/`}>Read -</a>
               </td>
             </tr>
           ))
@@ -60,7 +68,7 @@ const pageTitle = "kenan.fyi | posting occasionally";
               <td class="index-date">{datum(note.data.pubDate)}</td>
               <td>{note.data.title}</td>
               <td class="index-read">
-                <a href={`/notes/${note.slug}/`}>Read -></a>
+                <a href={`/notes/${note.slug}/`}>Read -</a>
               </td>
             </tr>
           ))
@@ -69,3 +77,18 @@ const pageTitle = "kenan.fyi | posting occasionally";
     </table>
   </section>
 </Base>
+
+<script>
+  const bannerCount = 10;
+
+  window.onload = function () {
+    const randomNumber = Math.floor(Math.random() * bannerCount) + 1;
+
+    const imagePath = `/img/banner-${randomNumber}.png`;
+
+    const banner = document.getElementById("randomBanner") as HTMLImageElement;
+    if (banner) {
+      banner.src = imagePath;
+    }
+  };
+</script>

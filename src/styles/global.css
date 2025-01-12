@@ -19,15 +19,15 @@ html {
 
 body {
   width: 87.5%;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
   margin-top: 0px;
   font-family: JB;
   font-weight: 400;
   background-color: var(--bg);
   color: var(--text);
-  max-width: 1400px;
-  min-width: 970px;
+  max-width: 1200px;
   counter-reset: sidenote-counter;
   overflow-x: hidden;
 }
@@ -85,9 +85,12 @@ p {
   padding-right: 0;
   vertical-align: baseline;
 }
+section a {
+  color: var(--links);
+}
 
 strong {
-  font-family: JB;
+  font-family: JBBold;
   font-weight: 700;
 }
 
@@ -288,6 +291,14 @@ label.margin-toggle:not(.sidenote-number) {
 
 /* my utilities */
 
+.dim {
+  color: var(--dim-text);
+
+  & a {
+    color: var(--dim-text);
+  }
+}
+
 .hl {
   color: #fff;
   background: var(--orange);
@@ -427,7 +438,7 @@ label.margin-toggle:not(.sidenote-number) {
       box-sizing: border-box;
       padding: 4px;
       text-decoration: none;
-      color: var(--links);
+      color: var(--text);
     }
 
     & a:hover {

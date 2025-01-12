@@ -4,9 +4,10 @@
     --bg: #181818;
     --body-bg: #f6f6f6;
     --text: #ddd;
+    --dim-text: #333;
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #fefefe;
+    --links: #c03e35;
     --black: #000;
     --red: #af2e1b;
     --orange: #cc6324;
@@ -27,13 +28,14 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
-    --bg: #fff;
+    --bg: #fdfdfc;
     --body-bg: #f6f6f6;
     --text: #000;
+    --dim-text: #ccc;
     /* --text: #353535; */
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #3b4b59;
+    --links: #af2e1b;
     --black: #000;
     --red: #af2e1b;
     --orange: #e66e4c;
