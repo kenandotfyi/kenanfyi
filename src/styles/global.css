@@ -344,7 +344,7 @@ label.margin-toggle:not(.sidenote-number) {
   }
 
   & td.index-date {
-    width: 120px;
+    width: 100px;
   }
 
   & td.index-read {
@@ -672,6 +672,10 @@ label.margin-toggle:not(.sidenote-number) {
   .index-table {
     width: 98%;
     font-size: 12px;
+
+    & td.index-date {
+      width: 80px;
+    }
   }
 
   .metadata {

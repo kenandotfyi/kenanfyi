@@ -1,7 +1,7 @@
 ---
 import Base from "./Base.astro";
 import Extra from "../components/Extra.astro";
-import { zeit } from "../../utils/zeit.ts";
+import { zeit, datum } from "../../utils/zeit.ts";
 const { frontmatter, minutes } = Astro.props;
 import Hovers from "../components/Hovers.astro";
 import Rn from "../components/Rn.astro";
@@ -20,17 +20,17 @@ const currentPath = Astro.url.pathname.toString().split("/")[1];
         <thead>
           <tr>
             <td> -> {frontmatter.title}</td>
-            <td>{zeit(frontmatter.pubDate)}</td>
+            <td>{datum(frontmatter.pubDate)}</td>
           </tr>
         </thead>
         <tbody>
           {
-            zeit(frontmatter.updated) === zeit(frontmatter.pubDate) ? (
+            datum(frontmatter.updated) === datum(frontmatter.pubDate) ? (
               ""
             ) : (
               <tr>
                 <td>Updated</td>
-                <td>{zeit(frontmatter.updated)}</td>
+                <td>{datum(frontmatter.updated)}</td>
               </tr>
             )
           }
