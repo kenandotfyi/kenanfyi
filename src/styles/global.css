@@ -291,6 +291,14 @@ label.margin-toggle:not(.sidenote-number) {
 
 /* my utilities */
 
+span.katex-display {
+  width: 55%;
+}
+
+.katex {
+  font-size: 1.25em;
+}
+
 .dim {
   color: var(--dim-text);
 
@@ -713,6 +721,11 @@ label.margin-toggle:not(.sidenote-number) {
     & .arrow {
       display: none;
     }
+  }
+
+  span.katex-display {
+    font-size: 0.8em;
+    width: 100%;
   }
 }
 
