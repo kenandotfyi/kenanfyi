@@ -8,16 +8,21 @@ const allNotes = await getCollection("notes", ({ data }) => {
   return data.draft !== true;
 });
 allNotes.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
-const pageTitle = "Notes";
+const pageTitle = "notes";
 ---
 
 <BasePage pageTitle={pageTitle}>
   <section>
+  <h1>{pageTitle}</h1>
+  <p>Below are some notes about different topics I find interesting during learning something and like to keep a record of. They are generally sections or quick jots from my locally stored PKM system.</p>
 
     <table class="index-table">
-      <thead>
-        <tr><td class="index-header" colspan="3">Index / <a href="/articles/">Notes</a></td></tr>
-      </thead>
+    <thead>
+      <tr class="index-header"><td>Published</td>
+      <td>Title</td>
+      <td>Link</td>
+      </tr>
+    </thead>
       <tbody>
         {
           allNotes.map((article: any) => (

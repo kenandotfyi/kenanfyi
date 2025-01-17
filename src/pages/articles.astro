@@ -8,15 +8,20 @@ const allArticles = await getCollection("articles", ({ data }) => {
   return data.draft !== true;
 });
 allArticles.sort((a: any, b: any) => b.data.pubDate - a.data.pubDate);
-const pageTitle = "Articles";
+const pageTitle = "articles";
 ---
 
 <BasePage pageTitle={pageTitle}>
   <section>
+  <h1>{pageTitle}</h1>
+  <p>These are somewhat longform posts, which I write for any topic I have in mind, so not particularly technical.</p>
 
     <table class="index-table">
       <thead>
-        <tr><td class="index-header" colspan="3">Index / <a href="/articles/">Articles</a></td></tr>
+        <tr class="index-header"><td>Published</td>
+        <td>Title</td>
+        <td>Link</td>
+        </tr>
       </thead>
       <tbody>
         {

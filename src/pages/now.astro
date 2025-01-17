@@ -1,15 +1,11 @@
 ---
-import Nav from "../components/Nav.astro";
-import Base from "../layouts/Base.astro";
+import BasePage from "../layouts/BasePage.astro";
 const pageTitle = "now";
 ---
 
-<Base pageTitle={pageTitle}>
-  <Nav />
+<BasePage pageTitle={pageTitle}>
   <section>
-    <div class="post-title">
-      <h3>{pageTitle}</h3>
-    </div>
+    <h1>{pageTitle}</h1>
 
     <p><i>Last updated: 24 Nov 2024</i></p>
     <p>I'm currently trying to publish the articles I wrote already. But in the meantime I am still making updates to the blog design. So the look will probably be very different in the end.</p>
@@ -28,4 +24,4 @@ const pageTitle = "now";
       <li>[x] content collections such as bits and articles</li>
     </ul>
   </section>
-</Base>
+</BasePage>

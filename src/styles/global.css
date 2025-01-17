@@ -95,7 +95,12 @@ strong {
 }
 
 blockquote {
+  margin-left: 0;
   & p {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    border-left: 4px solid var(--border);
+    border-bottom: 1px solid var(--border);
     width: 55%;
     margin-right: 40px;
     font-style: italic;
@@ -134,6 +139,28 @@ figure {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin: 0 0 1em 0;
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  padding-left: 0.5rem;
+  font-size: 14px;
+  border: 1px solid black;
+  background: var(--block-bg);
+  width: calc(100% - 30px - 2px - 0.5rem);
+  z-index: 10;
+  display: none;
+}
+
+.fw {
+  width: calc(95% - 30px - 2px - 0.5rem);
+}
+
+figure:hover span.caption {
+  display: block;
 }
 
 figcaption {
@@ -165,6 +192,7 @@ a.external-link::after {
 img {
   max-width: 100%;
   height: auto;
+  border: 1px solid #000;
 }
 
 img.banner {
@@ -329,8 +357,9 @@ span.katex-display {
   border-spacing: 0;
   box-shadow: 2px 2px 0px var(--boxsh);
   font-size: 14px;
+  border-collapse: collapse;
 
-  & td.index-header {
+  & .index-header {
     background-color: var(--table-bg);
     border-left: 1px solid var(--border);
     border-top: 1px solid var(--border);
@@ -615,8 +644,8 @@ span.katex-display {
   }
 
   blockquote {
-    margin-left: 1.5em;
-    margin-right: 0em;
+    margin-left: 0em;
+    margin-right: 1.5rem;
   }
 
   blockquote p,
@@ -655,6 +684,10 @@ span.katex-display {
   img {
     width: 100%;
     height: auto;
+  }
+
+  .caption {
+    font-size: 13px;
   }
 
   .code-container {
@@ -717,6 +750,7 @@ span.katex-display {
   .nav-simple {
     width: 98%;
     flex-direction: column;
+    gap: 10px;
 
     & .arrow {
       display: none;
