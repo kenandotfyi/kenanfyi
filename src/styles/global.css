@@ -319,6 +319,59 @@ label.margin-toggle:not(.sidenote-number) {
 
 /* my utilities */
 
+.nav-simple {
+  width: 55%;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-family: JB;
+  display: flex;
+
+  & .logo {
+    margin: 0;
+    font-family: JBBold;
+
+    & a {
+      background-color: black;
+      color: white;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      text-decoration: none;
+    }
+  }
+
+  & .arrow {
+    font-family: JBBold;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  & .nav-ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+
+    & li a {
+      text-decoration: none;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      color: var(--text);
+    }
+
+    & li a:hover {
+      background-color: var(--red);
+      color: white;
+    }
+
+    & .active {
+      background-color: var(--menubg);
+      color: var(--text);
+    }
+  }
+}
+
 span.katex-display {
   width: 55%;
 }
@@ -749,9 +802,14 @@ span.katex-display {
   }
   .nav-simple {
     width: 98%;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
-
+    border-bottom: 1px solid var(--menubg);
+    & .nav-ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-left: 1px solid var(--menubg);
+    }
     & .arrow {
       display: none;
     }
@@ -788,56 +846,15 @@ span.katex-display {
 .soft {
   border-color: var(--border);
 }
-
-.nav-simple {
-  width: 55%;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-family: JB;
-  display: flex;
-
-  & .logo {
-    margin: 0;
-    font-family: JBBold;
-
-    & a {
-      background-color: black;
-      color: white;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      text-decoration: none;
-    }
-  }
-
-  & .arrow {
-    font-family: JBBold;
-    margin: 0;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  & .nav-ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-transform: uppercase;
-
-    & li a {
-      text-decoration: none;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      color: var(--text);
-    }
-
-    & li a:hover {
-      background-color: var(--red);
-      color: white;
-    }
-
-    & .active {
-      background-color: var(--menubg);
-      color: var(--text);
-    }
-  }
+.container-404 {
+  width: 480px;
+  border: 2px solid var(--border);
+  padding: 10px;
+  background: var(--bg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

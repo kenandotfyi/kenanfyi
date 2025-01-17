@@ -1,0 +1,17 @@
+---
+import "../styles/fonts.css";
+import "../styles/colors.css";
+import "../styles/global.css";
+import { getCollection } from "astro:content";
+
+import BasePage from "../layouts/BasePage.astro";
+
+const pageTitle = "library";
+---
+
+<BasePage pageTitle={pageTitle}>
+  <p>library is getting designed at the moment :)</p>
+  <p>
+    <a href="/">go back home</a>
+  </p>
+</BasePage>
