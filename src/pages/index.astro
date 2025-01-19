@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { datum, zeit } from "../../utils/zeit.ts";
 import Nav from "../components/Nav.astro";
+import { Icon } from "astro-icon/components";
 
 // GET ALL ARTICLES FROM articles COLLECTION
 const allArticles = await getCollection("articles", ({ data }: { data: any }) => {
@@ -30,14 +31,16 @@ const pageTitle = "kenan.fyi | posting occasionally";
       <p>I believe everyone should have their own place in web and freely express themselves the way they want.</p>
 
       <p>
-        You can find me on <a href="https://mas.to/@ingenieur">Mastodon°</a>, <a href="https://github.com/kenandotfyi">GitHub°</a> or contact me directly via <a href="mailto:hey@kenan.fyi">e-mail</a>.
-        I always appreciate a meaningful and friendly conversation on topics such as software development, design, minimalism, electronics and non-fiction books.
+        You can find me on <a href="https://mas.to/@ingenieur">Mastodon<Icon name="ph:mastodon-logo-duotone" size="16" /></a>, <a href="https://github.com/kenandotfyi"
+          >GitHub<Icon name="ph:github-logo-duotone" size="16" /></a
+        > or contact me directly via <a href="mailto:hey@kenan.fyi">e-mail<Icon name="ph:envelope-duotone" size="16" /></a>. I always appreciate a meaningful and friendly conversation on topics such
+        as software development, design, minimalism, electronics and non-fiction books.
       </p>
       <p>If you like to use RSS, I also have a feed which you can find <a href="https://kenan.fyi/rss.xml">here</a>.</p>
 
       <p class="dim">That place generally sucks, but you can also find me on <a href="https://linkedin.com/in/kenanakinci">LinkedIn</a>.</p>
     </p>
-    <p>✶</p>
+    <p><Icon name="ph:asterisk" size="20" /></p>
     <table class="index-table">
       <thead>
         <tr><td class="index-header" colspan="3">Index / <a href="/articles/">Articles</a></td></tr>
@@ -57,7 +60,7 @@ const pageTitle = "kenan.fyi | posting occasionally";
       </tbody>
     </table>
 
-    <p>✶</p>
+    <p><Icon name="ph:asterisk" size="20" /></p>
 
     <table class="index-table">
       <thead>
