@@ -366,8 +366,8 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     & .active {
-      background-color: var(--menubg);
-      color: var(--text);
+      background-color: var(--red);
+      color: white;
     }
   }
 }
