@@ -85,6 +85,10 @@ p {
   padding-right: 0;
   vertical-align: baseline;
 }
+
+p.right-aligned {
+  text-align: right;
+}
 section a {
   color: var(--links);
 }
@@ -206,7 +210,7 @@ img.banner {
 }
 
 a:hover {
-  background-color: var(--black);
+  background-color: var(--red);
   color: white;
 }
 
@@ -441,7 +445,7 @@ span.katex-display {
   }
 
   & td.index-read {
-    width: 84px;
+    width: 86px;
     & a {
       background-color: black;
       color: white;
@@ -594,6 +598,85 @@ ul.bookmarks-list {
   font-size: 0.8rem;
 }
 
+.accordion {
+  width: 55%;
+  overflow: hidden;
+  font-size: 14px;
+  border-right: 1px solid var(--border);
+}
+
+/* Each accordion item */
+.accordion-item {
+}
+
+/* Last item border removal */
+.accordion-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+/* Header row with 3 columns */
+.accordion-header {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  /* grid-template-columns: 1fr 3fr; */
+}
+
+.accordion-bg {
+  background: var(--table-bg);
+}
+
+/* Columns inside header */
+.accordion-header .col {
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-left: 0.5rem;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  & a {
+    background-color: black;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-decoration: none;
+  }
+
+  & a:hover,
+  a:visited:hover {
+    background-color: var(--red);
+  }
+
+  & a:visited {
+    background-color: var(--metadata);
+  }
+
+  & span.status {
+    color: var(--metadata);
+    font-style: italic;
+  }
+}
+
+/* Initially hidden content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0px;
+
+  & p {
+    margin: 0;
+    color: var(--metadata);
+    font-size: 12px;
+  }
+}
+
+/* Expand content when parent item is hovered */
+.accordion-item:hover .accordion-content {
+  max-height: fit-content;
+  padding: 4px;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
 /* article page */
 
 .backlink-area {
@@ -631,16 +714,18 @@ ul.bookmarks-list {
 .hiddenContent {
   position: absolute;
   width: 420px;
-  height: 240px;
-  overflow-y: scroll;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  box-shadow: 4px 4px 0px var(--boxsh);
+  max-height: fit-content;
+  overflow-y: hidden;
+  background: var(--block-bg);
+  border: 4px double var(--border);
+  box-shadow: 4px 4px var(--shadow);
+  box-sizing: content-box;
+  scrollbar-color: var(--border) var(--block-bg);
   & p {
-    color: var(--metadata);
     font-size: 12px;
     line-height: 1.4;
-    padding-left: 1rem;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   & blockquote > p {
     width: 100%;
@@ -649,12 +734,15 @@ ul.bookmarks-list {
 
 .hiddenContentTitleBar {
   position: sticky;
-  font-size: 1rem;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: JBBold;
   top: 0px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background: var(--orange);
-  color: var(--active-link);
+  margin: 8px;
+  padding-bottom: 8px;
+  background: var(--block-bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .hiddenPrev {
@@ -791,6 +879,11 @@ ul.bookmarks-list {
     & td.index-date {
       width: 80px;
     }
+  }
+
+  .accordion {
+    width: 98%;
+    font-size: 12px;
   }
 
   .metadata {

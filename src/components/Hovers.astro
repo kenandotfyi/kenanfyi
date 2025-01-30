@@ -22,11 +22,11 @@
 
     // add them together
     div.innerHTML =
-      `<div class="hiddenContentTitleBar">${divTitle}<span><i>, ${divpD}</i></span></div>` +
+      `<div class="hiddenContentTitleBar"> -> ${divTitle}<span><i>, ${divpD}</i></span></div>` +
       `<div>` +
       post.map((e) => e.innerHTML).join("") +
       `</div>` +
-      `<p><a href=/${divType}s/${divSlug}/><i>read more...</i></a></p>`;
+      `<p class="right-aligned"><a href=/${divType}s/${divSlug}/><i>read more</i></a></p>`;
   });
 
   function isMobile() {
@@ -84,12 +84,12 @@
       // condition 3
       if (vpWidth - (l + r) / 2 > 490 && vpHeight - (t + b) / 2 < 400) {
         targetDiv.style.left = `${l + 24}px`; // l + offset
-        targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
+        targetDiv.style.top = `${t - 172 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
       }
       // condition 4
       if (vpWidth - (l + r) / 2 < 490 && vpHeight - (t + b) / 2 < 400) {
         targetDiv.style.left = `${l - 480}px`; // l - container width
-        targetDiv.style.top = `${t - 240 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
+        targetDiv.style.top = `${t - 172 + window.scrollY - 24 - 5}px`; // t - container height + scroll offset - text height
       }
 
       // for debugging

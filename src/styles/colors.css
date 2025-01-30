@@ -7,7 +7,7 @@
     --dim-text: #333;
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #c03e35;
+    --links: #fff;
     --black: #000;
     --red: #af2e1b;
     --orange: #cc6324;
@@ -19,6 +19,7 @@
     --table-bg: #111111;
     --border: #333333;
     --boxsh: #000;
+    --shadow: rgba(0, 0, 0, 0.4);
     --menubg: #333;
     --block-bg: #121212;
     --block-border: #333333;
@@ -35,7 +36,7 @@
     /* --text: #353535; */
     --active-link: #fefefe;
     --metadata: #6f6e69;
-    --links: #af2e1b;
+    --links: #000;
     --black: #000;
     --red: #af2e1b;
     --orange: #e66e4c;
@@ -47,6 +48,7 @@
     --table-bg: #eee;
     --border: #bbb;
     --boxsh: #ddd;
+    --shadow: rgba(0, 0, 0, 0.4);
     --menubg: #ddd;
     --block-bg: #f4f4f5;
     --block-border: #cfcfbb;
