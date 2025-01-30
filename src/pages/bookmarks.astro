@@ -33,7 +33,7 @@ interface RaindropItem {
 
 const links = await fetchLinks();
 
-function getBaseURL(url){
+function getBaseURL(url: string){
   let parsed = new URL(url);
   return parsed.hostname;
 }
