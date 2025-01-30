@@ -190,6 +190,11 @@ a.external-link::after {
   content: "°";
 }
 
+a.no-style {
+  color: var(--text);
+  text-decoration: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -567,6 +572,26 @@ span.katex-display {
   100% {
     opacity: 0;
   }
+}
+
+ul.bookmarks-list {
+  list-style: none;
+  padding-left: 0;
+  & li > * {
+    width: 100%;
+  }
+}
+
+.bookmark {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.bookmark-excerpt {
+  color: var(--metadata);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
 }
 
 /* article page */
