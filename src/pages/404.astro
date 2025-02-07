@@ -2,16 +2,23 @@
 import "../styles/fonts.css";
 import "../styles/colors.css";
 import "../styles/global.css";
+import Base from "../layouts/Base.astro";
+
+const pageTitle = "404 - kenan.fyi";
 ---
 
-<div class="container-404">
-  <p>Oops!</p>
-  <h1 style="font-size: 72px; color:var(--red)">404</h1>
-  <p>Either you manually entered a non-existing path or my lazy ass forgot to update the page link. Sorry!</p>
-  <p>
-    <a href="/">get me out of here</a>
-  </p>
-</div>
+<Base pageTitle={pageTitle}>
+  <section>
+    <div class="container-404">
+      <p>Oops!</p>
+      <h1 style="font-size: 72px; color:var(--red)">404</h1>
+      <p>Either you manually entered a non-existing path or my lazy ass forgot to update the page link. Sorry!</p>
+      <p>
+        <a href="/">get me out of here</a>
+      </p>
+    </div>
+  </section>
+</Base>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
