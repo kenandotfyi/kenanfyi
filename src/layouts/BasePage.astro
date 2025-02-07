@@ -18,6 +18,13 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="posting occasionally" />
     <script defer data-domain="kenan.fyi" src="https://pl.akinci.fyi/js/script.js"></script>
+    <script is:inline>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+    </script>
     <title>{pageTitle}</title>
   </head>
   <body>

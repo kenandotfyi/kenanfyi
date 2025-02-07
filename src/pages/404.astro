@@ -12,3 +12,9 @@ import "../styles/global.css";
     <a href="/">get me out of here</a>
   </p>
 </div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    plausible("404", { props: { path: document.location.pathname } });
+  });
+</script>
