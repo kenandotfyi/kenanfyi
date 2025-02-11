@@ -698,6 +698,7 @@ ul.bookmarks-list {
 
 .footer {
   display: flex;
+  color: var(--metadata);
   font-family: JB;
   font-size: 0.8rem;
   padding-top: 1rem;
