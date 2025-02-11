@@ -17,4 +17,4 @@ I use MIT licensed Phosphor Icons. You can find them [here](https://phosphoricon
 ## License
 
 - The **code** of this project is licensed under the MIT License.
-- The **content** (blog posts, articles, images) is licensed under CC BY-NC-SA 4.0.
+- The **content** (blog posts, articles, images) is licensed under CC BY-NC-SA-4.0.
