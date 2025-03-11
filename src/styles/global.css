@@ -424,8 +424,11 @@ span.katex-display {
     border-left: 1px solid var(--border);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    font-family: JBBold;
     font-weight: 700;
+
+    & td {
+      font-family: JBBold;
+    }
 
     & a {
       text-decoration: none;
@@ -438,6 +441,8 @@ span.katex-display {
     border-bottom: 1px solid var(--border);
     border-left: 1px solid var(--border);
     padding: 4px;
+    text-align: left;
+    vertical-align: top;
   }
 
   & td.index-date {
@@ -602,79 +607,14 @@ ul.bookmarks-list {
   width: 55%;
   overflow: hidden;
   font-size: 14px;
-  border-right: 1px solid var(--border);
 }
 
-/* Each accordion item */
-.accordion-item {
+.hidden-row {
+  display: none;
 }
 
-/* Last item border removal */
-.accordion-item:first-child {
-  border-top: 1px solid var(--border);
-}
-
-/* Header row with 3 columns */
-.accordion-header {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  /* grid-template-columns: 1fr 3fr; */
-}
-
-.accordion-bg {
-  background: var(--table-bg);
-}
-
-/* Columns inside header */
-.accordion-header .col {
-  border-left: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding-left: 0.5rem;
-  text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  & a {
-    background-color: black;
-    color: white;
-    padding-left: 4px;
-    padding-right: 4px;
-    text-decoration: none;
-  }
-
-  & a:hover,
-  a:visited:hover {
-    background-color: var(--red);
-  }
-
-  & a:visited {
-    background-color: var(--metadata);
-  }
-
-  & span.status {
-    color: var(--metadata);
-    font-style: italic;
-  }
-}
-
-/* Initially hidden content */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0px;
-
-  & p {
-    margin: 0;
-    color: var(--metadata);
-    font-size: 12px;
-  }
-}
-
-/* Expand content when parent item is hovered */
-.accordion-item:hover .accordion-content {
-  max-height: fit-content;
-  padding: 4px;
-  border-left: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+.clickable {
+  cursor: pointer;
 }
 
 /* article page */

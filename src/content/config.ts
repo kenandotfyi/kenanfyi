@@ -42,6 +42,20 @@ const photosCollection = defineCollection({
   }),
 });
 
+const bookCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    draft: z.boolean(),
+    title: z.string(),
+    author: z.string(),
+    rating: z.number().min(0).max(5),
+    isbn13: z.string().regex(/^\d{13}$/),
+    status: z.enum(["read", "finished", "want-to-read"]),
+    description: z.string().optional(),
+    coverUrl: z.string().url(),
+  }),
+});
+
 export const collections = {
   articles: articlesCollection,
   notes: notesCollection,
