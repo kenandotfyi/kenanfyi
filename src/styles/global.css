@@ -39,6 +39,14 @@ h1 {
   border-bottom: 1px solid;
 }
 
+h1.pageHeader {
+  font-size: 1.4rem;
+  text-align: center;
+  border: 0px;
+  text-transform: uppercase;
+  background-color: var(--table-bg);
+}
+
 h2 {
   font-weight: 700;
   font-family: JBBold;
@@ -130,7 +138,7 @@ section > p:first-child {
 section > dl,
 section > ol,
 section > ul {
-  width: 50%;
+  width: 55%;
   padding-left: 2rem;
 }
 
@@ -202,13 +210,12 @@ a.no-style {
 img {
   max-width: 100%;
   height: auto;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
 }
-
 img.banner {
-  border: 1px solid black;
+  width: 55%;
+  height: auto;
 }
-
 a:hover {
   background-color: var(--red);
   color: white;
@@ -329,6 +336,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .nav-simple {
   width: 55%;
+  background-color: var(--table-bg);
   margin-top: 24px;
   margin-bottom: 12px;
   font-family: JB;
@@ -424,11 +432,6 @@ span.katex-display {
     border-left: 1px solid var(--border);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    font-weight: 700;
-
-    & td {
-      font-family: JBBold;
-    }
 
     & a {
       text-decoration: none;
@@ -487,6 +490,11 @@ span.katex-display {
   & a:hover {
     background-color: unset;
   }
+}
+
+.display-title {
+  font-size: 2rem;
+  text-align: center;
 }
 
 .metadata {
@@ -615,6 +623,14 @@ ul.bookmarks-list {
 
 .clickable {
   cursor: pointer;
+}
+
+.coverImage {
+  float: left;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  height: auto;
 }
 
 /* article page */
@@ -788,6 +804,10 @@ ul.bookmarks-list {
     width: 100%;
     height: auto;
   }
+  img.banner {
+    width: 100%;
+    height: auto;
+  }
 
   .caption {
     font-size: 13px;
@@ -859,7 +879,8 @@ ul.bookmarks-list {
     width: 98%;
     flex-direction: row;
     gap: 10px;
-    border-bottom: 1px solid var(--menubg);
+    align-items: center;
+    padding-left: 10px;
     & .nav-ul {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
