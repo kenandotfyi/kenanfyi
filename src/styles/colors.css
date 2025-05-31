@@ -23,6 +23,7 @@
     --menubg: #333;
     --block-bg: #121212;
     --block-border: #333333;
+    --code-bg: #181616;
   }
 }
 
@@ -52,6 +53,7 @@
     --menubg: #ddd;
     --block-bg: #f4f4f5;
     --block-border: #cfcfbb;
+    --code-bg: #ececec;
   }
 }
 

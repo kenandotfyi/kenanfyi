@@ -240,6 +240,7 @@ a:hover {
     border-top: 0px solid;
     margin-top: 0;
     padding: 10px;
+    background-color: var(--code-bg) !important;
   }
 }
 
@@ -311,7 +312,7 @@ div.table-wrapper {
 .sidenote > code {
   font-size: 0.8rem;
   font-family: JB;
-  background-color: white;
+  background-color: var(--code-bg);
 }
 
 .fullwidth {
@@ -341,6 +342,7 @@ label.margin-toggle:not(.sidenote-number) {
   margin-bottom: 12px;
   font-family: JB;
   display: flex;
+  border: 1px solid var(--block-border);
 
   & .logo {
     margin: 0;
@@ -399,8 +401,11 @@ span.katex-display {
 .dim {
   color: var(--dim-text);
 
-  & a {
+  & a{
     color: var(--dim-text);
+  }
+  & a:hover{
+    color: white; 
   }
 }
 
@@ -665,6 +670,9 @@ ul.bookmarks-list {
   & a {
     color: var(--metadata);
     text-decoration: none;
+  }
+  & a:hover{
+    color: white;
   }
 }
 
