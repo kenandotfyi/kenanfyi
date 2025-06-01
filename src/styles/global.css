@@ -336,7 +336,7 @@ label.margin-toggle:not(.sidenote-number) {
 /* my utilities */
 
 .nav-simple {
-  width: 55%;
+  width: calc(55% - 2px);
   background-color: var(--table-bg);
   margin-top: 24px;
   margin-bottom: 12px;
@@ -718,7 +718,7 @@ ul.bookmarks-list {
   display: block;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1124px) {
   body {
     width: 94%;
     margin-right: 3%;
@@ -843,10 +843,10 @@ ul.bookmarks-list {
 
   .index-table {
     width: 98%;
-    font-size: 12px;
 
     & td.index-date {
       width: 80px;
+      font-size: 12px;
     }
   }
 
@@ -860,7 +860,7 @@ ul.bookmarks-list {
     box-sizing: border-box;
 
     & thead td {
-      font-size: 12px;
+      font-size: 14px;
     }
 
     & tbody {
@@ -884,7 +884,7 @@ ul.bookmarks-list {
     font-size: 13px;
   }
   .nav-simple {
-    width: 98%;
+    width: 97%;
     flex-direction: row;
     gap: 10px;
     align-items: center;
