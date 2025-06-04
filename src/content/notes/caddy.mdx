@@ -38,7 +38,7 @@ your.domain{
     }
     rewrite @title /index.php?title={re.title.1}&{query}  // [!code highlight]
     root * /var/www/html/mw #this might be mediawiki for you
-    php_fastcgi unix//var/run/php/php-fpm.sock # serving php applications
+    php_fastcgi unix//var/run/php/php-fpm.sock # serving php
     file_server
 }
 ```
@@ -53,7 +53,7 @@ After that you need to edit the LocalSettings.php too:
 
 ```php
 $wgScriptPath = "";
-$wgArticlePath = "/wiki/$1"; #for redirecting to /wiki/ 
+$wgArticlePath = "/wiki/$1"; #for redirecting to /wiki/
 $wgUsePathInfo = true;
 ```
 
