@@ -6,85 +6,79 @@ import BasePage from "../layouts/BasePage.astro";
 import { mmYY } from "../../utils/zeit.ts";
 import { Icon } from "astro-icon/components";
 
-const LITERAL = import.meta.env.Literal;
+const Hardcover = import.meta.env.HARDCOVER;
 
-var bearer = "Bearer " + LITERAL;
+var bearer = "Bearer " + Hardcover;
 
-const BOOKS_QUERY = `
-  fragment BookParts on Book {
-    id
-    slug
-    title
-    subtitle
-    description
-    isbn10
-    isbn13
-    language
-    pageCount
-    publishedDate
-    publisher
-    cover
-    authors {
-      id
-      name
-    }
-    gradientColors
-  }
-
-  fragment ReadingStateParts on ReadingState {
-    id
-    status
-    bookId
-    profileId
-    createdAt
-  }
-
-  query myReadingStates {
-    myReadingStates {
-      ...ReadingStateParts   # find fragments below
+const query = `
+{
+  me {
+    user_books(order_by: {status_id: asc}) {
+      rating
+      review_raw
+      status_id
       book {
-        ...BookParts   # find fragments below
+        id
+        title
+        slug
+        pages
+        release_year
+        cached_contributors
+        image {
+          url
+          height
+          width
+        }
       }
     }
   }
+}`;
 
-`;
+interface BookItem{
+  rating: number,
+  review_raw: string,
+  status_id: number,
+  book: {
+    id: number,
+    title: string,
+    slug: string,
+    pages: number,
+    release_year: number,
+    cached_contributors: {author: { name: string }}[],
+    iamge: {
+      url: string,
+      height: number,
+      width: number
+    }
+  }
+}
 
-let profileId = "cm6b8ukdr1205880h00hlb44f3b";
+const statusLabels: Record<BookItem["status_id"], string> = {
+  1: "Want to read",
+  2: "Reading",
+  3: "Read",
+  5: "Did not finish",
+}
 
-const response = await fetch("https://literal.club/graphql/", {
+const ratingStars: Record<BookItem["rating"], string> = {
+  1: "∗",
+  2: "∗∗",
+  3: "∗∗∗",
+  4: "∗∗∗∗",
+  5: "∗∗∗∗∗",
+}
+
+
+const response = await fetch("https://api.hardcover.app/v1/graphql", {
   method: "POST",
   headers: {
     Authorization: bearer,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ query: BOOKS_QUERY }),
+  body: JSON.stringify({ query }),
 });
 
 const d = await response.json();
-
-interface BookItem {
-  status: string;
-  createdAt: string;
-  book: {
-    title: string;
-    authors: { name: string }[];
-    cover: string;
-    description: string;
-    publishedDate: string;
-    isbn13: string;
-  };
-}
-
-const statusLabels: Record<BookItem["status"], string> = {
-  IS_READING: "Reading",
-  FINISHED: "Finished",
-  WANTS_TO_READ: "Wanna read",
-};
-
-const books = d.data.myReadingStates;
-
-// books.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
 const pageTitle = "library";
 ---
@@ -95,51 +89,54 @@ const pageTitle = "library";
     <Icon name="ph:warning-duotone" size="32" /><br />
     <i>under construction</i>
     <p>
-      Library currently just returns the default description and the status where I am pulling the data from. Therefore there is currently no rating information and data is inconsistent. I'm working on implementing a rating algorithm, so that it is automatically pulled from the service I use which is <a href="https://literal.club/pages/api">Literal°</a>. I will eventually skip the data filling only from API and integrate the chain with my local book notes.
+      Library works at the moment, but I need to implement some better review process/display.
     </p>
     <table id="data-table" class="index-table">
       <thead>
         <tr class="index-header">
           <td>Status</td>
           <td>Title</td>
-          <td>Published</td>
+          <td>Author</td>
+          <td>Rating</td>
         </tr>
       </thead>
       <tbody>
-        {books.map((b: BookItem) => (
-            <tr class="clickable" data-details={`details-row-${b.book.isbn13}`}>
-              <td class="index-date">{statusLabels[b.status]}</td>
-              <td>{b.book.title}</td>
-              <td class="index-read">{mmYY(b.book.publishedDate)}</td>
-            </tr>
-            <tr id={`details-row-${b.book.isbn13}`} class="hidden-row">
-              <td><img src=`${b.book.cover}` alt=`${b.book.title}`></td>
-              <td colspan="2" class="article-excerpt">{b.book.description}...</td>
-            </tr>
-        ))}
-      </tbody>
-    </table>
+        {
+        d.data.me[0].user_books.map((item: BookItem) =>  (    
+        <tr class="clickable" data-details={`details-row-${item.book.id}`}>
+          <td class="index-date">{statusLabels[item.status_id]}</td>
+          <td>{item.book.title}</td>
+          <td>{item.book.cached_contributors[0].author.name}</td>
+          <td class="index-read">{ratingStars[item.rating]}</td>
+        </tr>
+        <tr id={`details-row-${item.book.id}`} class="hidden-row">
+          <td colspan="4" class="">{item.review_raw}</td>
+        </tr>
+        ))
+        }
+    </tbody>
 
+    </table>
     <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", () => {
         const clickableRows = document.querySelectorAll(".clickable");
 
-        clickableRows.forEach(row => {
-            row.addEventListener("click", () => {
-                const targetRowId = row.getAttribute("data-details");
-                const targetRow = document.getElementById(targetRowId);
+        clickableRows.forEach((row) => {
+          row.addEventListener("click", () => {
+            const targetRowId = row.getAttribute("data-details");
+            const targetRow = document.getElementById(targetRowId);
 
-                // Hide all detail rows except the clicked one
-                document.querySelectorAll(".hidden-row").forEach(r => {
-                    if (r !== targetRow) r.style.display = "none";
-                });
-
-                // Toggle clicked row using computed style to avoid the double-click issue
-                const isHidden = getComputedStyle(targetRow).display === "none";
-                targetRow.style.display = isHidden ? "table-row" : "none";
+            // hide all detail rows except the clicked one
+            document.querySelectorAll(".hidden-row").forEach((r) => {
+              if (r !== targetRow) r.style.display = "none";
             });
+
+            //  avoid the double-click issue
+            const isHidden = getComputedStyle(targetRow).display === "none";
+            targetRow.style.display = isHidden ? "table-row" : "none";
+          });
         });
-    });
+      });
     </script>
   </section>
 </BasePage>
