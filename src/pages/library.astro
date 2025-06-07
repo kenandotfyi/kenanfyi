@@ -6,7 +6,7 @@ import BasePage from "../layouts/BasePage.astro";
 import { mmYY } from "../../utils/zeit.ts";
 import { Icon } from "astro-icon/components";
 
-const Hardcover = import.meta.env.HARDCOVER;
+const Hardcover = import.meta.env.Hardcover;
 
 var bearer = "Bearer " + Hardcover;
 
@@ -45,7 +45,7 @@ interface BookItem{
     pages: number,
     release_year: number,
     cached_contributors: {author: { name: string }}[],
-    iamge: {
+    image: {
       url: string,
       height: number,
       width: number
@@ -79,6 +79,7 @@ const response = await fetch("https://api.hardcover.app/v1/graphql", {
 });
 
 const d = await response.json();
+const books = d.data.me[0];
 
 const pageTitle = "library";
 ---
@@ -102,7 +103,7 @@ const pageTitle = "library";
       </thead>
       <tbody>
         {
-        d.data.me[0].user_books.map((item: BookItem) =>  (    
+        books.user_books.map((item: BookItem) =>  (    
         <tr class="clickable" data-details={`details-row-${item.book.id}`}>
           <td class="index-date">{statusLabels[item.status_id]}</td>
           <td>{item.book.title}</td>
