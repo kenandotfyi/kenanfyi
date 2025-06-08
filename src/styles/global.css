@@ -23,7 +23,7 @@ body {
   margin-right: auto;
   padding-left: 12.5%;
   margin-top: 0px;
-  font-family: JB;
+  font-family: Atkinson;
   font-weight: 400;
   background-color: var(--bg);
   color: var(--text);
@@ -83,8 +83,8 @@ p,
 dl,
 ol,
 ul {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 p {
@@ -102,7 +102,7 @@ section a {
 }
 
 strong {
-  font-family: JBBold;
+  font-family: Atkinson;
   font-weight: 700;
 }
 
@@ -116,7 +116,7 @@ blockquote {
     width: 55%;
     margin-right: 40px;
     font-style: italic;
-    font-family: JB;
+    font-family: Atkinson;
   }
 }
 
@@ -188,6 +188,31 @@ figcaption {
   max-width: 40%;
 }
 
+.code-container {
+  font-size: 14px;
+  & .code-file {
+    width: calc(55% - 20px);
+    border: 1px solid var(--border);
+    margin-bottom: 0;
+    font-family: JBBold;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  & .astro-code {
+    width: calc(55% - 20px);
+    border: 1px solid var(--border);
+    border-top: 0px solid;
+    margin-top: 0;
+    padding: 10px;
+    background-color: var(--code-bg) !important;
+  }
+}
+
+code {
+  font-family: JB;
+}
+
 figure.fullwidth figcaption {
   margin-right: 24%;
 }
@@ -222,31 +247,6 @@ a:hover {
 }
 
 /* title section */
-
-.code-container {
-  font-size: 14px;
-  & .code-file {
-    width: calc(55% - 20px);
-    border: 1px solid var(--border);
-    margin-bottom: 0;
-    font-family: JBBold;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  & .astro-code {
-    width: calc(55% - 20px);
-    border: 1px solid var(--border);
-    border-top: 0px solid;
-    margin-top: 0;
-    padding: 10px;
-    background-color: var(--code-bg) !important;
-  }
-}
-
-code {
-  font-family: JB;
-}
 
 /* Sidenotes, margin notes, figures, captions */
 
@@ -311,7 +311,7 @@ div.table-wrapper {
 .marginnote > code,
 .sidenote > code {
   font-size: 0.8rem;
-  font-family: JB;
+  font-family: Atkinson;
   background-color: var(--code-bg);
 }
 
@@ -331,63 +331,6 @@ label.sidenote-number {
 
 label.margin-toggle:not(.sidenote-number) {
   display: none;
-}
-
-/* my utilities */
-
-.nav-simple {
-  width: calc(55% - 2px);
-  background-color: var(--table-bg);
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-family: JB;
-  display: flex;
-  border: 1px solid var(--block-border);
-
-  & .logo {
-    margin: 0;
-    font-family: JBBold;
-
-    & a {
-      background-color: black;
-      color: white;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      text-decoration: none;
-    }
-  }
-
-  & .arrow {
-    font-family: JBBold;
-    margin: 0;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  & .nav-ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-transform: uppercase;
-
-    & li a {
-      text-decoration: none;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      color: var(--text);
-    }
-
-    & li a:hover {
-      background-color: var(--red);
-      color: white;
-    }
-
-    & .active {
-      background-color: var(--red);
-      color: white;
-    }
-  }
 }
 
 span.katex-display {
@@ -414,80 +357,6 @@ span.katex-display {
   background: var(--orange);
 }
 
-/* INDEX PAGE */
-.active-path {
-  color: var(--red);
-  border: 1px solid var(--block-border);
-  padding-left: 10px;
-
-  &::before {
-    content: " ●";
-  }
-}
-
-.index-table {
-  border-bottom: 0px;
-  border-right: 1px solid var(--border);
-  border-spacing: 0;
-  font-size: 14px;
-  border-collapse: collapse;
-
-  & .index-header {
-    background-color: var(--table-bg);
-    border-left: 1px solid var(--border);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-
-    & a {
-      text-decoration: none;
-    }
-  }
-
-  & td {
-    font-family: JB;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-    padding: 4px;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  & td.index-date {
-    width: 100px;
-  }
-
-  & td.index-read {
-    width: 86px;
-    & a {
-      background-color: black;
-      color: white;
-      padding: 0 0.75rem;
-      text-decoration: none;
-    }
-
-    & a:hover,
-    a:visited:hover {
-      background-color: var(--red);
-    }
-
-    & a:visited {
-      background-color: var(--metadata);
-    }
-  }
-
-  & td.article-excerpt {
-    color: lightgray;
-    font-style: italic;
-    font-size: 11px;
-    padding-left: 10px;
-
-    &:hover {
-      color: var(--red);
-    }
-  }
-}
-
 .no-underline {
   & a {
     text-decoration: none;
@@ -495,11 +364,6 @@ span.katex-display {
   & a:hover {
     background-color: unset;
   }
-}
-
-.display-title {
-  font-size: 2rem;
-  text-align: center;
 }
 
 .metadata {
@@ -538,7 +402,7 @@ span.katex-display {
   display: flex;
   gap: 10px;
   margin-bottom: 1rem;
-  font-family: JB;
+  font-family: Atkinson;
   font-size: 14px;
   box-sizing: border-box;
 
@@ -646,7 +510,7 @@ ul.bookmarks-list {
   border: 1px solid var(--border);
   padding-left: 10px;
   margin-bottom: 3rem;
-  font-family: JB;
+  font-family: Atkinson;
   & p {
     margin-top: 10px;
     font-family: JBBold;
@@ -660,7 +524,7 @@ ul.bookmarks-list {
 .footer {
   display: flex;
   color: var(--metadata);
-  font-family: JB;
+  font-family: Atkinson;
   font-size: 0.8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -701,7 +565,7 @@ ul.bookmarks-list {
   position: sticky;
   color: var(--red);
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 1rem;
   font-family: JBBold;
   top: 0px;
   margin: 8px;
@@ -741,8 +605,8 @@ ul.bookmarks-list {
   h2,
   h3,
   section > div.post-title {
-    width: 98%;
-    font-size: 13px;
+    width: 99%;
+    font-size: 14px;
     line-height: 1.5;
   }
 
@@ -750,13 +614,13 @@ ul.bookmarks-list {
   section > ol,
   section > ul {
     width: 92%;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
   }
 
   section li > * {
     width: 84%;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
   }
 
@@ -841,15 +705,6 @@ ul.bookmarks-list {
     }
   }
 
-  .index-table {
-    width: 98%;
-
-    & td.index-date {
-      width: 80px;
-      font-size: 12px;
-    }
-  }
-
   .accordion {
     width: 98%;
     font-size: 12px;
@@ -883,21 +738,7 @@ ul.bookmarks-list {
   .backlink-area ul {
     font-size: 13px;
   }
-  .nav-simple {
-    width: 97%;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    padding-left: 10px;
-    & .nav-ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      border-left: 1px solid var(--menubg);
-    }
-    & .arrow {
-      display: none;
-    }
-  }
+
 
   span.katex-display {
     font-size: 0.8em;
@@ -919,26 +760,10 @@ ul.bookmarks-list {
   text-transform: uppercase;
 }
 
-#type {
-  font-size: 15px;
-}
-
 .sh {
   box-shadow: 2px 2px var(--boxsh);
 }
 
 .soft {
   border-color: var(--border);
-}
-.container-404 {
-  width: 480px;
-  border: 2px solid var(--border);
-  padding: 10px;
-  background: var(--bg);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
 }

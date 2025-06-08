@@ -2,12 +2,12 @@
 import "../styles/fonts.css";
 import "../styles/colors.css";
 import "../styles/global.css";
-import Base from "../layouts/Base.astro";
+import BasePage from "../layouts/BasePage.astro";
 
 const pageTitle = "404 - kenan.fyi";
 ---
 
-<Base pageTitle={pageTitle}>
+<BasePage pageTitle={pageTitle}>
   <section>
     <div class="container-404">
       <p>Oops!</p>
@@ -18,10 +18,25 @@ const pageTitle = "404 - kenan.fyi";
       </p>
     </div>
   </section>
-</Base>
+</BasePage>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
     plausible("404", { props: { path: document.location.pathname } });
   });
 </script>
+
+<style>
+  .container-404 {
+    width: 480px;
+    border: 2px solid var(--border);
+    padding: 10px;
+    background: var(--bg);
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+</style>

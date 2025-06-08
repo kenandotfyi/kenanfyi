@@ -3,7 +3,7 @@ const { data } = Astro.props;
 ---
 
 <div class="interactions">
-  <span class="btn"><a onclick="window.history.go(-1); return false;">&lt;- Go Back</a></span>
+  <span class="btn"><a onclick="window.history.go(-1); return false;">← Go Back</a></span>
   <span class="btn"><a href=`mailto:hey@kenan.fyi?subject=${data.title}`>Reply via E-Mail</a></span>
   <span class="btn copy"><a id="copy-button">Copy URL</a></span>
   <div id="popup" class="popup">Copied!</div>

@@ -46,7 +46,7 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: "github-light-high-contrast",
-        dark: "kanagawa-dragon",
+        dark: "catppuccin-mocha",
       },
       wrap: false,
       transformers: [

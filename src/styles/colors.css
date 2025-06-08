@@ -23,7 +23,7 @@
     --menubg: #333;
     --block-bg: #121212;
     --block-border: #333333;
-    --code-bg: #181616;
+    --code-bg: #1E1E2E;
   }
 }
 
@@ -34,7 +34,6 @@
     --body-bg: #f6f6f6;
     --text: #000;
     --dim-text: #ccc;
-    /* --text: #353535; */
     --active-link: #fefefe;
     --metadata: #6f6e69;
     --links: #000;

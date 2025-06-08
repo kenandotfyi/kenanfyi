@@ -53,7 +53,7 @@ const pageTitle = "kenan.fyi | posting occasionally";
               <td class="index-date">{datum(article.data.pubDate)}</td>
               <td>{article.data.title}</td>
               <td class="index-read">
-                <a href={`/articles/${article.slug}/`}>Read -></a>
+                <a href={`/articles/${article.slug}/`}>Read →</a>
               </td>
             </tr>
           ))
@@ -74,7 +74,7 @@ const pageTitle = "kenan.fyi | posting occasionally";
               <td class="index-date">{datum(note.data.pubDate)}</td>
               <td>{note.data.title}</td>
               <td class="index-read">
-                <a href={`/notes/${note.slug}/`}>Read -></a>
+                <a href={`/notes/${note.slug}/`}>Read</a>
               </td>
             </tr>
           ))
@@ -98,3 +98,70 @@ const pageTitle = "kenan.fyi | posting occasionally";
     }
   };
 </script>
+
+<style>
+  .index-table {
+    border-bottom: 0px;
+    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 16px;
+
+    & .index-header {
+      background-color: var(--table-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      & a {
+        text-decoration: none;
+      }
+    }
+
+    & td {
+      font-family: Atkinson;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding: 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    & td.index-date {
+      width: 100px;
+    }
+
+    & td.index-read {
+      width: 86px;
+      font-family: Atkinson;
+      text-align: center;
+
+      & a {
+        background-color: black;
+        color: white;
+        padding: 0 0.75rem;
+        text-decoration: none;
+      }
+
+      & a:hover,
+      a:visited:hover {
+        background-color: var(--red);
+      }
+
+      & a:visited {
+        background-color: var(--metadata);
+      }
+    }
+  }
+
+  @media (max-width: 1124px) {
+    .index-table {
+      width: 98%;
+
+      & td.index-date {
+        width: 80px;
+        font-size: 12px;
+      }
+    }
+  }
+</style>
