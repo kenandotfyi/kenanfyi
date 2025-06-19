@@ -211,6 +211,7 @@ figcaption {
 
 code {
   font-family: JB;
+    background-color: var(--code-bg);
 }
 
 figure.fullwidth figcaption {
@@ -311,7 +312,7 @@ div.table-wrapper {
 .marginnote > code,
 .sidenote > code {
   font-size: 0.8rem;
-  font-family: Atkinson;
+  font-family: JB;
   background-color: var(--code-bg);
 }
 
