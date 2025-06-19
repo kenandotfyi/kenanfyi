@@ -1,0 +1,17 @@
+{
+  "config": {
+    "MD033": false,
+    "MD013": false
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.mdx"
+      ],
+      "config": {
+        "MD033": false,
+        "MD013": false
+      }
+    }
+  ]
+}

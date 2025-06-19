@@ -27,6 +27,7 @@ Serving a PHP application through Caddy is straightforward, but I wanted to conf
 installation with the so-called ShortURLs. This requires some setup in the Caddyfile:
 
 <Code file="Caddyfile">
+
 ```nginx
 your.domain{
     @title {
@@ -42,6 +43,7 @@ your.domain{
     file_server
 }
 ```
+
 </Code>
 
 This configuration redirects the ugly MediaWiki URLs to a more structured **/wiki/Main_page** type.
