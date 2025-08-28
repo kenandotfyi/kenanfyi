@@ -19,7 +19,7 @@ import Mn from "../../components/Mn.astro";
 
 In the past couple of days I was trying to recreate my Mac workflow in my Intel
 PC where I installed Arch recently. There is a strange behavior whenever I
-launch apps using the keybindings I assigned using GNOME's keyboard settings.
+launch apps using the keybindings I assigned with GNOME's keyboard settings.
 No matter if that application is already running or not, launching with the
 keybinding triggers another instance. Problem seems to be related to GNOME and
 if I launch apps using the application launcher, it
@@ -32,7 +32,7 @@ So, my target behavior while using keybindings is the following:
 2. Focus the application, if it's running
 
 I thought there must be some kind of a setting, since such behavior seems
-ridiculous to me. After couple of minutes of research, I realised the behavior
+ridiculous to me. After a couple of minutes of research, I realised the behavior
 was really intended to be that way. In fact, a lot of people even wrote their
 own small programs to overcome this issue.
 
@@ -44,7 +44,7 @@ It is a small program to interact with window manager to gather information and
 execute commands like switching to a desktop, raising a window, giving it
 focus, closing it and so on.
 
-What are we goint to do is basically listing windows and control them
+What are we going to do is basically listing windows and control them
 using their `WM_CLASS` property in X Window System. Therefore we need to list
 all active windows first with:
 
@@ -71,13 +71,13 @@ an example output would be:
 
 </Code>
 
-As you might expect, the first column is the `WM_CLASS` property, which we are
-going to use for controlling the behavior of our script.
+<Mn id="mn-1"> You can also use `xprop` to get properties for a window. </Mn>
+As you might expect, the third column is the `WM_CLASS` property, which we are going to use for controlling the behavior of our script.
 
 # Complete Script
 
 After couple of hours and brushing up my rusty bash skills, I came up with a
-basic script where I can use inside the keybinding assignment setting in GNOME:
+basic script where I can use inside the keybinding assignment setting in GNOME, and run it with a keybinding.
 
 <Code file="fl.sh">
 
@@ -140,7 +140,7 @@ fi
 </Code>
 
 then we store the arguments to variables and make a small trick in between to
-kind of reset the arguments list to the beginnig. We store the first
+kind of reset the arguments list to the beginning. We store the first
 argument into `WM_CLASS` and then remove it with `shift`<Sn
   id="sn-1">[This](https://unix.stackexchange.com/a/174568) from StackOverflow
 helped here.</Sn> and then collect the remaining arguments with
@@ -189,9 +189,9 @@ fi
 
 </Code>
 
-That's it. Now I can either focus or launch apps when I need to something in
+That's it. Now I can either focus or launch apps when I need to do something in
 GNOME. There's a catch though, since we are always launching the first window
-of an application that comes up in the list, we can not somehow focus to other
-windows. An option to implement would be some kind of switcher in **rofi** or
+of an application that comes up in the list, we can not focus to other
+windows. An option to implement would be some kind of a switcher in **rofi** or
 **dmenu** to show running windows of that application. I might implement that in
 some free time just for fun.
