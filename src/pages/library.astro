@@ -103,11 +103,12 @@ const pageTitle = "library";
       </thead>
       <tbody>
         {
-        books.user_books.map((item: BookItem) =>  (    
+        books.user_books.map((item: BookItem) =>  (
         <tr class="clickable" data-details={`details-row-${item.book.id}`}>
           <td class="index-date">{statusLabels[item.status_id]}</td>
           <td>{item.book.title}</td>
-          <td>{item.book.cached_contributors[0].author.name}</td>
+          <td>{item.book.cached_contributors?.[0]?.author?.name || 'No Author Found'}
+</td>
           <td class="index-read">{ratingStars[item.rating]}</td>
         </tr>
         <tr id={`details-row-${item.book.id}`} class="hidden-row">
@@ -214,6 +215,3 @@ const pageTitle = "library";
     }
   }
 </style>
-
-
-
