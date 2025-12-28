@@ -22,7 +22,7 @@ const { pageTitle } = Astro.props;
   </head>
   <body>
     <script src="https://swetrix.org/swetrix.js" defer></script>
-    <script>
+    <script is:inline>
       document.addEventListener("DOMContentLoaded", function () {
         swetrix.init("1FQBRBM970Ir", {
           apiURL: "https://swetrixapi.akinci.fyi/log",
