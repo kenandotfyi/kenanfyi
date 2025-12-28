@@ -17,23 +17,10 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="posting occasionally" />
-
+    <script defer src="https://meter.akinci.fyi/script.js" data-website-id="2fc8e433-d5b5-4815-8009-136f9d837057"></script>
     <title>{pageTitle}</title>
   </head>
   <body>
-    <script src="https://swetrix.org/swetrix.js" defer></script>
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", function () {
-        swetrix.init("1FQBRBM970Ir", {
-          apiURL: "https://swetrixapi.akinci.fyi/log",
-        });
-        swetrix.trackViews();
-      });
-    </script>
-
-    <noscript>
-      <img src="https://swetrixapi.akinci.fyi/log/noscript?pid=1FQBRBM970Ir" alt="" referrerpolicy="no-referrer-when-downgrade" />
-    </noscript>
     <slot />
     <Footer />
   </body>
