@@ -8,21 +8,22 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="me" href="https://mas.to/@ingenieur" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" sizes="32x32" href="/favicon.ico" />
-    <link rel="alternate" type="application/rss+xml" title="kenan.fyi" href={new URL("rss.xml", Astro.site)} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="posting occasionally" />
-    <script defer src="https://meter.akinci.fyi/script.js" data-website-id="2fc8e433-d5b5-4815-8009-136f9d837057"></script>
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Nav />
-    <slot />
-    <Footer />
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="me" href="https://mas.to/@ingenieur" />
+        <link href="https://github.com/kenandotfyi" rel="me" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" sizes="32x32" href="/favicon.ico" />
+        <link rel="alternate" type="application/rss+xml" title="kenan.fyi" href={new URL("rss.xml", Astro.site)} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content="posting occasionally" />
+        <script defer src="https://meter.akinci.fyi/script.js" data-website-id="2fc8e433-d5b5-4815-8009-136f9d837057"></script>
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <Nav />
+        <slot />
+        <Footer />
+    </body>
 </html>
